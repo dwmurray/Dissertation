@@ -1,0 +1,455 @@
+\documentclass[12pt,notitlepage]{report}
+
+% Included in Maddy's example to me.
+\usepackage{graphicx,vmargin,fancyhdr,amsfonts,amsmath,amsthm,amssymb,mathrsfs}
+\usepackage{uwmthesis2}
+\usepackage{natbib}
+\usepackage{subfigure}
+\bibpunct{(}{)}{;}{a}{}{,}
+\usepackage{color}
+\usepackage{subfiles}
+\usepackage[titletoc,toc,title]{appendix}
+\usepackage{epigraph}
+\usepackage{longtable}
+\usepackage{aas_macros}
+
+% From my MNRAS papers.
+%\usepackage{newtxtext,newtxmath}
+%\usepackage{ulem}
+%\usepackage[T1]{fontenc}
+%\usepackage{ae,aecompl}
+
+\usepackage{mathtools}
+
+%\sloppy %From Maddy's example. %Not great to use, so commented out by me. May require this.
+
+%------------Set Margin{left}{top}{right}{bottom}{foot notes}{headers etc}{}----
+\setmarginsrb{1.0in}{1in}{1in}{1.0in}{0pt}{0.in}{0pt}{1cm}
+
+%------------Set page numbering style---------------
+\pagestyle{fancy} \lhead{} \chead{} \rhead{} \lfoot{} \cfoot{\thepage} \rfoot{}
+
+%------------Previous users macros I left in------------
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhfoffset[]{0.25In}
+
+%%%%% number equations by section %%%%%%%%
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% macros for thesis % I converted to newcommand, rather than define
+\newcommand{\tit}{TURBULENT COLLAPSE OF GRAVITATIONALLY BOUND CLOUDS}
+\newcommand{\aut}{\large Daniel W. Murray}
+\newcommand{\mjrprof}{Philip Chang}
+\newcommand{\inh}{\today}
+%\def\tit{TURBULENT COLLAPSE OF GRAVITATIONALLY BOUND CLOUDS}
+%\def\aut{{\large Daniel W. Murray}}
+%\def\inh{\today}
+
+%Macros for Setting Spacing Between Lines
+\newcommand{\sglspc}{\setstretch{1.1}}
+\newcommand{\dblspc}{\setstretch{1.6}}
+
+% math macros
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bfig}{\begin{figure}}
+\newcommand{\efig}{\end{figure}}
+
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+
+% Common Velocities I use
+\newcommand{\ur}{\mathbf{u_r}}
+\newcommand{\vt}{\mathbf{v_T}}
+\newcommand{\vkep}{\mathbf{v_{\rm K}}}
+\newcommand{\vphi}{\mathbf{v_\phi}}
+\newcommand{\vff}{\mathbf{v_{\rm ff}}}
+\newcommand{\vrms}{\mathbf{v_{\rm rms}}}
+\newcommand{\cs}{c_{\rm s}}
+
+\newcommand{\etaeff}{\eta_{\rm ff}}
+\newcommand{\tff}{\tau_{\rm ff}}
+\newcommand{\tdyn}{\tau_{\rm dyn}}
+
+%--------------------- Units ----------------------------%
+% Solar
+\newcommand{\Msun}{{\,\rm M}_\odot}
+\newcommand{\Rsun}{{\,\rm R}_\odot}
+\newcommand{\Lsun}{{\,\rm L}_\odot}
+
+% Length
+\newcommand{\kpc}{\,\rm kpc}
+\newcommand{\pc}{\,\rm pc}
+\newcommand{\AU}{\,\rm AU}
+\newcommand{\cm}{\,\rm cm}
+
+% Mass
+\newcommand{\g}{\,\rm g}
+
+% Time
+\newcommand{\Myrs}{\,\rm Myrs}
+\newcommand{\yrs}{\,\rm yrs}
+\newcommand{\yr}{\,\rm yr}
+\newcommand{\s}{\,\rm s}
+
+% Velocity
+\newcommand{\kms}{\,\rm km\,s^{-1}}
+\newcommand{\cms}{\,\rm cm\,s^{-1}}
+
+% Energy
+\newcommand{\ergs}{\,\rm erg\, s^{-1}}
+
+
+%------------------------ Figure Commands -------------------------------%
+\newcommand\plotonesmall[1]{\begin{center} \includegraphics[width=0.5\textwidth]{#1} \end{center}}
+\newcommand\plotonebig[1]{\begin{center} \includegraphics[width=0.8\textwidth]{#1} \end{center}}
+\newcommand\plotone[1]{\begin{center} \includegraphics[width=0.6\textwidth]{#1} \end{center}}
+\newcommand\plottwo[2]{\begin{center} \includegraphics[width=0.5\textwidth]{#1}\includegraphics[width=0.5\textwidth]{#2} \end{center}}
+\newcommand\plotthree[3]{\begin{center} \includegraphics[width=0.3\textwidth]{#1}\includegraphics[width=0.3\textwidth]{#2}\includegraphics[width=0.3\textwidth]{#3} \end{center}}
+
+%Hydro Specific, should clean and remove from ms.
+\newcommand{\partA}{particle A }
+\newcommand{\PartA}{Particle A }
+\newcommand{\partB}{particle B }
+\newcommand{\PartB}{Particle B }
+%\newcommand{\omhat}{\hat{\Omega}}
+%\newcommand{\phat}{\hat{p}}
+%\newcommand{\hplus}{h_+}
+%\newcommand{\hcross}{h_{\times}}
+%\newcommand{\infint}{\int_{-\infty}^{\infty}}
+%\newcommand{\bb}{\begin{bmatrix}}
+%\newcommand{\eb}{\end{bmatrix}}
+% \DeclareMathOperator{\Tr}{Tr}
+%\newcommand{\R}[1]{\textcolor{red}{#1}}
+
+\begin{document}
+
+\title{\tit}
+\author{\aut}
+\majorprof{\mjrprof}%{Philip Chang}
+\submitdate{May 2018}
+\degree{Doctor of Philosophy}
+\program{Physics}
+\copyrightyear{2018}
+\majordept{Physics}
+
+\havededicationfalse
+%\dedication
+\haveminorfalse
+\copyrightfalse
+
+\doctoratetrue
+%\figurespagetrue%Default is on.
+\tablespagefalse
+
+% A the manuscript title page
+\manuscriptp
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\pagestyle{plain}
+
+% B the Official Approval page
+%\officialaprovp
+
+
+\setcounter{page}{2}
+
+%---------------------------------Abstract-----------------------------------------
+\begin{center} 
+\sglspc
+
+{\Large \bf ABSTRACT}\\
+\tit\\
+%TURBULENT COLLAPSE OF GRAVITATIONALLY BOUND CLOUDS\\
+
+\
+
+The University of Wisconsin--Milwaukee, May \number\year\\
+Under the Supervision of Professor \mjrprof
+\end{center}
+\ \\
+\dblspc %set double spacing
+%--------Abstract Text-------------------------
+\vskip -1cm
+
+This dissertation presents the story of star formation. 
+I discuss the dynamics of collapsing regions, the effect of proto-stellar jets, the impact of magnetic fields, and development of software for use in RAMSES.
+Motivated by the nonlinear star formation efficiency found in recent numerical simulations by a number of workers, I performed high-resolution adaptive mesh refinement simulations of star formation in self-gravitating turbulently driven gas. 
+I have run tens of simulations includying hydrodynamics (HD) alone, HD and proto-stellar jet feedback, as well as magneto-hydrodyamic (MHD) simulations.
+As I follow the collapse of this gas, we find that the character of the flow changes at two radii, the disk radius $r_d$, and the radius $r_*$ where the enclosed gas mass exceeds the stellar mass. 
+Accretion starts at large scales and works inwards. 
+In line with recent analytical work, I find that the density evolves to a fixed attractor, $\rho(r,t ) \rightarrow \rho(r)$, for $r_d<r<r_*$; mass flows through this structure onto a sporadically gravitationally unstable disk, and from thence onto the star. 
+%Double Check this! Do I still see it in the jet case? what about MHD?
+%In the vicinity of massive star forming regions I find $ p \sim 0.2-0.3$, as seen in observations. For $r<r_*$, $v_T$ increases inward, with  $p=-1/2$.  
+I find that for the HD the total stellar mass $M_*(t)\sim t^2$ in line with previous numerical and analytic work that suggests a nonlinear rate of star formation.
+I show that jets change the normalization of the stellar mass accretion rate, but do not strongly affect the dynamics of star formation.
+In particular, $M_*(t) \propto f^2 (t-t_*)^2$ where $f = 1 - f_{\rm jet}$ is the fraction of mass accreted onto the protostar, $f_{\rm jet}$ is the fraction ejected by the jet, and $(t-t_*)^2$ is the time elapsed since the formation of the first star.
+The star formation efficiency is nonlinear in time.
+I find that jets have only a small effect (of order 25\%) on the accretion rate onto the protostellar disk (the ``raw'' accretion rate).
+I show that the small scale structure -- the radial density, velocity, and mass accretion profiles are very similar in the jet and no-jet cases.
+Finally, I show that the inclusion of jets does drive turbulence but only on small (parsec) scales.
+
+\endabstract 
+\newpage
+
+% D the OPTIONAL copy right page
+\ifcopyright\copyrightpage\fi
+% E the OPTIONAL dedication page
+\ifhavededication\dedicationpage\fi
+% F the Table of Contents
+\newpage
+\renewcommand\contentsname{\begin{center}  \vspace{-2.5cm}{\Large TABLE \ OF \ CONTENTS}\vspace{-1.5cm} \end{center}}        
+\renewcommand\listfigurename{\vspace{-2.5cm}{\begin{center}{\Large LIST \ OF \ FIGURES} \end{center}} \vspace{-0.5cm}}
+\renewcommand\listtablename{\begin{center} \vspace{-2.5cm}{\Large LIST \ OF \ TABLES}\vspace{-0.5cm} \end{center}}
+
+
+\tableofcontents
+
+\afterpreface
+
+\newpage
+
+%---------------------------------Acknowledgments-----------------------------------------
+\begin{center}
+{\Large \bf ACKNOWLEDGMENTS}
+\end{center}
+
+
+\singlespace
+\epigraph{``\emph{Sometimes the gift of an inquisitive nature to the young can be greater than that of the wisdom which comes of age.}"}{--- \textup{Abbot Mordalfus}, \textit{Mattimeo by Brian Jacques}}
+%“Don't be ashamed to weep; 'tis right to grieve. Tears are only water, and flowers, trees, and fruit cannot grow without water. But there must be sunlight also. A wounded heart will heal in time, and when it does, the memory and love of our lost ones is sealed inside to comfort us.” 
+%― Brian Jacques, Taggerung
+%Mice are my heroes because, like children, mice are little and have to learn to be courageous and use their wits. -- Brian Jacques
+%“A little (one) can sometimes see things in others that us older ones cannot because our judgement gets clouded. —Abbot Saxtus” ― Brian Jacques, The Bellmaker
+
+\dblspace
+The inquisitiveness of family and many good friends, the wisdom of family and colleagues has planted me where I am.
+I would not have grown to be where I am today without the constant love and support of my family. 
+I would like to thank my nephew Aiden: For teaching me to approach everything with an open mind, and to question constantly.
+I thank my father for the many stimulating dialogues about the physical world that set me down this road.
+From the calculations of our mpg over Tioga pass to the constellations in the heavens.
+%My mother has tended my roots and branches 
+%I wish to thank my mother and sisters for supporting me in a near infinite number of ways throughout graduate school.
+
+All of the members of the Leonard E Parker Center for Gravitation, Cosmology \& Astrophysics (CGCA), and UWM Physics department, including Adil Amin, Matthew Brinson, and Joe Simon, have been wonderful collaborators and friends over the years. I would like to thank Eric Van Oeveren, Morgan Lynch, and Matt Brinson (again) for making the many late nights and early morning classes on no sleep much more enjoyable than they otherwise would have been. A special thank you to Matt and Adil for the countless coffee breaks and pep talks that I have needed over the years. 
+
+Finally, I acknowledge the advice, support and patience from my advisor Philip Chang. Phil was extremely patient, supportive, and persistent in sheparding me along a track towards independent research and my development both professionally and personally.
+I am grateful for the opportunity to complete my dissertation as a member of the CGCA.
+
+\newpage
+
+%---------------------------------Preface-----------------------------------------
+\begin{center}
+{\Large \bf CONVENTIONS}
+\end{center}
+\ \\
+
+\begin{itemize} 
+
+\item I use $\ur$ to indicate radial (infall) velocity.
+
+\item I use $\vt$to indicate the random motions velocity.
+
+\item I use $\vphi$to indicate the random motions velocity.
+
+\item I use $\vt$to indicate the random motions velocity.
+
+\item Bold font indicates a vector or a matrix, such as $\mathbf{J}$, $\mathbf{S}$ and $\mathbf{x}$.
+
+\end{itemize}
+
+\dblspc %set double spacing 
+
+\newpage
+
+\pagenumbering{arabic}
+%
+\pagestyle{uwmheadings}
+
+%ME here again, new format wants the number at cfoot, not rhead, so manually setting it here
+% Unsure if uwmheadings changes anything else, so I don't want to turn it off.
+%------------Set page numbering style---------------
+\pagestyle{fancy} \lhead{} \chead{} \rhead{} \lfoot{} \cfoot{\thepage} \rfoot{}
+
+
+%---------------------------------Ch 1: Introduction-----------------------------------------%
+\subfile{./Introduction/introduction}
+\label{ch:intro}
+
+%---------------------------------Ch 2: Hydro/Gravitational Force Alone-----------------------------------------%
+\subfile{./Hydro/hydro}
+\label{ch:hydro}
+
+%---------------------------------Ch 3: Protostellar/Jet Feedback------------------------------------------%
+%\subfile{./Jet/jet}
+%\label{ch:jet}
+
+%---------------------------------Ch 4: Magnetic Fields-----------------------------------------%
+%\subfile{./MHD/mhd}
+%\label{ch:mhd}
+
+%---------------------------------Ch 5: Conclusions-----------------------------------------%
+\subfile{./Conclusions/conclusions}
+
+\bibliographystyle{apj}
+\bibliography{diss_bibliography.bib}
+
+%----------------------- CV --------------------------------%
+
+\newpage
+\sglspc
+\begin{center}
+{\bf \Large{CURRICULUM VITAE}}\\
+\end{center}
+
+\
+
+Daniel Murray
+
+Place of birth: Santa Monica, CA
+
+\
+
+\small{
+\medskip\noindent
+{\bfseries  EDUCATION}
+\medskip
+
+\begin{tabular}{ll}
+{\it 8/2012--5/2018} & {\bf Doctor of Philosophy in Physics} \\
+ 			        & University of Wisconsin -- Milwaukee, Milwaukee WI \\
+			        & Advisor: Dr. Philip Chang \\
+			        & Awards: Research Excellence Award, Chancellor's Graduate Student Award, \\
+			        & Physics Graduate Student Award \\
+			        & GPA: 3.07/4.00 \\
+{\it 9/2008--6/2012} & {\bf Bachelor of Science in Physics} \\
+ 			        & University of California Santa Barbara, Santa Barbara, CA \\
+			        & GPA: 3.00/4.00 \\
+\end{tabular}
+}
+
+\bigskip
+\noindent{\bf RESEARCH EXPERIENCE}
+\medskip
+
+\begin{tabular}{ll}
+{\it 8/2012--present} & {\bf Graduate Research Assistant} \\
+				& University of Wisconsin - Milwaukee, Milwaukee WI \\
+				& Advisor: Dr. Philip Chang \\
+\end{tabular}	        
+
+
+Employment  June 2011 - August 2011 
+History:Smithsonian Astrophysical Observatory  
+ Pan-STARRS collaboration under Matthew Holman
+Wrote part of the data reduction pipeline, including the databasing
+
+June 2010 – January 2011
+ Las Cumbres Observatory
+Research Intern under Andy Howell
+Wrote and refined a program to automate the reduction of SNe data
+Work resulted in two papers, published in Nature and The Astrophysical Journal.
+
+December 2009- March 2010 
+ Dr. Phil Lubin’s lab at UCSB
+Research Assistant
+Designed inflatable mirrors for near-infrared applications
+
+\newpage
+			        				
+\bigskip
+\noindent{\bf TEACHING EXPERIENCE}
+\medskip
+
+\begin{tabular}{ll}
+{\it 8/2012--5/2018} & {\bf Teaching Assistant and Lecturer}\\		
+				& University of Wisconsin -- Milwaukee, Milwaukee, WI \\
+				& {\it Discussion section leader for introductory and advanced physics courses} \\
+				& Led discussion sections for both introductory and \\
+                                & advanced undergraduate courses \\
+			        				
+\end{tabular}
+
+%
+\bigskip
+\noindent{\bf FELLOWSHIPS \& AWARDS}
+\medskip
+
+%
+%\begin{tabular}{ll}
+%{\it 2013, 2014} & Distinguished Dissertation Fellowship Nominee (UWM)\\
+%{\it 2013} & Department of Physics Papastamatiou Scholarship (UWM)\\
+%
+%\end{tabular}
+
+\bigskip
+\noindent{\bf INVITED TALKS}
+\medskip
+
+%\begin{tabular}{ll}
+%{\it 5/2017} & {\bf Midwest Magnetic Fields Workshop} \\
+%		& University of Wisconsin-Madison, Madison, WI \\
+%		& Presented on dissertation research.
+%		
+%\end{tabular}
+
+\bigskip
+\noindent{\bf CONFERENCES AND PRESENTATIONS}
+
+
+\begin{itemize}
+
+%\item[]{\bf Iowa High Performance Computing Summer School} Iowa City, IA July 2013. Learned the fundamentals of HPC, includeing OpenMPI and CUDA
+
+\item[]{\bf Princeton’s Institute for Advanced Study Prospects in Theoretical Physics 2016}, Princeton, NJ July 2016. Oral presentation on the effects of turbulence on gravitational collapse.
+
+\item[]{\bf Graduate Student Research Symposium for Math, Engineering, and the Natural Sciences}, Milwaukee, WI, October. 2016. Poster presentation on the effects of turbulence on gravitational collapse.
+
+\item[]{\bf Midwest Magnetic Fields 2017 Workshop}, Madison, WI, May. 2017. Oral presentation on the effects of magnetic fields on the star formation rate for massive star forming regions.
+
+\end{itemize}
+
+\bigskip
+\noindent{\bf PUBLICATIONS}
+
+\textbf{Primary Publications}
+
+\begin{itemize}
+
+%\item[] \textbf{M. Wade}, J. Creighton, E. Ochsner, and A. Nielsen. ``Advanced LIGOÕs ability to detect apparent violations of the cosmic censorship conjecture and the no-hair theorem through compact binary coalescence detections." Phys. Rev. D 88 (2013) 083002.
+
+%\item[] \textbf{M. Wade}, X. Siemens, et al. ``Making $h(t)$ in Advanced LIGO". (in prep.)
+
+\item[] \textbf{D. Murray}, P. Chang, N. Murray, and J. Pittman. ``Collapse in Self-gravitating Turbulent Fluids.'' MNRAS 2017; 465:1316
+
+\item[] \textbf{D. Murray}, S. Goyal, and P. Chang. ``The Effects of Protostellar Jet Feedback on Turbulent Collapse.'' MNRAS 2018 arXiv: 1710.09415
+
+\item[] \textbf{D. Murray}, and P. Chang. ``The Effects of Magnetic Fields on Turbulent Collapse''. (in prep.)
+
+\item[] M. Holman, M. Payne, W. Fraser, P. Lacerda, M. Bannister, M. Lackner, Y. Chen, H. Lin, K. Smith, R. Kokotanekova, K. Chambers, S. Chastel, L. Denneau, A. Fitzsimmons, H. Flewelling, T. Grav, M. Huber, N. Induni, A. Krolewski, R. Jedicke, E. Lilly, E. Magnier, Z. Mark, M. Micheli, \textbf{D. Murray}, et al. ``A Dwarf Planet Class Object in the 21:5 Resonance with Neptune.'' ApJ Letters 2017 %arXiv: 1709.05427
+
+\item[] E. O. Ofek, M. Sullivan, S. B. Cenko, M. M.  Kasliwal, A. Gal-Yam, S. R. Kulkarni, I. Arcavi, L. Bildsten, J. S. Bloom, A. Horesh, D. A. Howell, A. V. Filippenko, R. Laher, \textbf{D. Murray}, et al. ``An outburst from a massive star 40 days before a supernova explosion.'' Nature 2013; 494:65
+
+ 
+\item[] A. Corsi, E. O. Ofek, D. A. Frail, D. Poznanski, I. Arcavi, A. Gal-Yam, S. R. Kulkarni, K. Hurley, P. A. Mazzali, D. A. Howell, M. M. Kasliwal, Y. Green, \textbf{D. Murray}, D. Xu, S. Ben-ami, J. S. Bloom, B. Cenko, N. M. Law, P. Nugent, R. M. Quimby, V. Pal'shin, J. Cummings, V. Connaughton, K. Yamaoka, A. Rau, W. Boynton, I. Mitrofanov, J. Goldsten ``PTF 10bzf (SN 2010ah): a broad-line Ic supernova discovered by the Palomar Transient Factory.'' ApJ 2011; 741:76
+
+\end{itemize}
+
+\textbf{Telegrams}
+
+\begin{itemize}
+
+\item[] Supernova 2010mc 2012CBET.3313....2H
+
+\item[] Supernova 2010ko in NGC 1954. 2010CBET.2575....2P
+
+\end{itemize}
+
+
+\end{document}

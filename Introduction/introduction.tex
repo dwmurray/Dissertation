@@ -1,0 +1,255 @@
+\documentclass[../dissertation.tex]{subfiles}
+%\setlength{\epigraphwidth}{.7\textwidth}
+
+\begin{document}
+
+\chapter{Introduction}
+%\label{ch:intro}
+
+\singlespace
+\epigraph{``\emph{Everything starts somewhere, though many physicists disagree. But people have always been dimly aware of the problem with the start of things. They wonder how the snowplough driver gets to work, or how the makers of dictionaries look up the spelling of words}"}{--- \textup{FindIT!}, \textit{Hogfather by Terry Pratchett}}
+
+Look it up at nana's should be under the bed on the 1st floor.
+\dblspace
+
+To zeroth-order, star formation is the collapse of a cloud of gas into a dense sphere that begins thermonuclear fusion.%TODO:Double Check Literature definition of a star.
+If that were the case then one would naively think that the star formation effeciency (SFE), which is:
+%
+\be
+{\rm SFE} = \frac{M_*}{M_{\rm gas}}, 
+\ee
+%
+would equal 100\% in the time it takes for the entire cloud to collapse to a point.
+The amount of time it takes for a cloud to collapse to a point is 
+With this naive model in mind, one could believe that all of the gas in the cloud collapses into a star in the free-fall time.
+That is to say, the Star Formation Effeciency (SFE) would be 100\%.
+On galactic scales, star formation is observed to be slow as implied by the Kennicutt-Schmidt law \citep{1998ApJ...498..541K,2008AJ....136.2782L}:
+\begin{equation}\label{eq:kennicutt}
+ \dot{M}_* = \epsilon \frac{M_g}{\tau_{\rm dyn}}
+\end{equation}
+where $\epsilon = 1-2\%$ of the mass of the gas, $M_g$ is converted to stars, $M_*$, per dynamical time, $\tau_{\rm dyn}$. 
+Our toy model is too fast by a factor of 50! 
+Obviously we are missing some crucial physics; there must be a force acting to slow the SFE.
+
+On smaller scales, i.e., the scales of giant molecular clouds (GMCs), observations show a large scatter in the efficiency, $\epsilon$, in both GMCs \citep{2016ApJ...833..229L} and smaller clouds \citep{2014ApJ...782..114E}. 
+Of course if the star formation rate on small scales is always small, then the large scale star formation rate needs no further explanation.
+
+
+The star formation time on galactic scales is long when compared to the dynamical time. 
+\citet{1998ApJ...498..541K} expressed this in the form
+\begin{equation}
+\dot{\Sigma}_* = \epsilon\Sigma_g \tau_{\rm DYN}^{-1}
+\end{equation}
+where $\dot{\Sigma}_*$ is the star formation rate per unit area, $\Sigma_g$ is the 
+gas surface density, $\tau_{\rm DYN}$ is the local dynamical time, and $\epsilon = 0.017$ 
+is the efficiency factor.  Naively, if the gas self-gravity dominates the dynamics, $\epsilon \sim 1$, so 
+the low efficiency of star formation is surprising.  More recent work has refined this and similar relations in regard to its dependence on molecular gas \citep{2008AJ....136.2846B} and by taking into account the error distributions of both $\dot\Sigma_*$ and $\Sigma_g$ \citep{2013MNRAS.430..288S}, but the best current estimates of the efficiency of star formation on galactic scales remains low. 
+
+Whether this low efficiency applies to scales comparable to giant molecular clouds, with radii of
+order $100\pc$, is debated in the literature.
+\citet{2010ApJ...723.1019H}, \citet{2010ApJ...724..687L}, \citet{2010ApJS..188..313W}, and \citet{2011ApJ...729..133M} 
+find efficiencies a factor of ten or more larger, while \citet{2007ApJ...654..304K} and \citet{2012ApJ...745...69K} 
+find $\epsilon\approx0.01$.
+On these small scales, observations also suggest that the efficiency is not universal, but instead 
+varies over two to three orders of magnitude (e.g.  
+\citealt{1988ApJ...334L..51M,2016arXiv160805415L}).%2015ApJ...804...18A}).  
+
+There are a number of explanations for the low star formation rate, on 
+either small or large scales (although they may not be necessary for the former!). These include 
+turbulent pressure support \citep{1992ApJ...396..631M}, support from magnetic fields
+\citep{1966MNRAS.132..359S,1976ApJ...207..141M}, and stellar feedback (e.g.
+\citealt{1986ApJ...303...39D}).  Numerical experiments investigating the first two 
+effects suggest that neither turbulence nor magnetic support is sufficient 
+to reduce the rate of star formation to $\epsilon\approx 0.02$ on small scales
+\citep{2010ApJ...709...27W,2011MNRAS.410L...8C,2011ApJ...730...40P,2012ApJ...754...71K,2014MNRAS.439.3420M}.  Feedback from radiative effects and protostellar jets and winds may be able to explain the low star formation rate, but the impact of these forms of stellar feedback remains uncertain despite recent progress
+\citep{2010ApJ...709...27W,2014MNRAS.439.3420M,2015MNRAS.450.4035F}.
+
+Until very recently, galaxy-scale or larger (cosmological) simulations 
+were not able to reproduce the Kennicutt-Schmidt relation.  Nor 
+did the cosmological runs reproduce correctly the mass of stars in galaxies of a given 
+halo mass, despite including supernova and other forms of feedback, 
+e.g., \citet{2010MNRAS.404.1111G,2010Natur.463..203G,2011MNRAS.410.2625P}.
+To overcome this low resolution driven problem, \citet{2011MNRAS.417..950H,2012MNRAS.421.3522H}
+performed high resolution (few parsec spatial, few hundred solar mass particle masses) simulations 
+of isolated galaxies, modeling both radiative and supernovae feedback (among other forms). 
+They recovered the Kennicutt-Schmidt relation, a result that they 
+showed was independent of the small-scale star formation
+law that they employed. The simulations in the second paper also generated galaxy 
+scale outflows or winds, removing gas from the disk, thus making it unavailable for star 
+formation. When the feedback was turned off, the star formation rate soared, demonstrating that
+in the simulations at least, feedback was crucial to explaining the Kennicutt-Schmidt relation, and
+the outflows. Simulations including supernovae but lacking the radiative component of the feedback
+did not exhibit strong winds and so overproduced stars.
+
+Cosmological simulations employing unresolved (or ``sub-grid") models for both 
+radiative and supernovae feedback are now able to reproduce the halo-mass/stellar mass relation (e.g.,
+\citealt{2013MNRAS.434.3142A,2014MNRAS.445..581H,2015ApJ...804...18A}). Again, 
+these simulations {\em require} 
+stellar feedback to drive the winds that remove gas from the disk, so as to 
+leave the observed mass of stars behind. 
+
+\citet{2015ApJ...800...49L} emphasized that the star formation efficiency on 
+parsec scales is nonlinear 
+in time, i.e., $\epsilon \propto t \rightarrow M_* \propto t^2$, on small scales, where $M_*$ is the total stellar mass. Magnetic fields slowed the initial star
+formation rate somewhat, but did not change the $M_*(t)\sim t^2$ scaling. 
+Using a detailed numerical simulation, they showed that this nonlinear star formation 
+rate is driven by the properties of collapsing regions.
+In particular, they demonstrated that the turbulent velocity near or in
+collapsing regions follows 
+different scaling relations than does turbulence in the global environment, which follows
+Larson's law, $v_T(r)\sim r^{1/2}$ \citep{1981MNRAS.194..809L}. They also showed that the density PDF 
+is not log-normal, but rather develops a power law to high density.
+This latter result was hinted at by \citet{2000ApJ...535..869K} and shown convincingly, 
+as well as explained, by \citet{2011ApJ...727L..20K}. 
+
+The increasing rate of star formation found by \citet{2015ApJ...800...49L} is important 
+in that it may provide an explanation for the observed range in star formation rates on 
+small scales.  It suggests that the star formation rates on small scales 
+vary in part because of the age of the star forming region; slow star forming 
+regions, with very low instantaneous efficiencies, will ramp up their stellar production over time. If this result
+can be firmly established, it will highlight the need for a form of very rapid 
+feedback. In particular, since the dynamical time in massive star forming regions 
+is much smaller than the time delay of $\sim 4{\,\rm Myrs}$ between the start of star 
+formation and the first supernovae, rapid star formation on small scales would 
+have to be halted by some form of feedback other than supernovae. 
+
+The simulations of  \citet{2015ApJ...800...49L} explicate the link between the rate of star formation with the gravitational collapse of high density regions, which  is  an analytically well studied problem. 
+An early model of \citet{1977ApJ...214..488S} estimated 
+the accretion rate onto stars by assuming that stars form from hydrostatic cores 
+supported by thermal gas pressure. The accretion rate in his model was independent
+of time, given by $\dot{M} = m_0c_s^3/G$, where $c_s = (k_b T / \mu)^{1/2}$  is the sound
+speed in molecular gas, and $m_0 = 0.975$. \citet{1977ApJ...214..488S} predicted a 
+maximum accretion rate of $\sim 2\times10^{-6} M_\odot\,\yr^{-1}$, which is too small to explain 
+the origin of massive ($M_*\sim50-100M_\odot$) O stars, which have lifetimes $\lesssim 4\times10^6\yrs$
+
+\citet{1992ApJ...396..631M} overcame the difficulty with slow accretion rates by adopting 
+the turbulent speed in lieu of the sound speed (see also \citet{1997ApJ...476..750M} and
+\citet{2003ApJ...585..850M}). In doing so they were able to replace the slower signal 
+speed of sound with the faster turbulent speed. However, they continued to assume 
+the initial condition was that of a hydrostatic core that is supported by
+turbulent pressure. They also assumed that the turbulence is static and unaffected by the collapse.  
+
+Collectively, these models, \citep{1977ApJ...214..488S,1992ApJ...396..631M,1997ApJ...476..750M,2003ApJ...585..850M}, are referred to as inside-out collapse models; the collapse starts at small radii (formally at $r=0$ in the analytic models) and works its way outward, at the assumed propagation speed ($c_s$ or $v_T(r)$).  At any given time, the infall velocity and mass accretion rate both decrease with increasing radius $r$.  The analytic models assume the existence of a self-similarity variable $x = r/vt$, where $v=c_s$ in \citet{1977ApJ...214..488S} or the turbulent velocity $v_T(r)$ in \citet{1992ApJ...396..631M,1997ApJ...476..750M,2003ApJ...585..850M}.  
+These models predict velocity and mass accretion profiles very different than those seen 
+in the simulations of \citet{2015ApJ...800...49L}.
+%; in particular, the analytic models do not predict any deviation of the turbulent velocity from Larson's size-linewidth relation.  
+
+Motivated by this discrepancy,
+\citet{2015ApJ...804...44M}, hereafter MC15, developed a 1-D model of
+spherical collapse that treats the turbulent velocity, $v_T$, as a dynamical variable and
+does not assume that the initial condition is a hydrostatically
+supported region. They used the results of \citet{2012ApJ...750L..31R} on
+compressible turbulence; the evolution
+of the turbulent velocity in a collapsing (or expanding) region is
+described well by the following equation:
+%
+\be
+\frac{\partial v_{T}}{\partial t} + u_{r} \frac{\partial v_{T}}{\partial r} 
++ \left( 1 + \eta \frac{v_{T}}{u_{r}} \right) \frac{v_T u_r}{r} = 0
+\label{eq:hydro_ Robertson}
+\ee
+%
+The first two terms are the Lagrangian derivative, and $u_r$ is the radial infall velocity. The first term in the brackets 
+describes the turbulent driving produced by the infall, while the second 
+is the standard expression for the turbulent decay rate;  $\eta$ is a dimensionless constant of order unity.
+
+MC15 used this in place of an energy equation. Together with the
+equations for mass continuity and momentum, equation (\ref{eq:hydro_ Robertson}) gives a
+closed set of equations that can be solved in spherical symmetry
+numerically. In addition, they were able to analytically show that the
+results of their calculations gave density and velocity profiles that
+appear to be in line with both recent numerical calculations
+\citep{2015ApJ...800...49L} and observations (e.g.,
+\citealt{1995ApJ...446..665C,1997ApJ...476..730P}).
+
+To summarize, MC15's major results were:
+\begin{itemize}
+\item The gravity of the newly formed star introduces a physical scale into the problem, which MC15 called the stellar sphere of influence, $r_*$. This is an idea familiar from galactic dynamics. 
+The radius $r_*$ is where the local dynamics transitions from being 
+dominated by the mass of the gas to being dominated 
+by the mass of the star. As a result,the character of the solution, in particular that of the velocity, differs dramatically between $r<r_*$ and $r>r_*$.  The existence of this physical scale modifies the form of the self-similarity on which inside-out theories rely.
+
+\item The small scale density profile is an attractor solution.  MC15 showed numerically and argued analytically that at small scales, the density profile is an attractor solution. 
+In particular, MC15 showed the density profile asymptotes to: 
+%
+\be
+\rho(r,t)=
+\begin{dcases}
+\rho(r_0)\left({\frac{r}{r_0}}\right)^{-3/2}, & r<r_*(t)\\
+\rho(r_0,t)\left({\frac{r}{r_0}}\right)^{-k_\rho}, \ k_\rho\approx1.6-1.8 & r>r_*(t).
+\end{dcases}
+\label{eq:hydro_density}
+\ee
+%
+where $r_0$ is some fiducial radius. 
+\item The existence of $r_*$ implies that the infall and turbulent velocities have different scaling for $r<r_*$ and $r>r_*$.  In particular, MC15 showed
+%
+\be
+u_r(r,t), v_T(r,t) \propto
+\begin{dcases}
+\sqrt{\frac{GM_*(t)}{r}} \sim r^{-1/2} & r<r_*(t)\\
+\sqrt{\frac{GM(r,t)}{r}} \sim r^{0.2} & r>r_*(t),
+\end{dcases}
+\label{eq:hydro_infall_behavior}
+\ee
+%
+Thus the scaling of the turbulent velocity differs from that predicted by Larson's law ($\propto r^{1/2}$) inside the sphere of influence. In other words, the turbulent velocity in  massive star forming regions will deviate from Larson's law, which has long been observed, but without theoretical explanation. 
+\item The stellar mass increases quadratically with time.  This result  arises naturally from the attractor solution nature of the density profile at small $r$, Equation (\ref{eq:hydro_density}), and the scaling with Keplerian velocity for the turbulent and infall velocities at small $r$, Equation (\ref{eq:hydro_infall_behavior}).
+
+The mass accretion rate: 
+%
+\be
+\dot M(r,t)=
+\begin{dcases}
+4\pi R^2\rho(R)u_r(r,t), \sim t\,r^{0} & r<r_*\\
+4\pi R^2\rho(R)u_r(r,t) \sim t^0\,r^{0.2} & r>r_*.
+\end{dcases}
+\label{eq:hydro_Mdot_behavior}
+\ee
+%
+\end{itemize}
+
+
+
+MC15's predictions for $r<r_*$ could not be checked using the simulations
+of \citet{2015ApJ...800...49L} as those fixed grid simulations were
+too coarse.  In this paper, we study the collapse of gas and formation
+of stars in a turbulent GMC using roughly a dozen high resolution
+adaptive mesh refinement (AMR) simulations in this paper.
+
+
+This dissertation describes my contributions to various parts of our current understanding of the dynamics of star formation. 
+This chapter gives a brief overview of the theory behind star formation and introduces descrepancies in our current understanding. 
+Ch. ~\ref{ch:Hydro} discusses the initial set up for the majority of my simulations, and the dynamics of gravitational collapse with no feedback or other delaying aspects.
+Ch. ~\ref{ch:Jet} discusses the effects that protostellar and jet feedback have on the stellar mass accretion rate for a cluster of stars.
+Ch. ~\ref{ch:MHD} discusses the dynamical effect of magnetic fields.
+Finally, in Ch. ~\ref{ch:conclusions}, I summarize the results obtained in this dissertation succinctly.
+
+%
+\section{Review of Analytic Theories of Star Formation}
+\label{sec:sf_review}
+I will begin with a refresher on the state of analytic theories of star formation, and what each individual step has indicated for our understanding of this process.
+
+\subsection{Thermal Pressure Support and HSE}
+The original proposals were that the thermal motion of the gas in the Giant Molecular Cloud was enough to
+
+\subsubsection{Larson, Penston inside out collapse}
+In the late 1960's and early 1970's, star formation theory revolved around hydrostatic equilibrium supporting a cloud of gas and dust via the thermal pressure support. The thought process is that eventually, the density/mass becomes too great for the thermal pressure support, and the cloud collapses.
+Talk about Larson 1969 \& Penston 1969
+
+\subsubsection{Shu 1977}
+\label{subsec:Shu_review}
+Dr. Shu thought that this idea had promise, but he did not like the idea of a stream of material infalling at an infinite velocity. 
+He much prefered the idea0
+Talk about Shu.
+
+
+Thermal pressure support HSE (Larson 69; Penston 69; Shu 77)
+Magnetic pressure support
+Turbulent pressure support HSE (Myers; McLaughlin; McKee)
+Turbulence (Padoan \& Nordlund; Krumholz \& McKee)
+
+\subsection{Turbulent Pressure support and HSE}
+
+
+\end{document}

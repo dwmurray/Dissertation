@@ -7,12 +7,12 @@
 %\label{ch:intro}
 
 \singlespace
-\epigraph{``\emph{Everything starts somewhere, though many physicists disagree. But people have always been dimly aware of the problem with the start of things. They wonder how the snowplough driver gets to work, or how the makers of dictionaries look up the spelling of words}"}{--- \textup{FindIT!}, \textit{Hogfather by Terry Pratchett}}
+\epigraph{``\emph{Everything starts somewhere, though many physicists disagree. But people have always been dimly aware of the problem with the start of things. They wonder how the snowplough driver gets to work, or how the makers of dictionaries look up the spelling of words}"}{--- \textit{Hogfather by Terry Pratchett}}
 
-Look it up at nana's should be under the bed on the 1st floor.
 \dblspace
 
-To zeroth-order, star formation is the collapse of a cloud of gas into a dense sphere that begins thermonuclear fusion.%TODO:Double Check Literature definition of a star.
+The journey of star formation is the collapse of a cloud of gas into a dense sphere that begins thermonuclear fusion.
+If we imagine an isolated cloud of gas with constant density, $\rho(r) \rightarrow \rho$,
 If that were the case then one would naively think that the star formation effeciency (SFE), which is:
 %
 \be
@@ -218,6 +218,54 @@ of stars in a turbulent GMC using roughly a dozen high resolution
 adaptive mesh refinement (AMR) simulations in this paper.
 
 
+
+
+\section{Introduction}
+
+On galactic scales, star formation is observed to be slow as implied by the Kennicutt-Schmidt law \citep{1998ApJ...498..541K,2008AJ....136.2782L}:
+\begin{equation}\label{eq:jet_kennicutt}
+ \dot{M}_* = \epsilon \frac{M_g}{\tau_{\rm dyn}}
+\end{equation}
+where $\epsilon = 1-2\%$ of the mass of the gas, $M_g$ is converted to stars, $M_*$, per dynamical time, $\tau_{\rm dyn}$. On smaller scales, i.e., the scales of giant molecular clouds (GMCs), observations show a large scatter in the efficiency, $\epsilon$, in both GMCs \citep{2016ApJ...833..229L} and smaller clouds \citep{2014ApJ...782..114E}. %Of course if the star formation rate on small scales is always small, then the large scale star formation rate needs no further explanation.
+
+A number of explanations for this low star formation rate and scatter in the efficiency, on either galactic or GMC scales, have been put forth.
+On large scales, the leading candidate is stellar feedback, e.g. \citet{1986ApJ...303...39D}, in which supernovae limit the amount of dense gas. %, which is supposed to create a slow star formation rate on galactic scales.
+On small scales, these include turbulent pressure support \citep{1992ApJ...396..631M} and support from magnetic fields \citep{1966MNRAS.132..359S,1976ApJ...207..141M}. %, which are envisioned to produce a slow star formation rate. %on small scales.
+Numerical experiments investigating turbulence and magnetic fields suggest that, while magnetic support found in MHD simulations can slow the rate of star formation compared to hydrodynamics simulations, neither turbulence nor magnetic support is sufficient to limit the small scale star formation rate to 1-2\% per free fall time
+\citep{2010ApJ...709...27W,2011MNRAS.410L...8C,2011ApJ...730...40P,2012ApJ...754...71K,2014MNRAS.439.3420M,2015ApJ...808...48B,2017ApJ...838...40M}.
+
+%While turbulence and magnetic support appear unable to slow the rate of star formation on small scales, it is still possible that understanding the small scale accretion physics may provide an avenue to explain the observed low efficiency of galaxy-scale star formation.  Along these lines,
+
+\citet{2015ApJ...800...49L} showed that, in simulations with no feedback, the star formation efficiency on
+parsec scales is not constant in time.
+This is in contrast to previous work, which had implicitly assumed that the star formation rate on small scales was constant.
+In particular, many authors have assumed that the star formation rate in their simulations of a GMC (or smaller cloud or part of a cloud) was given by equation (\ref{eq:jet_kennicutt}), where $\epsilon$ was assumed to be constant.
+\citet{2015ApJ...800...49L} showed that $\epsilon \propto t$, which implies that $M_* \propto t^2$, where $M_*$ is the total stellar mass.
+Motivated by this, \citet[][hereafter MC15]{2015ApJ...804...44M} developed a new 1-D model of spherical collapse that treats the turbulent velocity, $v_T$, as a dynamical variable.
+%In essence, they extended the classic analysis of \citet{1977ApJ...214..488S} and \citet{1992ApJ...396..631M}; see also \citet{1997ApJ...476..750M,2003ApJ...585..850M}.
+%
+Following earlier work \citep{1977ApJ...214..488S,1992ApJ...396..631M,1997ApJ...476..750M}, MC15 reduced the fluid equations by assuming spherical symmetry, but did not assume a fixed equation of state.
+Early work \citep{1977ApJ...214..488S,1992ApJ...396..631M,1997ApJ...476..750M} assumed that the pressure, which appears in the momentum equation, was given by $P = \rho c_s^2$ with $c_S = \textrm{const}$ or $P = \rho v_{\rm T}^2$ with $v_{\rm T} = v_{\rm T}(r) \propto r^{\kappa_r}$, i.e., a prescribed function of $r$, and $\kappa_r$ is typically chosen to be 1/2 to reflect Larson's law \citep{1981MNRAS.194..809L}.
+%proportional to the density, i.e., that the gas was isothermal, or proportional to the density times the square of a prescribed function of radius (the square of the turbulent velocity, which was in turn assumed to have a power law dependence on radius).
+In contrast,  MC15 used the results of \citet{2012ApJ...750L..31R} on compressible turbulence including both decay and compression, treating the turbulent velocity as a dynamical variable.  In essence, MC15 includes an extra equation for the evolution of the energy.
+In doing so, MC15 found that the $t^2$ power law arises naturally because the small scale density and velocity are set by the gravity of the protostar, and made predictions for the velocity and mass accretion
+%The density profile approaches an attractor solution $\rho(r,t) \rightarrow \rho(r)$.
+profiles that were later verified numerically by \citet{2017MNRAS.465.1316M}.
+
+In any case, the issue of the slow rate of large scale star formation remains.
+One possibility is that stellar feedback acting on large (galactic disk) scales controls the rate of star formation on those scales.
+Cosmological simulations including both radiative and supernova feedback can reproduce Kennicutt's observational results, e.g., \cite{2011MNRAS.417..950H,2013ApJ...770...25A,2014MNRAS.445..581H}. If these simulations are to be believed, the physics of stellar feedback from protostellar jets, which are not included, may not control the global galactic rate of star formation.
+
+However, jets may control the rate of small (parsec) or medium (GMC) scale star formation and may power the observed turbulence in molecular clouds \citep{2007ApJ...659.1394M}.
+As a result, a number of groups have recently studied the effects of protostellar jets and outflows on star formation \citep{2010ApJ...709...27W,2014MNRAS.439.3420M,2015MNRAS.450.4035F}.
+\citet{2007ApJ...662..395N} and \citet{2011ApJ...740...36N} found that the effect of protostellar outflows was important for driving turbulence.  \citet{2011ApJ...740..107C} and \citet{2012ApJ...747...22H} found that protostellar outflows enhanced the effectiveness of radiative feedback.  In addition, \citet{2015MNRAS.450.4035F} found that a combination of turbulence, jets, and magnetism is able to reproduced the observed low efficiency (to within a factor of four) of star formation in contrast to galactic scale simulations that rely on radiative and supernovae feedback.
+%Returning to the possibility that protostellar jets may control the rate of star formation, \citet{2012ApJ...754...71K} found that proto-stellar jets did not reduce the star formation rate, while \citet{2014ApJ...790..128F} find that it might, under certain conditions.
+
+%The numerical observation that protostellar feedback can, in certain simulations, reduce the star formation rate raises an important question in the context of the results of \citet{2015ApJ...800...49L}, MC15, and \citet{2017MNRAS.465.1316M}:
+The results of \citet{2015ApJ...800...49L}, \citet{2015ApJ...804...44M}, and \citet{2017MNRAS.465.1316M} demonstrated that the small scale dynamics are intimately linked to the star formation rate. The question we address in this paper is, do protostellar jets affect the small scale physics of accretion in a turbulent medium?  In particular, does the stellar mass still increase as $t^2$ with the inclusion of protostellar jet feedback?  The answer as we will argue below is no and yes, respectively.
+
+
+
 This dissertation describes my contributions to various parts of our current understanding of the dynamics of star formation. 
 This chapter gives a brief overview of the theory behind star formation and introduces descrepancies in our current understanding. 
 Ch. ~\ref{ch:Hydro} discusses the initial set up for the majority of my simulations, and the dynamics of gravitational collapse with no feedback or other delaying aspects.
@@ -240,8 +288,6 @@ Talk about Larson 1969 \& Penston 1969
 \subsubsection{Shu 1977}
 \label{subsec:Shu_review}
 Dr. Shu thought that this idea had promise, but he did not like the idea of a stream of material infalling at an infinite velocity. 
-He much prefered the idea0
-Talk about Shu.
 
 
 Thermal pressure support HSE (Larson 69; Penston 69; Shu 77)

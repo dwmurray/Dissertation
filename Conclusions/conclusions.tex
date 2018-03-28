@@ -11,6 +11,100 @@
 
 \dblspace
 
-Conclusions if I have any.
+\section{The effect of teh Reynolds Stress alone.}
+
+Motivated by the discrepancy between the current analytic models and observations we perform deep AMR simulations 
+of star formation in self-gravitating continuously driven hydrodynamic turbulence. 
+We show that two length scales emerge from the process of star formation, $r_*$ and $r_d$, and demonstrate
+that these length scales are clearly associated with physical effects. 
+In particular, the character of the 
+solution changes at $r_*(t)$, inside of which (but outside $r_d$) $|u_r|$ and  $v_T$ are both
+$\propto r^{-1/2}$; outside of $r_*$, $v_T\sim r^{p}$ (with $p\approx0.2$), while $|u_r|$ 
+is on average about constant. 
+We emphasize that the length scales at which the character of the solution changes are time dependent. 
+As the star grows in mass, the radius where the stars' gravity exceeds the gravity of the surrounding gas increases outwards away from the star, 
+$r_*(t) \propto M_*^{2/3}(t)$.
+The disk radius, $r_d$, also changes as a function of time as a result of the advection and transport of angular momentum from largescales to small scales (and vice versa).
+
+We also found that the density profile evolves
+to a fixed attractor, $\rho(r,t ) \rightarrow \rho(r)$ in line with the results of MC15 and 
+the earlier numerical results of \citet{2015ApJ...800...49L}. 
+
+Our results strongly support the basic premise of MC15, that turbulence is a dynamic variable 
+which is driven by adiabatic compression \citep{2012ApJ...750L..31R}, and that the turbulence
+in turn acts to slow the collapse. 
+We note, as did MC15, that observations of massive star forming regions also find $v_T \propto r^p$ 
+with $ p \sim 0.2-0.3$, and that at small radii or high density, $v_T$  
+increases with increasing density, as seen in observations of massive star forming
+regions \citep{1997ApJ...476..730P}. We find these departures from Larson's law only in
+collapsing regions in our simulations. We also show that the acceleration 
+due to the pressure gradient is comparable to that due to gravity at all $r>r_d$. 
+As a result, the infall velocity is substantially smaller than the free fall velocity
+even very close to the star or accretion disk. Inside $r_d$, rotational support takes over 
+and as a result $u_r$ and $v_T$ both decrease.  
+
+Our simulations capture rotational dynamics that MC15 did not capture in their 1-D model.  
+In particular, we find the development of rotationally support disks at $r_d \sim 0.01$ pc.  
+These disks have radii comparable to  or slightly larger than disks seen around 
+young stars in Taurus \citep{1999AJ....117.1490P} in which stellar feedback effects are minimal,
+and where the undisturbed disks are larger than in more active star forming regions such as Orion, 
+where the disk radii are $\sim 100\AU$ \citep{2011ARA&A..49...67W}.  
+This is despite the fact that we do not include magnetohydrodynamic effects 
+in our numerical computations;  large scale magnetic fields may transfer angular 
+momentum away from these disks, shrinking them.  
+
+Like the disks modeled by \citet{2010ApJ...708.1585K},
+our simulated disks are 
+marginally gravitationally stable, suggesting that large scale gravitational torques are 
+responsible for transport of material and angular momentum in our simulations; this may
+also be true at early times in real protostellar disks.  
+
+We have shown that the assumptions made by previous analytic collapse models
+\citep{1977ApJ...214..488S,1992ApJ...396..631M,1997ApJ...476..750M,2003ApJ...585..850M}, 
+are not fulfilled in our simulations.  In particular, 
+the collapsing regions in our simulations do not start from a hydrostatic equilibrium, nor 
+do they show any evidence of inside-out collapse.  The gathering of material before collapse, i.e.,
+before the central cusp in the density power law is formed, involves transonic bulk motions 
+and supersonic random motions (see Figure \ref{fig:hydro_velocity_avg}). The accretion of mass starts at large 
+scales ($r\sim 1\pc$) with large initial infall velocities.  In addition, we find that $v_T$ 
+scales differently in collapsing regions as opposed to the rest of the simulation box, 
+whereas the turbulent collapse models \citep{1997ApJ...476..750M,2003ApJ...585..850M} assume 
+that the scaling of $v_T$ with $r$ remains fixed.  
+
+Finally, we close with a brief discussion of how our results relate to turbulence regulated theories of star formation. Here we find several points of disagreement. 
+First, we find that the star 
+particles accrete continuously from the surrounding large scale turbulent flow; there is 
+no hydrostatic ``core'' that is cut-off from the turbulent medium. Second, 
+the density distribution does not remain log-normal, but rather develops a power law tail that 
+is directly related to the density profile \citep{2011ApJ...727L..20K,2015ApJ...800...49L}.  
+Third, the fact that the density profile approaches an attractor solution that scales like 
+$r^{-3/2}$ for $r<r_*$ and $u_r$ scales with the Keplerian velocity guarantees that $\dot{M}$ is 
+constant with radius and $\dot{M}_*\propto t$ and hence a non-linear star formation efficiency, 
+i.e., $M_* \propto t^2$ results. This is in contrast with turbulence regulated theories of star 
+formation that predict a constant star formation rate, i.e., $\dot{M}_* = {\rm const}$ and, 
+hence, a linear star formation efficiency $M_* \propto t$. 
+
+
+\section{changes to the dynamics due to jets}
+We performed simulations of turbulent, self-gravitating gas including star particle formation and protostellar jets. 
+Starteing with uniform density in a box with length $16$ parsecs on a side, we drove turbulence until we reached a statistically steady state.
+At that point, the density was no longer uniform.
+We then turned on gravity and star formation.
+We used AMR to follow collapsing regions down to an effective resolution of $32 \, K^3$ which gave us a $\Delta x$ of $100 {\rm AU}$ at the finest level of refinement.
+
+We observed that the inclusion of protostellar jets does not affect the general dynamics of accreting gas.
+In particular we saw $M_*(t) \propto f^2 (t-t_*)^2$ where $f = 1 - f_{\rm jet}$ is the fraction of mass accreted onto the protostar and $f_{\rm jet}$ is the fraction ejected by the jet.
+We find that this mass ejection accounts for 75\% of the effect of jets on the star formation rate in our simulations.
+This appears to be the case in similar simulations performed by other groups (e.g. see Figure \ref{fig:jet_fed_comp}), but we find suggestions that this may be altered if MHD is included.
+
+As we have found previously in the case without jets \citep{2017MNRAS.465.1316M}, the spherical average profile of gas around the protostar follows the analytic model of MC15 and does not seem the change in the case with jets.  In particular, the run of density finds an attractor solution prior to star formation and remains on that solution even after jets begin to blow out cavities in the surrounding medium.
+The behavior of the infall and rotational velocities is similar regardless of whether jets are included or not.
+The profile of the random velocities are also similar once the jet bi-cone is removed.  Finally, the mass accretion rates are similar in the jet and no-jet cases.
+
+We also find that the collapse is outside-in  \citep{2017MNRAS.465.1316M}, and holds for both the jet and no jet simulations.
+The average jet momentum per stellar mass does increase over time, though this is to be expected as the stars continue to accrete mass.
+We did not run long enough for the stars to completely consume the surrounding gas and thus for the jets to begin to be shut off.
+We find that jets do drive turbulence in the surrounding gas, but is confined to small scales of roughly a parsec.
+
 
 \end{document}

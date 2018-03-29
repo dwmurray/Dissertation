@@ -29,7 +29,7 @@ The vast majority of newborn stars in our Milky Way Galaxy are made of $\sim 71 
 
 \section{How do we observe stars}
 
-
+We have a variety of tools at our fingertips in the modern era of multi-messenger astronomy. 
 
 
 
@@ -37,7 +37,6 @@ The vast majority of newborn stars in our Milky Way Galaxy are made of $\sim 71 
 
 
 The journey of star formation begins in the dust and cold clouds of gas called nebulae. Nebulae are many light-years across and have the potential to create thousands of stars about the size of our sun. Nebulae contain essential ingredients for the production of stars, such as hydrogen and helium. The Small Magellanic Clouds are mottled with star forming regions. These regions or clusters-- en masse-- make up an irregular galaxy, a kind of galaxy more commonly found in the Early Universe. These cold clouds begin to collapse under their own gravity, becoming smaller, more dense, and more hot. The collapsing cloud becomes dense enough to initiate a thermonuclear reaction. At around a temperature of 10 million degrees Celsius, a nascent star emerges out of the hot dense clumps of material. Observations tell us that most of these young stars form near or at the center of the collapsing cloud, lying in what is an emerging flat disc. To paraphrase author Terry Pratchett, this is truly ``the start of things'' astronomical. Planets may form around this emerging star.
-
 
 With our eyes turned to the cosmos, we must now ask, where do we see new or young stars being born? 
 What are the physical conditions that lend themselves to the formation of stars, 
@@ -155,9 +154,13 @@ The thought process is that eventually, the density/mass of the cloud becomes to
 
 \subsection{\citet{1969MNRAS.145..271L} and \citet{1969MNRAS.144..425P}}
 \citet{1969MNRAS.145..271L} and \citet{1969MNRAS.144..425P} first put forth the idea that the collapse of this core would have a self similar solution.
-
-\citet{1969MNRAS.145..271L}
-Talk about Larson 1969 \& Penston 1969
+\citet{1969MNRAS.145..271L} assumed a static cloud, while \citet{1969MNRAS.144..425P} did a nearly static cloud (Bonner-Ebert sphere). 
+Both \citet{1969MNRAS.145..271L} and \citet{1969MNRAS.144..425P} assumed self similarity, which gives a power law throughout. 
+We will later show that one can not assume self-similarity throughout all radii. 
+\citet{1969MNRAS.145..271L} used boundary conditions, that are not necessarily physical. 
+\citet{1969MNRAS.145..271L} desired a solution that would be static at the core, and since they desired a self-similar solution, 
+the power law would then state that the velocity must approach infinity as r approaches infinity. 
+This is not a realistically physical condition, as there must be some boundary to the cloud.
 
 \subsection{Shu 1977} \label{subsec:Shu_review}
 \citet{1977ApJ...214..488S} found that the solution described by \citet{1969MNRAS.145..271L} and \citet{1969MNRAS.144..425P} was physically artificial prior to core formation.
@@ -171,6 +174,7 @@ For regions where $r < c_s t$, the layers find that their pressure support insid
 This collapse expands outwards in time, leading to the phrase ``inside-out collapse''. 
 Following this solution, \citet{1977ApJ...214..488S} estimated the accretion rate onto 
 stars by assuming that stars form from hydrostatic cores supported by thermal gas pressure. 
+In \citet{1977ApJ...214..488S}, their boundary conditions, you have a shock at the surface/ at r =0 which is not modeled by these equations.
 The accretion rate in his model was independent of time, given by $\dot{M} = m_0c_s^3/G$, where $c_s = (k_b T / \mu)^{1/2}$  is the sound
 speed in molecular gas, and $m_0 = 0.975$. 
 \citet{1977ApJ...214..488S} predicted a maximum accretion rate of $\sim 2\times10^{-6} M_\odot\,\yr^{-1}$, which is too small to explain 

@@ -9,19 +9,26 @@
 
 \singlespace
 \epigraph{``\emph{Quotey McBOaty words}"}{--- \textup{Find One?}, \textit{Book Title by Author First and Last}}
+%\epigraph{``\emph{Some say the world will end in fire
+%Some say in ice
+%From what I've tasted of desire
+%I hold with those who favor fire
+%... for destruction ice
+%Is also great
+%And would suffice}"}{--- \textit{Fire and Ice Robert Frost}}
 
 \dblspace
 
-% Abstract of the paper
-Original Abstract
-We present results of hydrodynamic simulations of massive star forming regions with and without protostellar jets.
-We show that jets change the normalization of the stellar mass accretion rate, but do not strongly affect the dynamics of star formation.
-In particular, $M_*(t) \propto f^2 (t-t_*)^2$ where $f = 1 - f_{\rm jet}$ is the fraction of mass accreted onto the protostar, $f_{\rm jet}$ is the fraction ejected by the jet, and $(t-t_*)^2$ is the time elapsed since the formation of the first star.
-The star formation efficiency is nonlinear in time.
-We find that jets have only a small effect (of order 25\%) on the accretion rate onto the protostellar disk (the ``raw'' accretion rate).
-We show that the small scale structure -- the radial density, velocity, and mass accretion profiles are very similar in the jet and no-jet cases.
-Finally, we show that the inclusion of jets does drive turbulence but only on small (parsec) scales.
-
+%% Abstract of the paper
+%Original Abstract
+%We present results of hydrodynamic simulations of massive star forming regions with and without protostellar jets.
+%We show that jets change the normalization of the stellar mass accretion rate, but do not strongly affect the dynamics of star formation.
+%In particular, $M_*(t) \propto f^2 (t-t_*)^2$ where $f = 1 - f_{\rm jet}$ is the fraction of mass accreted onto the protostar, $f_{\rm jet}$ is the fraction ejected by the jet, and $(t-t_*)^2$ is the time elapsed since the formation of the first star.
+%The star formation efficiency is nonlinear in time.
+%We find that jets have only a small effect (of order 25\%) on the accretion rate onto the protostellar disk (the ``raw'' accretion rate).
+%We show that the small scale structure -- the radial density, velocity, and mass accretion profiles are very similar in the jet and no-jet cases.
+%Finally, we show that the inclusion of jets does drive turbulence but only on small (parsec) scales.
+%
 
 \section{Current state of the field}
 
@@ -38,21 +45,19 @@ However, jets may control the rate of small (parsec) or medium (GMC) scale star 
 As a result, a number of groups have recently studied the effects of protostellar jets and outflows on star formation \citep{2010ApJ...709...27W,2014MNRAS.439.3420M,2015MNRAS.450.4035F}.
 \citet{2007ApJ...662..395N} and \citet{2011ApJ...740...36N} found that the effect of protostellar outflows was important for driving turbulence.  \citet{2011ApJ...740..107C} and \citet{2012ApJ...747...22H} found that protostellar outflows enhanced the effectiveness of radiative feedback.  In addition, \citet{2015MNRAS.450.4035F} found that a combination of turbulence, jets, and magnetism is able to reproduced the observed low efficiency (to within a factor of four) of star formation in contrast to galactic scale simulations that rely on radiative and supernovae feedback.
 
+The results of \citet{2015ApJ...800...49L}, \citet{2015ApJ...804...44M}, and \citet{2017MNRAS.465.1316M} demonstrated that the small scale dynamics are intimately linked to the star formation rate. 
+The question we address in this chapter is, do protostellar jets affect the small scale physics of accretion in a turbulent medium? 
+In particular, does the stellar mass still increase as $t^2$ with the inclusion of protostellar jet feedback? 
+The answer as we will argue below is no and yes, respectively.
 
-The results of \citet{2015ApJ...800...49L}, \citet{2015ApJ...804...44M}, and \citet{2017MNRAS.465.1316M} demonstrated that the small scale dynamics are intimately linked to the star formation rate. The question we address in this paper is, do protostellar jets affect the small scale physics of accretion in a turbulent medium?  In particular, does the stellar mass still increase as $t^2$ with the inclusion of protostellar jet feedback?  The answer as we will argue below is no and yes, respectively.
-
-
-The paper is organized as follows.
+The chapter is organized as follows.
 In \S~\ref{sec:jet_implementation}, we describe the numerical implementation of the jet outflow (\S~\ref{sec:jet_jet feedback}).
 In \S~\ref{sec:jet_protostar evolution} we describe our protostar evolutionary model, which is based on the one-zone models of \citet{2000ApJ...534..976N} and \citet{2009ApJ...703..131O}.
 %
 We then present our results in \S~\ref{sec:jet_turbulent star formation}, describing the large (pc) scale jet effects (qualitatively) in \S~\ref{sec:jet_large scale}.
 In \S~\ref{subsec:jet_SFR} we show that the star formation rate is reduced by the ejection of mass in the jet, but the jets do not, surprisingly, significantly change accreting gas properties (in a spherically averaged sense) in \S ~\ref{sec:jet_run_density} - \ref{subsec:jet_mdotstars}.
 We discuss the effects of the jet on the gas in terms of momentum depositions in  \S~ \ref{subsec:jet_jet_mv} and the driving of turbulence in \S~\ref{sec:jet_jets_drive_small}.
-%We discuss our results, and our jet/protostellar radius algorithm, with that of previous workers in \S~\ref{sec:jet_previous}.
-%We describe the effect of jet feedback on the morphology of the gas on parsec scales (\S~\ref{sec:jet_large scale}). and their relation to previous work in
 We discuss our results in \S~\ref{sec:jet_discussion} and give our conclusions in \S~\ref{sec:jet_conclusions}.
-%We discuss the implications of this work on the the large SFE, small scale accretion, and turbulence in molecular clouds in \S~\ref{sec:jet_discussion} and closed with some conclusions in \S~\ref{sec:jet_conclusions}.
 
 \section{Numerical Implementation}\label{sec:jet_implementation}
 

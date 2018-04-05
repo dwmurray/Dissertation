@@ -28,7 +28,7 @@ In addition, we choose the size of the box $L = 16 \rm pc$, and the sound speed 
 These choices fix both the density and the mass scale.
 
 The simulations described in this chapter disregard several physical effects.
-They do not include radiative, stellar wind, or proto-stellar jet feedback.
+They do not include magnetohydrodynamics, radiative, stellar wind, or proto-stellar jet feedback.
 While the feedback physics I neglect in this chapter can have significant effects on both the rate of star formation and the initial mass function (IMF), I aim to address the role the random motions captured by the Reynolds stress play in the dynamics of gravitational collapse in turbulent fluids.
 
 Our equation of state is that of an isothermal gas. 
@@ -50,7 +50,6 @@ Most of the simulations described here use the adaptive mesh refinement code FLA
 giving an effective resolution of $32,768^3$.  
 Following \citet{2015ApJ...800...49L} our FLASH runs use the Harten-Lax-van Leer-Contact 
 Riemann solver and an unsplit solver \citep{2009ASPC..406..243L}. We have also used the RAMSES code \citep{2002A&A...385..337T}, but unless explicitly stated otherwise, the results below come from FLASH simulations.
-
 
 As just mentioned, we start with a box with the physical length set to $L = 16$ pc using 
 periodic boundary conditions. The initial mass density is 
@@ -1285,7 +1284,8 @@ scales differently in collapsing regions as opposed to the rest of the simulatio
 whereas the turbulent collapse models \citep{1997ApJ...476..750M,2003ApJ...585..850M} assume 
 that the scaling of $v_T$ with $r$ remains fixed.  
 
-Finally, we close with a brief discussion of how our results relate to turbulence regulated theories of star formation. Here we find several points of disagreement. 
+Finally, we close this chapter with a brief discussion of how our results relate to turbulence regulated theories of star formation. 
+Here we find several points of disagreement. 
 First, we find that the star 
 particles accrete continuously from the surrounding large scale turbulent flow; there is 
 no hydrostatic ``core'' that is cut-off from the turbulent medium. Second, 
@@ -1326,7 +1326,8 @@ hence, a linear star formation efficiency $M_* \propto t$.
 %\appendix
 \section{Notes on Calculating the random motion and rotational Velocity}
 \label{Sec:Hydro_velocity}
-In this appendix, we discuss how we calculate the random motion, $v_t$, infall, $u_r$, and rotational velocities, $v_{\phi}$ from the full three dimensional numerical solution.  To begin, we adopt a series of concentric, logarithmically spaced, spherical shells around either a star particle (if available) or around a density maximum in the case where the star particle has not yet formed. We then removed the bulk velocity from these shells by first calculating the enclosed mass, $M(<r)$, and momentum in each sphere ${\bf P}(<r)$, then dividing the two to find the bulk velocity, ${\bf V} = {\bf P}(<r)/M(<r)$ of the sphere of matter. We then subtract this bulk velocity from the corresponding {\em shell}. 
+Prior to proceeding directly into the inclusion of proto-stellar jets, I wish to note upon several things.
+In this section, we discuss how we calculate the random motion, $v_t$, infall, $u_r$, and rotational velocities, $v_{\phi}$ from the full three dimensional numerical solution.  To begin, we adopt a series of concentric, logarithmically spaced, spherical shells around either a star particle (if available) or around a density maximum in the case where the star particle has not yet formed. We then removed the bulk velocity from these shells by first calculating the enclosed mass, $M(<r)$, and momentum in each sphere ${\bf P}(<r)$, then dividing the two to find the bulk velocity, ${\bf V} = {\bf P}(<r)/M(<r)$ of the sphere of matter. We then subtract this bulk velocity from the corresponding {\em shell}. 
 
 We also tried defining the bulk velocity using the total momentum in each of the spherical shells (rather than in the enclosed spheres), and found very similar results.
 

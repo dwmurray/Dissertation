@@ -102,7 +102,7 @@ In these regions neutral hydrogen is no longer the dominant cooling mechanism:
 ``Owing to its low ionization potential below 13.6 eV and its high abundance, carbon dominates the cooling of neutral gas traced by the Hi 21-cm line'' \citep[p. 48]{2009ARA&A..47...27K}. 
 In addition, neutral oxygen plays a signifcant role in cooling neutral gas within the Galactic plane.
 
-1987ApJ...319..730S
+\citet{1987ApJ...319..730S}
 
 \subsection{Molecular Gas}
 While the molecular gas is only 10\% of the gas in the Milky Way, inside the Solar Circle (inside the radius from the Galactic Center to our Sun, about 8 - 8.5 kpc) 
@@ -111,7 +111,7 @@ molecular gas accounts for half or more of the total gas mass.
 As the CNM gets to the lower temperatures, and thus lower energies, molecules such as CO and NH3 can begin to form. \citep[p. 47]{2009ARA&A..47...27K}
 
 Solomon showed that the bulk of this gas is in Molecular clouds which they found to have masses upwards of
-1987ApJ...319..730S
+\citet{1987ApJ...319..730S}
 
 \subsubsection{Giant Molecular Clouds (GMCs)}
 Larsons Law and it scales all the way down to cores.
@@ -127,11 +127,9 @@ Mention the deviations from Larsons law that are seen. Myers and Fuller and Plum
 
 \subsection{Turbulence in the ISM}
 Talk about Turbulence all the way down. its structured.
-Kalberla and Kerp Annual Review pg 52
 %From such analyses, the evidence emerged that there is not the expected separation in a cold and warm phase.
 %The most recent observations with the Arecibo telescope (Heiles 2001, Heiles & Troland 2003)
 %show unambiguously that 50\% of the gas is located in the “unstable region” of the phase diagram. \citep[p. 48]{2009ARA&A..47...27K}.
-
 \citep[p. 52]{2009ARA&A..47...27K}.
 
 
@@ -163,16 +161,16 @@ Nebulae in our Galaxy have sizes ranging from about one parsec up to 100 parsecs
 Nebular may consist of either atomic/ionized gas, or molecular gas; 
 in the latter case they are known as molecular clouds, with the largest objects (with sizes in excess of about 10 parsecs) known as giant molecular clouds or GMCs. 
 GMCs in the Milky Way have masses ranging from about $10^4$ to $10^7M_\odot$ (ten thousand to ten million solar masses), 
-and are observed to form from thousands up to $50,000\,M_\odot$ of stars, the latter exemplified by Westerlund 1 (Andersen et al. 2017 A\&A 602 22.
+and are observed to form from thousands up to $50,000\,M_\odot$ of stars, the latter exemplified by Westerlund 1 \citep{2017A&A...602A..22A}. 
 
-A comparison between infrared emission (a tracer of star formation, produced when starlight from young stars is absorbed and re-emitted by dust grains) and CO emission shows that most if not all star formation in the Milky Way occurs in molecular clouds (Scoville and Good 1989 ApJ 339 149).
+A comparison between infrared emission (a tracer of star formation, produced when starlight from young stars is absorbed and re-emitted by dust grains) and CO emission shows that most if not all star formation in the Milky Way occurs in molecular clouds \citep{1989ApJ...339..149S}. 
 
 Astronomers believe (and I will show below) that portions of these GMCs collapse, initially due to turbulent motions, and later under their own gravity. 
 The central parts of the collapsing regions eventually become dense enough that radiation cannot escape; further collapse heats the gas. 
 Eventually, the central temperature reaches several to ten million degrees, initiating  thermonuclear reactions. At this point, a nascent star is born.
 
 Observations tell us that most of these young stars are surrounded by flattened gas discs. To paraphrase author Terry Pratchett, this is truly ``the start of things'' astronomical. 
-There is strong observational evidence that planets from in these discs, for example, the famous ALMA image of HL Tau (ALMA Partnership 2015 ApJL 808 3).
+There is strong observational evidence that planets from in these discs, for example, the famous ALMA image of HL Tau \citep{2015ApJ...808L...3A}.
 
 %%Before we present evidence for this, it is quite reasonable to believe that stars would result in these clouds; in order to accrete the large amount of matter in order to form a star, 
 %% the infant proto-stars would need a large resevoir of gas and dust. 
@@ -348,6 +346,7 @@ The analytic models assume the existence of a self-similarity variable $x = r/vt
 These models predict velocity and mass accretion profiles very different than those seen 
 in the simulations of \citet{2015ApJ...800...49L}.
 
+
 \section{Current Numerical simulations and Observations} \label{current_obs}
 Numerical experiments investigating the effects of turbulent pressure and magnetic fields suggest that neither turbulence nor magnetic support is sufficient 
 to reduce the rate of star formation to $\epsilon\approx 0.02$ on small scales
@@ -356,10 +355,45 @@ Feedback from radiative effects and protostellar jets and winds may be able to e
 but the impact of these forms of stellar feedback remains uncertain despite recent progress
 \citep{2010ApJ...709...27W,2014MNRAS.439.3420M,2015MNRAS.450.4035F}.
 
+\subsection{Krumholz \& McKee - The Berkeley Group}
+
+\citet{2005ApJ...630..250K}
 
 
 
-\subsection{\citet{2015ApJ...800...49L} and Numerical Simulation} \label{Lee15_model}
+
+
+
+\subsection{Klessen \& Mac Low Group} 
+%\citet{2010A&A...512A..81F} https://www.aanda.org/articles/aa/pdf/2010/04/aa12437-09.pdf
+One of the major questions in implementing turbulence in numerical simulations is how one decides to drive it. 
+There are two ways in which one can drive turbulence, either solenoidally, think stirring cream into a cup of coffee, 
+or via compression, think clapping your hands together. 
+Depending upon the choice of driver, or even mixture of the two, one might drastically change the simulated results. 
+So, what choice of driving method best models the turbulence seen in the ISM, and in GMCs in particular?
+This question was resolved when \citet{2010A&A...512A..81F} showed that irrespective of the type of forcing, 
+they found velocity dispersion-size relations consistent with observations, and independent numerical simulations. 
+They found that the forcing they used did not change the physical relations at smaller scales. 
+The turbulent cascade had reached equipartition. %, of 2:1 solenoidal to compressive.
+\citet{2010A&A...512A..81F} achieved this by using high resolution simulations of pure solenoidal and pure compressive turbulence. 
+In addition, they ran several lower resolution simulations with varying mixtures of the drivers.
+\citet{2010A&A...512A..81F} found that, `` although likely driven with mostly compressive modes on large scales, turbulence can behave like solenoidal turbulence on smaller scales.''
+
+
+
+\citet{2004ApJ...605..800L}
+
+
+
+``We find that, under typical molecular cloud conditions, global collapse can indeed be prevented, but density enhancements caused by strong shocks nevertheless become gravitationally unstable and collapse into dense cores and, presumably, stars. The occurrence and efficiency of local collapse decreases as the driving wavelength decreases and the driving strength increases.''
+\citet{2000ApJ...535..887K}
+
+
+\subsection{Nordlund \& Padoan}
+
+
+
+\subsection{\citet{2015ApJ...800...49L}} \label{Lee15_model}
 
 \citet{2015ApJ...800...49L} showed that, in simulations with no feedback, the star formation efficiency on
 parsec scales is not constant in time.

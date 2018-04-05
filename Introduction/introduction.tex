@@ -21,6 +21,16 @@ The oil that we burn, the wind energy we capture via turbines,
 and the radiation we capture via solar panels, all have an origin in the nuclear fusion reactions in the center of our Sun. 
 The one exception is the fuel used in nuclear reactors. Those elements, including Uranium,  were created in stars that died before our Sun was born.
 
+%\subsection{What makes up a star?}
+
+
+
+
+%\section{How do we observe stars}
+
+
+
+
 Stars have been studied since antiquity, partly because the position of the sun relative to the stars allowed people to predict the timing of the seasons. 
 Anaxagoras and Democritus argued that the Milky Way consisted of many stars blurred together, and that the sun was a star. 
 While this argument proved to be correct, astronomers long applied it too broadly, asserting that 
@@ -36,7 +46,7 @@ In the same paper Trumpler noted that the obscuring material was confined to the
 The amount of gas associated with this obscuring material was not known, but was assumed to be small compared to the stellar mass of the Galaxy.
 
 It took another 20 years, and the discovery of 21 cm emission from neutral hydrogen, to establish the presence of a 
-large mass of gas in the Milky Way by \citet{1951Natur.168..356E}, \citet{1951Natur.168..357M}, and \citet{1951Natur.168..358P}.
+large mass of gas in the Milky Way  \citep{1951Natur.168..356E,1951Natur.168..357M,1951Natur.168..358P}.
 
 While the existence of a large mass of molecular gas was suspected by some, 
 its presence was not widely acknowledged until the discovery by \citet{1970ApJ...161L..43W}
@@ -56,24 +66,24 @@ Since we observe about 10,000 such stars in the Milky Way, the current estimate 
 
 %The recognition that stars consisted primarily of hydrogen and helium was gradual, starting with Payne (1925) PNAS vol. 11 p 192.
 \section{The Phenomenology of the Interstellar Medium (ISM)}
-The ISM within $R \le 60 \kpc$ of the Galactic center is $M = 4.6 \times 10^{11} \Msun$. 
+The total mass within $R \le 60 \kpc$ of the Galactic center is $M = 4.6 \times 10^{11} \Msun$. 
 Baryons provide $M = 9.5 \times 10^{10} \Msun$ with a gas fraction of 13\%. 
-The HI mass is $M = 8 \times 10^9 \Msun$, the warm ionized medium contributes $M = 2 \times 10^9 \Msun$, and molecular gas is $M = 2.5 \times 10^9 \Msun$ \citep[p. 35]{2009ARA&A..47...27K}.
+The HI mass is $M = 8 \times 10^9 \Msun$, the warm ionized medium contributes $M = 2 \times 10^9 \Msun$, and molecular gas is $M = 2.5 \times 10^9 \Msun$ \citep[p. 35]{2009ARA&A..47...27K}. The hot ionized gas, with temperatures of order $10^6\,{\rm K}$ or higher, contains little mass, but occupies most of the volume for heights more than one kpc above the disk mid-plane (near the mid-plane, it fills only about 20\% of the volume).
 
-\subsection{Ionized Gas}
-Regions of ionized gas are where the heating provided causes the gas temperature to exceed several thousand Kelvin \citep[p. 47]{2009ARA&A..47...27K}.
-Regions of ionized gas are sometimes referred to as $\HII$ regions. 
-Observers see $\HII$ regions surrounding very massive O and B stars. 
-The radiation given off by these ``rock stars'' of the universe is enough to dissociate any molecules, and even strip electrons off protons. 
-I will discuss the radiation from massive stars in Section \ref{sec:Intro_FF_and_CO}.
+\subsection{Warm Ionized Gas}
+Regions of warm ionized gas where the gas temperature  exceeds several thousand Kelvin \citep[p. 47]{2009ARA&A..47...27K}, are common in the inner disk, and are often referred to as $\HII$ regions. Warm ionized gas is also seen above and below the neutral gas in the outer disk.
+Observers see $\HII$ regions surrounding massive O stars. 
+The radiation given off by these ``rock stars'' of the universe is enough to dissociate any molecules, and even strip electrons off protons. These ionized electrons then share their energy (the difference between the energy of the photon that ionized the host atom and the ionization potential of that host) with the surrounding gas, heating it.
+I will discuss the radiation from massive stars in Section \ref{sec:Intro_FF_and_CO}. The ionized layers overlying the neutral disk at large radii are heated by the cosmic ultraviolet background radiation.
 
 \subsection{Neutral Gas}
 Neutral hydrogen, which is traced observationally by its 21-cm emission (short radio wave), exists in a variety of environments. 
-The densities range from $10^5 \,  - \, 0.5 \, {\rm particles \, cm}^{-3}$.
-Temperatures range from $10 \, {\rm K}$ to as high as $10^3 \sim 10^4 \, {\rm K}$. 
+The densities range from $1 \,  - \, 10^{-4} \, {\rm particles \, cm}^{-3}$.
+Temperatures range from $10 \, {\rm K}$ to temperatures as high as $10^3 \sim 10^4 \, {\rm K}$. 
 As Peter Kalberla and J{\"u}rgen Kerp succicintly state: 
 ``Studying neutral atomic hydrogen means first focusing on the thermal pressure.'' \citep[p. 47]{2009ARA&A..47...27K}
-Thus, it is typically disccused using the temperature to differentiate between the various gaseous phase. %``warm'' and ``cold'' neutral gas. 
+Observers typically differentiated by the neutral gas by temperature, referring to ``warm'' and ``cold'' neutral gas. While it is often assumed that the gas is in both thermal and pressure equilibrium, recent work suggests a more dynamic picture, with nearly half the neutral gas in a thermally unstable region. 
+%``warm'' and ``cold'' neutral gas. 
 
 \subsubsection{Warm Neutral Medium (WNM)} %Neutral atomic hydrogen 
 There are a multitude of processes that contribute to the ``high'' temperature of the WNM in the ISM; 
@@ -543,7 +553,7 @@ This dissertation describes my contributions to various parts of our current und
 This chapter gives a brief overview of the theory behind star formation and introduces descrepancies in our current understanding. 
 Ch. \ref{ch:hydro} discusses the initial set up for the majority of my simulations, and the dynamics of gravitational collapse with no feedback or other delaying aspects.
 Ch. \ref{ch:jet} discusses the effects that protostellar and jet feedback have on the stellar mass accretion rate for a cluster of stars.
-%Ch. \ref{ch:mhd} discusses the dynamical effect of magnetic fields. %TODO Confirm if removing.
+Ch. \ref{ch:mhd} discusses the dynamical effect of magnetic fields. %TODO Confirm if removing.
 Finally, in Ch. ~\ref{ch:conclusions}, I summarize the results obtained in this dissertation succinctly.
 
 \end{document}

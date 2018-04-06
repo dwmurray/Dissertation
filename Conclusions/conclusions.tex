@@ -131,29 +131,36 @@ We did not run long enough for the stars to completely consume the surrounding g
 We find that jets do drive turbulence in the surrounding gas, but is confined to small scales of roughly a parsec.
 
 \section{Future Work}
-While the results presented here are a step in the direction of determining the process of star formation, there is much that still needs to be completed. 
+While the results presented in this dissertation move the story of star formation a little further along, 
+there is still much we do not understand and further work is needed. 
 
-This theory and the results of this dissertation, has not yet looked at the effects of magnetic fields. 
-There are several papers \citet{2017ApJ...838...40M} ({\bf include more}), which suggest that magnetic fields may have an effect on the rate of star formation. 
-Whether that contribution modifies the $M_*(t) \propto t^2$ profile or the normalization, like protostellar jets, has yet to be determined. 
+For instance, this theory and the results of this dissertation, has not yet looked at the effects of magnetic fields. 
+There are several papers \citet{2017ApJ...838...40M} ({\bf include more}), which suggest that magnetic fields have an effect on the rate of star formation. 
+Whether that contribution modifies the $M_*(t) \propto t^2$ profile we've seen or the normalization, like protostellar jets, has yet to be determined. 
 
-Our simulations also negelect strong physical effects at late times. 
-Our lack of radiation is not physically accurate for sink particles that grow beyond $\sim 4 \Msun$.
+As mentioned above, my simulations also negelect strong physical effects at late times. 
+For example, the absence of radiation is not physically accurate for sink particles that grow beyond $\sim 4 \Msun$.
+We direct the reader to section \ref{subsec:missing_physics} for our argument about $M < 4 \Msun$. 
+The upshot was that we expect that the effects of radiation pressure are not particularly significant in the situations we report; 
+the run of density and infall velocity, and hence the $M_*(t)\sim t^2$ scaling should not be affected, at least up to the times we are reporting on. 
+Left unsaid is that radiation dynamics must have a significant effect at later times when stellar masses exceed 4 solar masses.
+We note, however, that this estimate neglects the effect of radiative or ionization heating which is an important feedback mechanism.
+
 %as the mass of stars grows the effects of radiation from these massive stars will have a strong impact on the surrounding medium. 
 
 Radiative feedback will also affect both the IMF and, for massive enough stars, the dynamics of the collapse at late times (after massive stars have formed). 
 
-To estimate the effects of radiation, we compare the force from the Reynold stress $F_T=4\pi r^2 \rho \vt^2$, to the radiation force $L/c$. 
-From Figure \ref{fig:hydro_velocity_avg}, the (averaged over many stars) $\vt$ is slightly in excess of $1\kms$ at $r=0.01\pc$, 
-while from any of the density figures the density is $\rho\approx5\times10^{-18} {\rm g/cm}^3$. 
-The force from Reynold stress is then $F\approx4\times 10^{26}$ dynes. 
-The luminosity of a 4 solar mass star on the zero age main sequence is $L\approx 2\times10^{36}\ergs$ \citep{1992A&AS...96..269S}, 
-so the radiation force $L/c \approx 3\times10^{25}\,{\rm dynes}$, about a 10\% effect. 
-The force from Reynolds stress increases outward, see Figure \ref{fig:hydro_dPdr_avg}, so this statement holds at larger radii as well. 
-
-Thus we expect that the effects of radiation pressure are not particularly significant in the situations we report; 
-the run of density and infall velocity, and hence the $M_*(t)\sim t^2$ scaling should not be affected, at least up to the times we are reporting on. 
-We note, however, that this estimate neglects the effect of radiative or ionization heating which is an important feedback mechanism.
+%To estimate the effects of radiation, we compare the force from the Reynold stress $F_T=4\pi r^2 \rho \vt^2$, to the radiation force $L/c$. 
+%From Figure \ref{fig:hydro_velocity_avg}, the (averaged over many stars) $\vt$ is slightly in excess of $1\kms$ at $r=0.01\pc$, 
+%while from any of the density figures the density is $\rho\approx5\times10^{-18} {\rm g/cm}^3$. 
+%The force from Reynold stress is then $F\approx4\times 10^{26}$ dynes. 
+%The luminosity of a 4 solar mass star on the zero age main sequence is $L\approx 2\times10^{36}\ergs$ \citep{1992A&AS...96..269S}, 
+%so the radiation force $L/c \approx 3\times10^{25}\,{\rm dynes}$, about a 10\% effect. 
+%The force from Reynolds stress increases outward, see Figure \ref{fig:hydro_dPdr_avg}, so this statement holds at larger radii as well. 
+%
+%Thus we expect that the effects of radiation pressure are not particularly significant in the situations we report; 
+%the run of density and infall velocity, and hence the $M_*(t)\sim t^2$ scaling should not be affected, at least up to the times we are reporting on. 
+%We note, however, that this estimate neglects the effect of radiative or ionization heating which is an important feedback mechanism.
 
 Simulations including radiative feedback support this simple analysis. 
 Figure 15 of  \citet{2014MNRAS.439.3420M} shows that in their simulations, 

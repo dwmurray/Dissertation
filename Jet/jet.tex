@@ -100,7 +100,7 @@ To further ensure that the injection of mass and momentum per grid cell is as ac
 Here, we discretized the cell into $n_{\rm sg}^3$ sub-cells, where $n_{\rm sg}$ is typically set to 3. This gives 27 evaluations of the mass and momentum injection per cell.
 The central value of the injected mass and momentum was taken for each of the sub-cells, and subsequently averaged to find the effective mass and momentum deposition over the entire cell.
 This algorithm was used because it gave more accuracy in the jet feedback implementation.
-Our method is similar to the methodology in \citet{2011ApJ...740..107C} and \citet{2014MNRAS.439.3420M} to conserve mass and momentum where they compute the normalization of the jet kernel -- effectively $\Theta(\theta)$ -- numerically.
+Our method is similar to the methodology in \citet{2011ApJ...740..107C} and \citet{2014MNRAS.439.3420M} to conserve mass and momentum where they compute the normalization of the jet kernel --- effectively $\Theta(\theta)$ --- numerically.
 Similarly, \citet{2014ApJ...790..128F} iterates over the deposition of jet mass and momentum per star particle to conserve mass and momentum exactly.
 
 We use the protostellar mass and radius to set the jet velocity.
@@ -367,7 +367,7 @@ The ratio predicted by equation (\ref{eq:jet_mass_ratio}) with $f = 0.7$ is $2.0
 Thus the (indirect) effect of the jet on accretion onto star particle (from turbulent driving, explusion of accreting gas, etc) is $\approx 25 \%$, showing that the dynamical effect of jets on the mass accretion rate is minor.
 Comparing the left to right hand columns in Figure \ref{fig:jet_jet_panel}, this is not too surprising, since the differences are rather subtle; Figure \ref{fig:jet_jet_close_up} shows a zoom-in on a proto-star with a jet-inflated bubble, which shows that, while the jet moves gas on scales of order a parsec, accretion continues along directions perpendicular to the jet axis.
 
-In the next subsections we check the other predictions of MC15, $\rho(r,t) \rightarrow \rho(r)$ is an attractor solution, $u_r = \sqrt{GM_* /r}$ is set by the protostar at $r<r_*$, where $r_*$ is the sphere of influence of the star particle (MC15), and the ``raw'' mass accretion rate -- without the $f_{\rm jet}$ correction --  is the same in the cases with and without a jet.
+In the next subsections we check the other predictions of MC15, $\rho(r,t) \rightarrow \rho(r)$ is an attractor solution, $u_r = \sqrt{GM_* /r}$ is set by the protostar at $r<r_*$, where $r_*$ is the sphere of influence of the star particle (MC15), and the ``raw'' mass accretion rate --- without the $f_{\rm jet}$ correction ---  is the same in the cases with and without a jet.
 %Encoded in the result of equation (\ref{eq:jet_mass_ratio}) is the theoretical results of MC15, which is implicitly assumed to apply to the jet case.  In particular, the ``raw'' mass accretion rate in the cases with and without a jet are the same.  What this implies is that the accretion rate onto the star -- the ``raw'' rate -- is the same in the jet and no-jet case modulo the factor of $(\beta/2)^2$, which is empirically seen to be small.  However, the jet removes a fraction of this accrete mass, leading to a lower growth rate of the star.  Following the results of MC15, this implies that because the velocity follows the local Keplerian velocity inside of the sphere of influence of the star particle and the density approaches the same attractor solution in the jet and no-jet case.  These three predictions -- same $\dot{M}$, same attractor solution for the density profile, and same velocity profile -- can now be checked for both simulations and we proceed to do so below.
 
 \subsection{A fixed point attractor for $\rho(r,t)$ inside $r_*$} \label{sec:jet_run_density}
@@ -570,7 +570,7 @@ This ensures that the jet driven turbulence from an individual star decays more 
 \begin{figure*}[htb] % Figure 13 %
   \plottwo{Jet/fed_hd.pdf}{Jet/fed_mhd.pdf}
   %\includegraphics[width=0.49\textwidth]{Jet/fed_mhd.pdf}
-  \caption[Jet - ]{Left plot: the SFE, $M_*/M_{\rm tot}$, as a function of time (measure in free-fall times) for the jet (solid line) and no-jet (dashed line) cases from \citet{2014ApJ...790..128F} Figure 9 (N.B. HD simulation). 
+  \caption[Jet - Star Formation Efficiency over time]{Left plot: the SFE, $M_*/M_{\rm tot}$, as a function of time (measure in free-fall times) for the jet (solid line) and no-jet (dashed line) cases from \citet{2014ApJ...790..128F} Figure 9 (N.B. HD simulation). 
 Right plot: the SFE as a function of time (measure in Myrs) for the jet (solid line) and no-jet (dashed line) cases from \citet{2015MNRAS.450.4035F} Figure 2 (N.B. MHD simulation). 
 In both plots we have rescaled the no-jet case by $f=(1-f_{\rm jet})^2$, which is set to $f_{\rm jet} = 0.3$. 
 In the left plot the rescaled no-jet case follows the jet case fairly well up to about an SFE of about 0.4. The rescaled no-jet case at this point rescales the no-jet case for $M_*/M_{\rm tot}\approx 0.8$, where the accretion onto star particles is starved due to depletion of gas. 

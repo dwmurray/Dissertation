@@ -140,7 +140,7 @@ provided that the maximum refinement level has not been reached.
 When the transisition to the maximum refinement level is triggered i.e. when $l$ goes from $7$ to $8$ (the maximum refinement level),
 the density contrast is $\rho / \rho_0 \approx 10^6$. 
 
-In the Appendix we describe a number of test simulations in which we refined the grid when 
+At the end of this chapter we describe a number of test simulations in which we refined the grid when 
 $N_J=4, 8, 16$ or $32$ \citep{2011ApJ...731...62F}. We show that many of the quantities in our runs, including the density and the mass accretion rates, are converged for $N_J=4$.
 
 The maximum dynamic range is a little larger than 6 orders of magnitude, because we allow the density to increase further before forming star particles.
@@ -228,8 +228,8 @@ Throughout the simulation \partB had a steady supply of gas.
 
 Figure \ref{fig:hydro_Sphere_of_influence_quad2_well_before} shows the infall 
 velocity, $u_r$, circular, $v_{\phi}$, and random motion, $v_T$, velocities as a function of  radius (top panel) and the density in a slice of the local volume 
-(bottom panel) around the density peak that will form \partA\ 100,000 years in the future.   In Appendix \ref{appendix:velocity}, we describe how we calculate 
-each of these velocities.
+(bottom panel) around the density peak that will form \partA\ 100,000 years in the future. 
+In Appendix \ref{Sec:Hydro_velocity}, we describe how we calculate each of these velocities.
 
 We will compare $v_T$ to what  MC15 referred to as a turbulent velocity. Our current definition of $v_T$ is simply that of a random velocity. 
 We are agnostic about whether or not $v_T$ characterizes an isotropic turbulent pressure; close examination of the velocity field indicates that the random motions are not isotropic on the scale of their distance from the density peak. It is also clear, however, that $v_T$ characterizes a Reynolds stress that does provide a net outward support against gravitational collapse. This follows from a simple energy argument; the infall velocity in the vicinity of the density peak is well below the local free-fall velocity, and remains so throughout the simulation, even after a star particle forms. Thus, some of the potential energy released by the infall goes into some channel other than inward motion. A fraction of the potential energy release goes into shocks, and in our code is effectively removed immediately. At this early stage, the rotational motion represents a small fraction ($\lesssim10\%$) of the energy at all but the smallest radii. But the inward flattening of the green line in Figure
@@ -1324,9 +1324,12 @@ hence, a linear star formation efficiency $M_* \propto t$.
 %\bibliography{Bibliography}
 %
 %\appendix
-\section{Notes on Calculating the random motion and rotational Velocity}
-\label{Sec:Hydro_velocity}
+\section{Appendix} 
 Prior to proceeding directly into the inclusion of proto-stellar jets, I wish to note upon several things.
+
+\subsection{Notes on Calculating the random motion and rotational Velocity}
+\label{Sec:Hydro_velocity}
+
 In this section, we discuss how we calculate the random motion, $v_t$, infall, $u_r$, and rotational velocities, $v_{\phi}$ from the full three dimensional numerical solution.  To begin, we adopt a series of concentric, logarithmically spaced, spherical shells around either a star particle (if available) or around a density maximum in the case where the star particle has not yet formed. We then removed the bulk velocity from these shells by first calculating the enclosed mass, $M(<r)$, and momentum in each sphere ${\bf P}(<r)$, then dividing the two to find the bulk velocity, ${\bf V} = {\bf P}(<r)/M(<r)$ of the sphere of matter. We then subtract this bulk velocity from the corresponding {\em shell}. 
 
 We also tried defining the bulk velocity using the total momentum in each of the spherical shells (rather than in the enclosed spheres), and found very similar results.
@@ -1373,7 +1376,7 @@ As a check that we were accounting for all of the velocities, we added the veloc
 
 
 
-\section{Filamentary or Spherical Accretion?}
+\subsection{Filamentary or Spherical Accretion?}
 \begin{figure*}[htb]%Figure B1 Non-filamentary accretion
 \plottwo{Hydro/fB1a.pdf}{Hydro/fB1b.pdf}
 \caption[Hydro Normalized $\dot{M}$ and Normalized Solid Angle]{Histogram of the cumulative normalized $\dot{M}$ (left) and cumulative normalized solid angle (right) as a function of normalized density for $r=0.05$ and $0.5\pc$ when the star reaches 1 and 4 $M_{\odot}$. \label{fig:hydro_Accretion_avg}}
@@ -1443,7 +1446,7 @@ of accreting gas, much of the accretion (and much of the mass) lies in gas that
 is more nearly spherically distributed. 
 
 % New section
-\section{Star Formation Criteria}
+\subsection{Star Formation Criteria}
 \label{particle_criteria}
 The majority of our simulations used a simple density condition of three times the Truelove condition (Equation \ref{eq:hydro_refinement_criteria}) at the maximum refinement level inspired by the sink particle formation criteria of \citet{2011ApJ...730...40P} as discussed in \S \ref{sec:hydro_simulation setup}.
 %
@@ -1567,7 +1570,7 @@ followed at yet smaller radii by a decrease in the total turbulent velocity.
 We interpret the drop in the total turbulent
 velocity at small radii as the flow settling into more ordered motion in an accretion disk.
 
-\section{The Initial Mass Function}
+\subsection{The Initial Mass Function}
 
 For completeness we report the IMF in this subsection, though we caution the reader again that, because we do not handle the thermal physics properly, the location of the break in the IMF is unlikely to be correct; however it is commonly believed that the slope at the high mass end is set by the turbulence so that the thermal properties will not have much effect there.
 Figure \ref{fig:hydro_imf} shows the IMF at the end of our Ramses run with $N_J = 32$. 
@@ -1586,7 +1589,7 @@ Figure \ref{fig:hydro_avg_mass} shows the average stellar mass as a function of 
 \caption[Hydro Average Stellar Mass as a function of time since the first star formed]{Average stellar mass as a function of time for the Ramses run with $N_J = 32$ in green. Average stellar mass starts at $\approx 1 M_\odot$ increasing to $\approx 6 M_\odot$ and then decreasing as low mass star formation begins. We also show the average stellar mass for $N_J = 8$ (blue) and $N_J = 4$ (red). This demonstrates that $N_J = 4$ runs are converged. \label{fig:hydro_avg_mass}}
 \end{figure}
 
-\section{Convergence with $N_J$}
+\subsection{Convergence with $N_J$}
 
 In this appendix, we examine how our results for the mass accretion rate depend on the resolution of the Jeans length, as quantified by $N_J$. 
 

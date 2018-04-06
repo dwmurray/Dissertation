@@ -183,17 +183,17 @@ Under the Supervision of Professor \mjrprof
 %This dissertation presents the story of star formation. 
 In this dissertation, I explore the time-variable rate of star formation, using both numerical and analytic techniques. 
 I discuss the dynamics of collapsing regions, the effect of protostellar jets, and development of software for use in the hydrodynamic code RAMSES.
-Motivated by recent results in which simulations show an increasing rate of star formation, I perform high-resolution adaptive mesh refinement simulations of star formation in self-gravitating turbulently driven gas. 
-I have run tens of simulations including hydrodynamics (HD), and HD with protostellar jet feedback.
+I perform high-resolution adaptive mesh refinement simulations of star formation in self-gravitating turbulently driven gas. 
+I have run simulations including hydrodynamics (HD), and HD with protostellar jet feedback.
 Accretion starts when the turbulent fluctuations on largescales, near the driving scale produce a converging flow.
 I find that the character of the collapse changes at two radii, the disk radius $r_d$, and the radius $r_*$ where the enclosed gas mass exceeds the stellar mass. 
 This is the first numerical work to show that the density evolves to a fixed attractor, $\rho(r,t ) \rightarrow \rho(r)$, for $r_d<r<r_*$; mass flows through this structure onto a sporadically gravitationally unstable disk, and from thence onto the star. 
-The total stellar mass $M_*(t)\sim t^2$ is in agreement with previous numerical and analytic work that suggests a linear rate of star formation.
+The total stellar mass $M_*(t)\sim (t-t_*)^2$, where $(t-t_*)^2$ is the time elapsed since the formation of the first star. 
+This is in agreement with previous numerical and analytic work that suggests a linear rate of star formation.
 I show that protostellar jets change the normalization of the stellar mass accretion rate, 
 but do not strongly affect the dynamics of star formation in hydrodynamics runs. 
 In particular, $M_*(t) \propto (1 - f_{\rm jet})^2 (t-t_*)^2$ is the fraction of mass accreted onto the protostar, 
-where $f_{\rm jet}$ is the fraction ejected by the jet, and $(t-t_*)^2$ is the time elapsed since the formation of the first star.
-The star formation efficiency is again linear in time.
+where $f_{\rm jet}$ is the fraction ejected by the jet. 
 For typical values of $f_{\rm jet} \sim 0.1 - 0.3$ the accretion rate onto the star can be reduced by a factor of two or three. 
 However, I find that jets have only a small effect (of order 25\%) on the accretion rate onto the protostellar disk (the ``raw'' accretion rate). 
 In other words, jets do not affect the dynamics of the infall, but rather simply eject mass before it reaches the star.
@@ -233,21 +233,28 @@ Finally, I show that the small scale structure --- the radial density, velocity,
 %“A little (one) can sometimes see things in others that us older ones cannot because our judgement gets clouded. —Abbot Saxtus” ― Brian Jacques, The Bellmaker
 
 \dblspace
-The inquisitiveness of family and many good friends, the wisdom of family and colleagues has planted me where I am.
-I would not have grown to be where I am today without the constant love and support of my family. 
-I would like to thank my nephew Aiden: For teaching me to approach everything with an open mind, and to question constantly.
-As well as a new found love of sprinklers.
-I thank my father for the many stimulating dialogues about the physical world that set me down this road.
-From the calculations of our mpg over Tioga pass to the constellations in the heavens.
-%My mother has tended my roots and branches 
-%I wish to thank my mother and sisters for supporting me in a near infinite number of ways throughout graduate school.
 
-%All of the members of the Leonard E Parker Center for Gravitation, Cosmology \& Astrophysics (CGCA), and UWM Physics department, including Adil Amin, Matthew Brinson, and Joe Simon, have been wonderful collaborators and friends over the years. I would like to thank Eric Van Oeveren, Morgan Lynch, and Matt Brinson (again) for making the many late nights and early morning classes on no sleep much more enjoyable than they otherwise would have been. A special thank you to Matt and Adil for the countless coffee breaks and pep talks that I have needed over the years. 
-%
-I would like to thank all the members of the Leonard E Parker Center for Gravitation, Cosmology \& Astrophysics (CGCA) and the UWM Physics department for being wonderful mentors over the years. I want to especially thank David Kaplan and Dawn Erb for the many rousing CGCA teas, whether science was involved or the many festivals around the city.
-Finally, I acknowledge the advice, support and patience from my advisor Philip Chang. 
-Phil was extremely patient, supportive, and persistent in sheparding me along a track towards independent research 
-and my development both professionally and personally.
+The inquisitiveness of many good friends and the wisdom of family and colleagues have planted me where I am.
+I would not be where I am today without the constant love and support of my family. 
+I would like to thank my nephew Aiden, and Phil's sons Liam and Gregory, for teaching me to approach everything with an open mind, and to question constantly.
+I have a new appreciation of sprinklers and ``mighty machines'', due to their curiosity.
+
+I thank my father for our many stimulating conversations about the physical world. 
+Whether it was calculations of our mpg over Tioga pass or talk of the constellations in the heavens, it was these conversations that set me down this road.
+I thank my sisters for the lessons learned and for guidng my branches to what I need when I need it, whether I know or not.
+%My growth and the fruit it has borne is thanks to my mother. 
+My mother has tended my roots and the branches I had spread as I learned to be courageous and use my wits. 
+
+I would like to thank Matthew Brinson, Adil Amin, and Joe Simon for the countless walks, coffee breaks, and occasional late night at Vintage. 
+
+I would like to thank all the members of the Leonard E Parker Center for Gravitation, Cosmology \& Astrophysics (CGCA) and the UWM Physics Department 
+for being wonderful mentors over the years. 
+I want to especially thank David Kaplan and Dawn Erb for the many rousing CGCA teas, whether science was involved or one of the many festivals around the city. 
+
+Finally, I want to acknowledge the guidance, support and encouragement from my advisor Philip Chang. 
+Phil was extremely patient and persistent in shepherding me along towards independent research. 
+He was instrumental in my development both professionally and personally. 
+
 I am grateful for the opportunity to complete my dissertation as a member of the CGCA.
 
 \newpage

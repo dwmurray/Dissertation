@@ -148,19 +148,21 @@ Larson also showed that the linewidth scaled with the mass of the GMC
 The size-linewidth relation, with a slightly larger exponent ($\sim0.5$) has been recovered by dozens of groups over the last thirty years, e.g., \citet{1987ApJ...319..730S,2008ApJ...679.1338R,2017ApJ...834...57M} 
 
 \subsubsection{clumps}
-GMCs are not the only structures identified in the ISM, e.g., \citet{2000prpl.conf...97W}. The latter argue that the ISM has structure on all scales, as would be expected if turbulence dominated the kinematics of the gas.
+GMCs are not the only structures identified in the ISM, e.g., \citet{2000prpl.conf...97W}. 
+The latter argue that the ISM has structure on all scales, as would be expected if turbulence dominated the kinematics of the gas.
 
 \citet{1992ApJ...396..631M}%Myers & Fuller
 
 
 
-Another interesting result appeared in the late nineties. 
-\citet{1997ApJ...476..730P} observed 150 massive star forming regions, expecting to see Larson's law. 
-Instead, they found that both line width and density are greater for 
-``Instead, both line width and density are greater for a given size than would be predicted by the usual relationships. We find that the line width increases with density, the opposite of what would be predicted by the usual arguments''
+Another series of interesting and unexpected results was published in the mid to late nineties.
+Following the results of \citet{1995ApJ...446..665C}, 
+\citet{1997ApJ...476..730P} observed 150 massive star forming regions, using a 30m telescope. %IRAM 
+They did not even see a statistically relevent line width-size or density-size relationship that would be predicted by the usual arguements.
+they found that the line width increases with density, the opposite the usual predictions. \citep{1997ApJ...476..730P}.
 
-
-2017ApJ...834...57M
+\citet{2017ApJ...834...57M} present a catalogue of more than eight thousand molecular clouds using the data from the \citet{1993AIPC..278..267D} survey.
+They find 
 
 \subsubsection{cores}
 
@@ -451,6 +453,8 @@ but strong shocks would become gravitationally unstable and collapse to presumab
 
 \subsection{Nordlund \& Padoan}
 
+\citet{2011ApJ...730...40P} presented a new model of star formation that depends on the relative importance of gravitational, turbulent, magnetic, and thermal energies.
+They presented self-gravitating MHD simulations, and show that turning off magnetic fields leads to an increase in the SFR by a factor of three \citep{2011ApJ...730...40P}. 
 
 
 \subsection{\citet{2015ApJ...800...49L}} \label{Lee15_model}
@@ -603,8 +607,38 @@ stellar feedback to drive the winds that remove gas from the disk, so as to leav
 
 
 \section{What this Dissertation does not cover}
-Magnetic Fields, Radiation, stellar winds.
+There are a number of analytical, statistical and observational theories of star formation that I have not covered.
+ I do not intend to even attempt an exhaustive review.
 %Magnetic fields are about in equipartition \fraction{$B^2$}{$8 \pi$} \approx \vt^2$
+
+\subsection{Missing physics}
+Our current understanding of star formation suggests that the effects of magnetic 
+fields, radiative and proto-stellar outflow feedback from stars, and the equation 
+of state of the gas can 
+all have significant effects on both the rate of star formation and the initial 
+mass function (IMF) of the stars. We do not include any of this physics in the simulations
+described in this paper. 
+
+It is often argued that the turnover in the IMF, somewhere between $0.2$ and
+ $0.6\,M_\odot$, is associated with the thermal state of the gas in the collapsing
+region. If so, then our use of an isothermal equation of state suggests that the IMF found in our simulations is likely to be in error, so we have not discussed our computed IMF. However, as Figures \ref{fig:hydro_Sphere_of_influence_quad2_well_before}-\ref{fig:hydro_Sphere_influence_quad2_end_time} and \ref{fig:hydro_velocity_avg} show, both $|u_r|$ and $v_T$ exceed $c_s$, except at the earliest times ($\sim 100,000\yrs$ before a star forms), and then only for $r\lesssim0.1\pc$, so that the gas pressure does not dominate the dynamics in most regions and most of the time. Of course we do include the effects of gas pressure, so even in those regions and those times, our simulations capture the dynamical effects to lowest order, aside from, as we have just said, from fragmentation effects on the smallest scales. 
+
+We have undertaken and made some preliminary analyses of magnetohydrodynamic simulations, which we will report on in future publications; as seen by other authors, we find that magnetic fields slow the star formation rate. But the runs of density and velocity have the same qualitative form in our MHD simulations as in the hydro runs presented here, and the MHD runs also give $M_*(t)\sim t^2$. 
+
+Like magnetic fields, feedback from protostellar outflows are seen to slow the rate of star formation, e.g., \citet{2010ApJ...709...27W,2015MNRAS.450.4035F}. But those authors also find that $dM_*/dt$ increases with time even in runs that include outflows. 
+
+%Begin bold face for estimate of radiation pressure versus turbulent pressure
+Radiative feedback will also affect both the IMF and, for massive enough stars, the dynamics of the collapse at late times (after massive stars have formed). 
+
+All the figures we show present results for stars with masses no larger than about $4 M_\odot$. To estimate the effects of radiation, we compare the force from the Reynold stress $F_T=4\pi r^2 \rho v_T^2$, to the radiation force $L/c$. 
+From Figure \ref{fig:hydro_velocity_avg}, the (averaged over many stars) $v_T$ is slightly in excess of $1\kms$ at $r=0.01\pc$, while from any of the density figures the density is $\rho\approx5\times10^{-18} {\rm g/cm}^3$. The force from Reynold stress is then $F\approx4\times 10^{26}$ dynes. The luminosity of a 4 solar mass star on the zero age main sequence is $L\approx 2\times10^{36}\ergs$ \citep{1992A&AS...96..269S}, so the radiation force $L/c \approx 3\times10^{25}\,{\rm dynes}$, about a 10\% effect.  The force from Reynolds stress increases outward, see Figure \ref{fig:hydro_dPdr_avg}, so this statement holds at larger radii as well. 
+
+Thus we expect that the effects of radiation pressure are not particularly significant in the situations we report;  the run of density and infall velocity, and hence the $M_*(t)\sim t^2$ scaling should not be affected, at least up to the times we are reporting on.  We note, however, that this estimate neglects the effect of radiative or ionization heating which is an important feedback mechanism.
+
+Simulations including radiative feedback support this simple analysis. Figure 15 of  \citet{2014MNRAS.439.3420M} shows that in their simulations, which include feedback from both protostellar outflows and radiation (as well as magnetic fields), the stellar mass increases as the square of the time, up to masses of ~4.5 solar masses. Earlier work by the Berkeley group found similar results, forming stars with 10 solar masses, with $M_*(t)~ t^2$ even for such massive stars, see Figure 13 of \citet{2012ApJ...754...71K}. Their simulations included radiative effects, but no proto-stellar winds. 
+ %End bold face for estimate of the effects of radiation on dynamics
+
+
 
 
 This dissertation describes my contributions to various parts of our current understanding of the dynamics of star formation. 

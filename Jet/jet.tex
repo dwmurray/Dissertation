@@ -9,7 +9,7 @@
 
 \singlespace
 \epigraph{``\emph{Quotey McBoaty words}"}{--- \textup{Find One?}, \textit{Book Title by Author First and Last}}
-% Larry Niven Neutron Star
+% Neutron Star by Larry Niven
 %\epigraph{``\emph{Some say the world will end in fire
 %Some say in ice
 %From what I've tasted of desire
@@ -34,9 +34,6 @@
 In the previous chapter, we found that the turbulence, which was driven at small scales by the collapsing region, had a direct impact on the dynamics of star formation.
 Now we have to ask the question: Does this relationship hold when one of the physical processes ignored in the HD simulations is included? 
 Our next step was the inclusion of protostellar jets. 
-
-
-
 
 \section{Current state of the field}
 As a reminder to the reader, early work \citep{1977ApJ...214..488S,1992ApJ...396..631M,1997ApJ...476..750M} assumed that the pressure, which appears in the momentum equation, was given by $P = \rho c_s^2$ with $c_S = \textrm{const}$ or $P = \rho v_{\rm T}^2$ with $v_{\rm T} = v_{\rm T}(r) \propto r^{\kappa_r}$, i.e., a prescribed function of $r$, and $\kappa_r$ is typically chosen to be 1/2 to reflect Larson's law \citep{1981MNRAS.194..809L}.
@@ -804,7 +801,9 @@ We find that jets do drive turbulence in the surrounding gas, but is confined to
 % \subsection{Main Sequence}
 % When the star particle is in the main sequence state, we simply calculate the radius from the data of \citet{1967CaJPh..45.3429E}.
 %
-\section{Effects of excising bi-cones aligned with protostellar jets on the infall, random, and rotational velocity} \label{sec:jet_jet_cone_sub}
+\section{Appendix}
+
+\subsection{Effects of excising bi-cones aligned with protostellar jets on the infall, random, and rotational velocity} \label{sec:jet_jet_cone_sub}
 In this appendix we illustrate the effect of excising bi-cones aligned with the jet emitted by a protostar when calculating $\lvert u_r \rvert$, $v_{\rm T}$ and $v_\phi$. The simulated jets are powerful enough that they enforce outflow over almost the entire bi-cone over which the star particle emits the jet. However, because our jets are emitted along the instantaneous spin axis of the star particle, which is usually roughly perpendicular to the accretion disk, the jet outflow tends to avoid high density and infalling gas, which is generally near the plane of the disk. An example can be seen in Figure \ref{fig:jet_jet_close_up}.
 
 While the jets do not strongly affect the infall and rotational velocity of the bulk of the gas near the star particle, they do have a fairly strong effect on the random velocity, when averaged over spherical shells. A glance at Figure \ref{fig:jet_jet_close_up} shows why: the jet velocities are very large in the evacuated region around the jet axis. Our calculation of $v_T$ involves subtracting the mass-weighted infall and rotational velocity in spherical shells from the velocity of each cell in the shell; since the jet expels low density gas, it does not affect the mass weighted infall or rotational velocity when performing the average, but it does boost the random velocity.
@@ -848,7 +847,7 @@ The infall velocity smooths out slightly when we excise the region around the je
 % \end{figure}
 %
 
-\section{Protostellar Model}
+\subsection{Protostellar Model}
 \label{appendix:jet_protostar}
 There is one final thing to note about the protostellar model presented by O09, which is the transition from no burning to core burning at a fixed temperature of $1.5 \times 10^6$ Kelvin.
 When this transition is made, the polytropic index $n$ is changed from whatever its' current value is to $1.5$.

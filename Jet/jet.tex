@@ -70,7 +70,8 @@ We discuss our results in \S~\ref{sec:jet_discussion} and give our conclusions i
 \subsection{Jet Feedback Prescription}\label{sec:jet_jet feedback}
 
 We have implemented a model of jet feedback in the adaptive mesh refinement (AMR) code, RAMSES
- \citep{2002A&A...385..337T}.  Ramses is a mature AMR code that include self-gravity, sink particle formation \citep{2010MNRAS.409..985D,2014MNRAS.445.4015B}, and radiative transfer \citep{2013MNRAS.436.2188R,2015MNRAS.449.4380R}.  RAMSES has been used in a number of problems including cosmological structure formation (e.g., see for instance \citealt{2016MNRAS.463.1462O}), star cluster formation \citep{2017MNRAS.472.4155G}, %\citep{2017arXiv170107982G}, 
+ \citep{2002A&A...385..337T}.  
+Ramses is a mature AMR code that includes self-gravity, sink particle formation \citep{2010MNRAS.409..985D,2014MNRAS.445.4015B}, and radiative transfer \citep{2013MNRAS.436.2188R,2015MNRAS.449.4380R}.  RAMSES has been used in a number of problems including cosmological structure formation (e.g., see for instance \citealt{2016MNRAS.463.1462O}), star cluster formation \citep{2017MNRAS.472.4155G}, %\citep{2017arXiv170107982G}, 
 colliding winds \citep{2011MNRAS.418.2618L,2017MNRAS.468.2655L}, and relativistic astrophysics \citep{2013A&A...560A..79L,2018MNRAS.474.2813L}. More recently, we have added a turbulent stirring module and have used this for star formation simulations in a turbulent gas without feedback \citep{2017MNRAS.465.1316M}.
 
 Here we build on our previous work \citep{2017MNRAS.465.1316M} by adding jets to the sink particle implemention in RAMSES \citep{2010MNRAS.409..985D,2014MNRAS.445.4015B}.   A jet is launched once a star particle has a mass in excess of $0.01 M_\odot$ at which point it also has a well defined spin angular momentum.

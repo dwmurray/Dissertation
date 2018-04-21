@@ -92,18 +92,20 @@ The width of the 21-cm emission line varies dramatically from sight line to sigh
 There are a multitude of processes that contribute to the ``high'' temperature of the WNM in the ISM; 
 for example, heating from hydrodynamic and magnetohydrodynamic processes, heating due to interstellar shocks, heating due to soft X-rays and stellar radiation, longward of the Lyman limit.
 A key take away from this list is that heating in the ISM is dependent upon location within the ISM. 
-In addition, the efficiency of heating depends upon the phase of the material \citep[p. 48]{2009ARA&A..47...27K}. 
+In addition, the efficiency of heating depends upon the phase of the material: 
+different heating and cooling mechanisms determine the temperature of the gas, depending upon the current temperature, density and ionization of the medium \citep[p. 48]{2009ARA&A..47...27K}.
 The velocity dispersion in the WNM is $\Delta v \simeq 24 \kms$ \citep[p. 49]{2009ARA&A..47...27K}, corresponding to the line of sight velocity dispersion of $\sigma_{\rm los} \approx 10 \kms$. This is comparable to the thermal line width.
 
 
 \subsubsection{Cold Neutral Medium (CNM)}
-The CNM is heated by many of the same sources as the WNM, 
-e.g. hydrodynamic and magnetohydrodynamic effects, though the velocity dispersion in the CNM is $\Delta v \simeq 4 \kms$ \citep[p. 49]{2009ARA&A..47...27K}.
-However, due to the low volume densities of cold neutral gas, observers have been constrained to 
-primarily fine structure lines, which are visible in the far infrared regime. 
+In contrast to the WNM, the velocity dispersion in the CNM is $\Delta v \simeq 4 \kms$ \citep[p. 49]{2009ARA&A..47...27K}.
+The CNM is heated by a variety of sources, including photoelectric heating by dust grains, by soft X-rays, and hydrodynamic and magnetohydrodynamic effects.
+Observers have been constrained primarily to fine structure lines, which are visible in the far infrared regime because the of the low volume density of the CNM. 
 In these regions neutral hydrogen is no longer the dominant cooling mechanism: 
-``Owing to its low ionization potential below 13.6 eV and its high abundance, carbon dominates the cooling of neutral gas traced by the HI 21-cm line'' \citep[p. 48]{2009ARA&A..47...27K}. 
-In addition, neutral oxygen plays a signifcant role in cooling neutral gas within the Galactic plane. The dispersion or line width seen in the CNM can often be much wider than can be explained by thermal motions. In other words, the gas exhibits bulk flows that are supersonic. 
+``Owing to its low ionization potential below 13.6 eV and its high abundance, [atomic] carbon dominates the cooling of neutral gas traced by the HI 21-cm line'' \citep[p. 48]{2009ARA&A..47...27K}. 
+In addition, neutral oxygen plays a signifcant role in cooling neutral gas within the Galactic plane. 
+The dispersion or line width seen in the CNM can often be much wider than can be explained by thermal motions. 
+In other words, the gas exhibits bulk flows that are supersonic. 
 
 
 \subsection{Molecular Gas} \label{subsec:intro_molecular_gas}
@@ -129,7 +131,7 @@ These massive clouds are known as giant molecular clouds (GMCs).
 \left({\sigma\over \kms}\right) = 1.10\left({L\over \pc}\right)^{0.38}, 
 \ee
 %
-where $\sigma$ is the dispersion velocity, and L is the length of the cloud.
+where $\sigma$ is the dispersion velocity, and L is the charateristic size of the cloud.
 Larson found a similar relation for the interiors of many of his clouds, i.e., the clouds were composed of substructures that had similar properties to those found on the largest (cloud) scale.
 More recent work finds a somewhat larger exponent relating the linewidth to the scale of the observed region, with values clustering around $0.5$.
 
@@ -143,7 +145,9 @@ He connected this with the Kolmogorov scaling for sub-sonic turbulence
 
 On large scales the linewidth exceeds the thermal linewidth, indicating that the motion is supersonic, a point Larson appreciated and commented on. Typical Mach numbers for large GMCs are ${\cal M}\approx 10$ in the Milky Way, with much larger values seen in more rapidly star forming galaxies.
 
-Simulations of supersonic turbulence find a relation of the form $\sigma\sim L^{1/2}$, again suggesting that the observed linewidths reflect supersonic motions in the ISM.
+Simulations of supersonic turbulence find a relation of the form $\sigma\sim L^{1/2}$,
+where $\sigma$ is the dispersion velocity, and L is the length scale on which the velocity dispersion is measured. 
+This again suggests that the observed linewidths reflect supersonic motions in the ISM.
 
 Larson also showed that the linewidth scaled with the mass of the GMC
 %
@@ -632,24 +636,41 @@ There are a number of groups whose observational, statistical, and analytical, c
 I do not intend to attempt to create an extensive review.
 %Magnetic fields are about in equipartition \fraction{$B^2$}{$8 \pi$} \approx \vt^2$
 
+
 \subsection{Missing physics} \label{subsec:missing_physics}
 Our current understanding of star formation suggests that the effects of magnetic 
-fields, radiation from stars, and the equation 
-of state of the gas can 
-all have significant effects on both the rate of star formation and the initial 
-mass function (IMF) of the stars. We do not include any of this physics in the simulations
-described in this paper. 
+fields, radiation from stars, and the heating and cooling rates of the gas can all have significant effects on both the rate of star formation and the initial 
+mass function (IMF) of the stars. 
+We do not include any of this physics in the simulations described in this paper. 
+The simulations presented in this dissertation are focused upon turbulence in hydrodynamic simulations and the effects of protostellar jets. 
 
-It is often argued that the turnover in the IMF, somewhere between $0.2$ and
- $0.6\,M_\odot$, is associated with the thermal state of the gas in the collapsing
-region. If so, then our use of an isothermal equation of state suggests that the IMF found in our simulations is likely to be in error, so we have not discussed our computed IMF. However, as Figures \ref{fig:hydro_Sphere_of_influence_quad2_well_before}-\ref{fig:hydro_Sphere_influence_quad2_end_time} and \ref{fig:hydro_velocity_avg} show, both $|u_r|$ and $v_T$ exceed $c_s$, except at the earliest times ($\sim 100,000\yrs$ before a star forms), and then only for $r\lesssim0.1\pc$, so that the gas pressure does not dominate the dynamics in most regions and most of the time. Of course we do include the effects of gas pressure, so even in those regions and those times, our simulations capture the dynamical effects to lowest order, aside from, as we have just said, from fragmentation effects on the smallest scales. 
+It is often argued that the turnover in the IMF, somewhere between $0.2$ and $0.6\,M_\odot$, 
+is associated with the thermal Jeans mass of the gas in the collapsing region. 
+There have been other proposed explanations, for instance, 
+\citet{2002ApJ...576..870P} found that the IMF depends upon turbulent fragmentation, however, this is hard to understand because turbulence does not have a scale associated with it. 
+\citet{2016MNRAS.460.3272K} state that on small scales the dominant mechanism limiting fragmentation of gas is the thermal pressure. 
+They state that this thermal pressure is influenced by stellar radiation: as the gas fragements and collapses the opacity of the gas grows trapping the radiation from the young stars, leading to a change in temperature of the gas, increasing the thermal pressure. 
+This picks out a mass scale.
+If so, then our use of an isothermal equation of state suggests that the IMF found in our simulations is likely to be in error. 
+However, as Figures \ref{fig:hydro_Sphere_of_influence_quad2_well_before}-\ref{fig:hydro_Sphere_influence_quad2_end_time} and \ref{fig:hydro_velocity_avg} show, 
+both $\ur$ and $\vt$ exceed $c_s$, except at the earliest times ($\sim 100,000\yrs$ before a star forms), and then only for $r\lesssim0.1\pc$, 
+so that the gas pressure does not dominate the dynamics in most regions and most of the time. 
+%%TODO - what am I trying to say here.
+%Of course we do include the effects of gas pressure, so even in those regions and those times, 
+%our simulations capture the dynamical effects aside from, as we have just said, fragmentation effects on the smallest scales. 
 
-We have undertaken and made some preliminary analyses of magnetohydrodynamic simulations, which we will report on in future publications; as seen by other authors, we find that magnetic fields slow the star formation rate. But the runs of density and velocity have the same qualitative form in our MHD simulations as in the hydro runs presented here, and the MHD runs also give $M_*(t)\sim t^2$. 
+We have undertaken and made some preliminary analyses of magnetohydrodynamic simulations, which we will report on in future publications; 
+as seen by other authors, we find that magnetic fields slow the star formation rate. 
+But the runs of density and velocity have the same qualitative form in our MHD simulations as in the hydro runs presented here, and the MHD runs also give $M_*(t)\sim t^2$. 
 
-Like magnetic fields, feedback from protostellar outflows are seen to slow the rate of star formation, e.g., \citet{2010ApJ...709...27W,2015MNRAS.450.4035F}. But those authors, like us,  find that $dM_*/dt$ increases with time even in runs that include outflows. 
+%TODO - Phil asks why is this line here.
+%Feedback from protostellar outflows are seen to slow the rate of star formation, e.g., \citet{2010ApJ...709...27W,2015MNRAS.450.4035F}. 
+%But those authors, like us, find that $dM_*/dt$ increases with time even in runs that include outflows. 
 
-%Begin bold face for estimate of radiation pressure versus turbulent pressure
 Radiative feedback will also affect both the IMF and, for massive enough stars, the dynamics of the collapse at late times (after massive stars have formed). 
+Massive stars can emit high velocity winds, up to $3000 \kms$, as these winds leave the star they create shocks when the wind runs into the surrounding gas.
+Due to the collision of the wind and surrounding gas, the gas heats up to $10^8 - 10^9 \K$. 
+The pressure associated with these high temperatures will push the surrounding gas away from the star.
 
 All the figures we show present results for stars with masses no larger than about $4 M_\odot$. To estimate the effects of radiation, we compare the force from the Reynold stress $F_T=4\pi r^2 \rho v_T^2$, to the radiation force $L/c$. 
 From Figure \ref{fig:hydro_velocity_avg}, the (averaged over many stars) $v_T$ is slightly in excess of $1\kms$ at $r=0.01\pc$, while from any of the density figures the density is $\rho\approx5\times10^{-18} {\rm g/cm}^3$. The force from Reynold stress is then $F\approx4\times 10^{26}$ dynes. The luminosity of a 4 solar mass star on the zero age main sequence is $L\approx 2\times10^{36}\ergs$ \citep{1992A&AS...96..269S}, so the radiation force $L/c \approx 3\times10^{25}\,{\rm dynes}$, about a 10\% effect.  The force from Reynolds stress increases outward, see Figure \ref{fig:hydro_dPdr_avg}, so this statement holds at larger radii as well. 
@@ -657,9 +678,6 @@ From Figure \ref{fig:hydro_velocity_avg}, the (averaged over many stars) $v_T$ i
 Thus we expect that the effects of radiation pressure are not particularly significant in the situations we report;  the run of density and infall velocity, and hence the $M_*(t)\sim t^2$ scaling should not be affected, at least up to the times we are reporting on.  We note, however, that this estimate neglects the effect of radiative or ionization heating which is an important feedback mechanism.
 
 Simulations including radiative feedback support this simple analysis. Figure 15 of  \citet{2014MNRAS.439.3420M} shows that in their simulations, which include feedback from both protostellar outflows and radiation (as well as magnetic fields), the stellar mass increases as the square of the time, up to masses of ~4.5 solar masses. Earlier work by the Berkeley group found similar results, forming stars with 10 solar masses, with $M_*(t)\sim t^2$ even for such massive stars, see Figure 13 of \citet{2012ApJ...754...71K}. Their simulations included radiative effects, but no protostellar winds. 
- %End bold face for estimate of the effects of radiation on dynamics
-
-
 
 
 This dissertation describes my contributions to various parts of our current understanding of the dynamics of star formation. 

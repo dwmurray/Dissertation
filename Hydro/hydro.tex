@@ -24,18 +24,22 @@ Motivated by the nonlinear star formation efficiency found in recent numerical s
 As we followed the collapse of this gas, we found that the character of the flow changes at two radii, the disk radius $r_d$, and the radius $r_*$ where the enclosed gas mass exceeds the stellar mass. 
 Accretion starts at large scales and works inwards. 
 
-If the equations are non-dimensionalized, two dimensionless variables appear, the Mach number ${\cal M}$ and the virial parameter $\alpha_{vir} \equiv (5/3) \vt^2 / GM_{box}$, e.g., \citet{1984oup..book.....M}.
+If the equations are non-dimensionalized, two dimensionless variables appear, the Mach number ${\cal M}$ and the virial parameter $\alpha_{vir} \equiv 5 \vt^2 R / GM_{box}$, e.g., \citet{1984oup..book.....M}.
 We want to model massive star forming regions in the Milky Way, so we choose the Mach Number ${\cal M} = 9$ and the virial parameter $\alpha_{vir} = 1.9$ respectively \citep{1987ApJ...319..730S}. 
 In addition, we choose the size of the box $L = 16 \rm pc$, and the sound speed $c_s = 0.264\,{\rm km\,s^{-1}}$, so that the turbulent velocity lies approximately on the observed size-line width relation, Larson's Law.
 These choices fix both the density and the mass scale.
 
 The simulations described in this chapter disregard several physical effects.
-They do not include magnetohydrodynamics, radiative, stellar wind, or proto-stellar jet feedback.
+They do not include magnetohydrodynamics, radiative, stellar wind, or protostellar jet feedback.
 While the feedback physics I neglect in this chapter can have significant effects on both the rate of star formation and the initial mass function (IMF), I aim to address the role the random motions captured by the Reynolds stress play in the dynamics of gravitational collapse in turbulent fluids.
 
 Our equation of state is that of an isothermal gas. 
-For now, we shall state leave unknown as to whether thermal effects play a role in setting the initial mass function of stars, e.g \citet{2005MNRAS.359..211L}.
-With this in mind, we relegate the discussion of the IMF to an appendix, as the details are unlikely to be reliable.
+While we have stated in \ref{subsec:missing_physics} that radiation and temperature effects can play a significant role, 
+assuming an isothermal gas is a reasonable approximation. 
+The cooling timescale associated with the environment we simulate is much much shorter than the dynamical time of the system. 
+This means that even though the gas will heat up via shocks etc, the gas rapidly cools, well before it affects the dynamics significantly. 
+This dissertation will not address whether thermal effects play a role in setting the initial mass function of stars, e.g \citet{2005MNRAS.359..211L}.
+With this in mind, we relegate the discussion of the IMF to the appendix of this chapter, as the details are unlikely to be reliable.
 
 This chapter is organized as follows. In Section \ref{sec:hydro_simulation setup}
 we describe our numerical methods and simulation setup. In Section
@@ -51,11 +55,13 @@ Most of the simulations described here use the adaptive mesh refinement code FLA
 \citep{2000ApJS..131..273F, 2008ASPC..385..145D} to model self-gravitating, hydrodynamic turbulence in isothermal gas with three-dimensional (3D) periodic grids and a minimum of 8 levels of refinement on a root grid of $128^3$, 
 giving an effective resolution of $32,768^3$.  
 Following \citet{2015ApJ...800...49L} our FLASH runs use the Harten-Lax-van Leer-Contact 
-Riemann solver and an unsplit solver \citep{2009ASPC..406..243L}. We have also used the RAMSES code \citep{2002A&A...385..337T}, but unless explicitly stated otherwise, the results below come from FLASH simulations.
+Riemann solver and an unsplit solver \citep{2009ASPC..406..243L}. We have also used the RAMSES code \citep{2002A&A...385..337T}, but unless explicitly stated otherwise, the results in this chapter come from FLASH simulations.
 
 As just mentioned, we start with a box with the physical length set to $L = 16$ pc using 
-periodic boundary conditions. The initial mass density is 
-$\rho = 3\times10^{-22}\,{\rm g\,cm}^{-3}$ (number density $n \approx 100\,{\rm cm}^{-3}$), 
+periodic boundary conditions. 
+We fill the box with molecular hydrogen (H$_2$). 
+The initial mass density is 
+$\rho = 3\times10^{-22}\,{\rm g\,cm}^{-3}$ (number density of hydrogen molecules $n \approx 100\,{\rm cm}^{-3}$), 
 corresponding to a mean 
 free-fall time $\bar\tau_{\rm ff}\approx3.8\,{\rm Myrs}$; the total mass in the
 box is $M\approx 18,000\,M_\odot$.
@@ -117,7 +123,7 @@ In most of our simulations, the AMR grid is refined when the \citet{1997ApJ...48
 % Change this and the density condition to reflect N_j = 32. 
 %
 \be
-\lambda_J \le N_J \Delta x, 
+\lambda_J \ge N_J \Delta x, 
 \ee
 %
 is met.
@@ -309,15 +315,17 @@ We note that the particle forms near the tip of a filament (not shown).
 
 
 \subsection{The Stellar Sphere of Influence} \label{sec:hydro_r_star}
-We begin by developing an operational definition of $r_*$.  We choose to define $r_*$ 
-as the radius where the enclosed mass, $M(<r, t)$ is three times the mass 
+We begin by developing an operational definition of $r_*$. 
+We choose to define $r_*$ as the radius where the enclosed mass, $M(<r, t)$ is three times the mass 
 of the star, i.e., 
+%
 \be
 3M_*(t) = M(<r_*(t), t)
 \label{eq:hydro_rstar def}
 \ee
+%
 similar to \citet{2015ApJ...804...44M}. 
-We use the factor of 3 to ensure that the gravity of the gas dominates the gravity 
+We chose the factor of 3 to ensure that the gravity of the gas dominates the gravity 
 of the star.\footnote{
 The gas in the disk around the protostar is rotationally supported, so 
 it essentially acts as a part of the star. We include the mass of the disk 
@@ -414,7 +422,8 @@ is more like $r\approx 1\pc$ in our simulations.
 \subsection{A Fixed Point Attractor for $\rho(r, t)$ Inside $r_*$}\label{sec:hydro_attractor}
 
 One of the most striking findings of MC15 was that the run of density is 
-independent of time for $r<r_*$. Our simulations confirm that finding, 
+independent of time for $r<r_*$. 
+Our simulations confirm that finding, 
 as illustrated in Figure \ref{fig:hydro_quad2_run_of_density_double}.
 The plot shows the run of density for two separate times.
 The dotted blue line shows the run of density $\sim 40,000$ years 
@@ -523,11 +532,14 @@ tried to calculate these torques, but as a first check, we have calculated the
 Toomre Q parameter, as shown in Figure \ref{fig:hydro_Toomre_Q_2B}; recall that 
 %
 \be 
-Q = \frac{v_\phi \sqrt{v_T^2 + c_s^2}}{\pi G r \Sigma}.
+Q = \frac{\vphi \sqrt{\vt^2 + c_s^2}}{\pi G r \Sigma}.
 \label{eq:hydro_Toomre_Q}
 \ee
 %
-In this expression $\Sigma$ is the gas surface density of the disk.
+In this expression $\Sigma$ is the gas surface density of the disk, $\vphi$ is the rotational velocity of the disk, and $\vt$ is the turbulent velocity in the disk. 
+The Toomre Q parameter (also referred to as the Safronov-Toomre criterion) is used to determine approximately whether a razor thin disc is gravitationally unstable or not. 
+If $Q > 1$ then the system is stable against collapse, and we would expect little angular momentum transport via gravitational torques. 
+On the other hand if $Q < 1$ then it is at least plausible that graviational torques can transport angular momentum and hence drive accretion.
 The figure shows $Q$ for the disk around \partB at the time shown in Figure
 \ref{fig:hydro_Sphere_influence_quad2_end_time}.
 For the region $3\times10^{-3} \lesssim r \lesssim 6\times10^{-3} \pc$, $Q$ 
@@ -631,9 +643,34 @@ approached from outside-in (see their Figure 1). We see the
 same behavior in the simulations we have run with $N_J = 16$ and
 with $N_J=32$. In those runs we see the flattening of the density at
 small radii and early times, before the star particle forms. 
- 
- In Figure \ref{fig:hydro_PDF_quad1}, we show the density probability 
- distribution function (PDF) of one of our simulations. 
+
+In simulations without self gravity we see a log normal distribution in the density probability distribution function (PDF). 
+\citet{2018ApJ...854...88R} provide a conceptual picture of the physics, that I will briefly describe.
+In a turbulent box, one will end up with two flows that converge, creating a shock. 
+With an isothermal simulation the temperature will not increase, but the higher density of the shock will create a pressure gradient. 
+The net momentum of the converging flows will result in a net acceleration. % in the direction of one of the flows. 
+
+The acceleration will be of the form:
+\be
+a \approx \rho {\mathbf v}^2 / \Sigma_{\rm shock},
+\ee
+
+where, $a$ is the acceleration due to the net ram pressure of the flow, $\rho$ is the upwind gas density, $\mathbf v$ is the velocity of the wind relative to the shock, and $\Sigma_{\rm shock}$ is the gas surface density of the shock. 
+The gas downstream of the shock will feel the acceleration of the shock, creating a situation where the downstream gas can reach hydrostatic equilibrium, given by: 
+\be
+\label{eq:HSE_pdf}
+\frac{dP}{dz} = - \rho a.
+\ee
+In the case of an isothermal ideal gas, $P = \frac{\rho}{m_p} k_b T$, plugging this into equation \ref{eq:HSE_pdf} and then integrating shows that
+%
+\be
+\rho \propto e^{-z/H},
+\ee
+%
+where $H = c_s^2 / a$ is the scale height of the region of gas downstream of the shock that is in HSE.
+This gives an expontential distribution, \citet{2018ApJ...854...88R} show how this becomes a log-normal distribution of $\rho$.
+
+In Figure \ref{fig:hydro_PDF_quad1}, we show the density PDF of one of our simulations. 
 The black line shows the result for the full box.
 The blue thin dot-dash line shows the result when we excise a 1 pc sphere around each star particle.
 % a full box with 1 pc spheres around star particles excised (blue thin dot-dash line), 
@@ -646,16 +683,13 @@ At high densities, the PDF exhibits power
 Moreover these high density regions are localized around star particles, 
  as the PDF with 1 pc spheres excised around star particles shows (blue dot-dashed line). 
 We also note that the regions around star particles are not devoid of low density regions, 
-as the PDF of the 1 pc spheres around star particles (blue dashed line) shows.
- \citet{2011ApJ...727L..20K} first argued that the power law tail of the 
- density PDF at high densities is related to the scaling of the density with radius; 
- for $\rho \propto r^{-\alpha}$, the density PDF $\propto \rho^{-3/\alpha}$.  
- For the values of $\alpha$ ($\alpha \approx 1.5-2$) that we expect from 
- analytic theory (MC15) and from previous numerical calculations
- \citep{2015ApJ...800...49L}, we expect the density pdf 
- to scale like $\rho^{-2}$ to $\rho^{-3/2}$. We fit a power law between 
- $n=10^4-10^9\,{\rm cm}^{-3}$ (red dotted line) and find a scaling like 
- $n^{-1.7}$, in line with these expectations.
+as the PDF of the 1 pc spheres around star particles (blue dashed line) shows. 
+\citet{2011ApJ...727L..20K} first argued that the power law tail of the density PDF at high densities is related to the scaling of the density with radius; 
+for $\rho \propto r^{-\alpha}$, the density PDF $\propto \rho^{-3/\alpha}$. 
+For the values of $\alpha$ ($\alpha \approx 1.5-2$) that we expect from analytic theory (MC15) and from 
+previous numerical calculations \citep{2015ApJ...800...49L}, we expect the density pdf 
+ to scale like $\rho^{-2}$ to $\rho^{-3/2}$. 
+We fit a power law between $n=10^4-10^9\,{\rm cm}^{-3}$ (red dotted line) and find a scaling like $n^{-1.7}$, in line with these expectations.
 
 \begin{figure}[htb] %Figure 10 PDF(\rho)
 %\plotone{vel_dens_quad3_0320_shellsphere_65591_0.png}

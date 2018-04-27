@@ -51,7 +51,7 @@ them to previous work in Section \ref{sec:hydro_discussion}
 
 \section{Detailed Simulations of Turbulent Collapse} \label{sec:hydro_simulation setup}
 
-Most of the simulations described here use the adaptive mesh refinement code FLASH ver. 4.0.1 
+Most of the simulations described here use the adaptive mesh refinement code FLASH version 4.0.1 
 \citep{2000ApJS..131..273F, 2008ASPC..385..145D} to model self-gravitating, hydrodynamic turbulence in isothermal gas with three-dimensional (3D) periodic grids and a minimum of 8 levels of refinement on a root grid of $128^3$, 
 giving an effective resolution of $32,768^3$.  
 Following \citet{2015ApJ...800...49L} our FLASH runs use the Harten-Lax-van Leer-Contact 
@@ -98,7 +98,7 @@ In addition, there is some evidence \citep{2010A&A...512A..81F} that the results
 
 This fully developed turbulent state is the initial condition to 
 which we add self-gravity and star particle formation for our star 
-formation experiments. We enable AMR to follow the collapse of overdense regions.
+formation experiments. We enable AMR to follow the collapse of over-dense regions.
 % We do not do this in RAMSES.
 Even after turning on star formation, we continue to drive the large scale fixed solenoidal acceleration field.
 
@@ -145,7 +145,7 @@ This corresponds to a condition on the density
 where $l$ is the refinement level, with $l = 0$ corresponding to the root grid.
 When this density condition is met the local grid is refined by a factor of 2, 
 provided that the maximum refinement level has not been reached. 
-When the transisition to the maximum refinement level is triggered i.e. when $l$ goes from $7$ to $8$ (the maximum refinement level),
+When the transition to the maximum refinement level is triggered i.e. when $l$ goes from $7$ to $8$ (the maximum refinement level),
 the density contrast is $\rho / \rho_0 \approx 10^6$. 
 
 At the end of this chapter we describe a number of test simulations in which we refined the grid when 
@@ -357,7 +357,7 @@ particles, see below.
 \plottwo{Hydro/f4a.pdf}{Hydro/f4b.pdf}
 %\plotonesmall{Hydro/f4a.pdf}
 %\plotonesmall{Hydro/f4b.pdf}
-\caption[Hydro Sphere of Infuence 3]{\label{fig:hydro_Sphere_influence_quad2_just_after}The run of velocity (top panel) of \partA\ 24,000 years after 
+\caption[Hydro Sphere of Influence 3]{\label{fig:hydro_Sphere_influence_quad2_just_after}The run of velocity (top panel) of \partA\ 24,000 years after 
 star particle formation.
 The color and linestyles are the same as in the top panel of Figure \ref{fig:hydro_Sphere_of_influence_quad2_well_before}.
 This panel shows that the disk around the particle is rotationally supported for $r\lesssim 5\times10^{-3}\pc$; inside that radius, 
@@ -456,7 +456,7 @@ In Figure \ref{fig:hydro_Mdot_vs_shu} we show the mass accretion rate $\dot{M}$ 
 
 Following the establishment of the power law solution for the density, at $t=t_*$, a star particle forms and the $\dot{M}$ profiles flatten at small radii. An examination of the density profile (not plotted) reveals that $\rho\propto r^{-3/2}$, while for $t-t_*=24$kyrs, the gravitational force (and hence $u_r$) is dominated by the central mass for $r\lesssim0.1\pc$, so that $v\propto r^{-1/2}$ out to that radius. We also note that while the $\dot{M}$ profile is flat, it does increase in time as shown by the difference between the $t-t_* = 24.6$ kyrs and $154$ kyrs curves. All this behavior agrees well with the prediction of Equation (\ref{eq:hydro_Mdot_behavior}).
 
-At all times, the accretion rate is either nearly flat or increasing with radius, which is a natural result of the near balance between gravity and Reynold's stress support, as posited in the theory of MC15. We contrast this with an inside-out collapse model, which we exemplify using a \citet{1977ApJ...214..488S} solution (blue dashed line) obtained by directly integrating equations (11) and (12) of \citet{1977ApJ...214..488S} at a fixed time. The asymptotic behavior of $\dot{M}$ follows from Shu's equations (15) and (17);
+At all times, the accretion rate is either nearly flat or increasing with radius, which is a natural result of the near balance between gravity and Reynolds stress support, as posited in the theory of MC15. We contrast this with an inside-out collapse model, which we exemplify using a \citet{1977ApJ...214..488S} solution (blue dashed line) obtained by directly integrating equations (11) and (12) of \citet{1977ApJ...214..488S} at a fixed time. The asymptotic behavior of $\dot{M}$ follows from Shu's equations (15) and (17);
 % In a spherical model like \citet{1977ApJ...214..488S}'s the mass accretion rate is $\dot{M}(r,t) = 4 \pi r^2 \rho(r,t) u_r(r,t)$. 
 %The behavior of $\dot{M}$ can be seen in the asymptotic solutions that Shu provides in equations (15) (for large x) and (17) (at small x) for solutions with no critical point (i.e. not in hydrostatic equilibrium) as well as his equation (8); 
 recall that $x = r/ (c_s  t)$ is a function of the radius. 
@@ -539,7 +539,7 @@ Q = \frac{\vphi \sqrt{\vt^2 + c_s^2}}{\pi G r \Sigma}.
 In this expression $\Sigma$ is the gas surface density of the disk, $\vphi$ is the rotational velocity of the disk, and $\vt$ is the turbulent velocity in the disk. 
 The Toomre Q parameter (also referred to as the Safronov-Toomre criterion) is used to determine approximately whether a razor thin disc is gravitationally unstable or not. 
 If $Q > 1$ then the system is stable against collapse, and we would expect little angular momentum transport via gravitational torques. 
-On the other hand if $Q < 1$ then it is at least plausible that graviational torques can transport angular momentum and hence drive accretion.
+On the other hand if $Q < 1$ then it is at least plausible that gravitational torques can transport angular momentum and hence drive accretion.
 The figure shows $Q$ for the disk around \partB at the time shown in Figure
 \ref{fig:hydro_Sphere_influence_quad2_end_time}.
 For the region $3\times10^{-3} \lesssim r \lesssim 6\times10^{-3} \pc$, $Q$ 
@@ -668,7 +668,7 @@ In the case of an isothermal ideal gas, $P = \frac{\rho}{m_p} k_b T$, plugging t
 \ee
 %
 where $H = c_s^2 / a$ is the scale height of the region of gas downstream of the shock that is in HSE.
-This gives an expontential distribution, \citet{2018ApJ...854...88R} show how this becomes a log-normal distribution of $\rho$.
+This gives an exponential distribution, \citet{2018ApJ...854...88R} show how this becomes a log-normal distribution of $\rho$.
 
 In Figure \ref{fig:hydro_PDF_quad1}, we show the density PDF of one of our simulations. 
 The black line shows the result for the full box.
@@ -808,7 +808,7 @@ turbulent decay, as suggested by MC15 and by \citet{2012ApJ...750L..31R}.
 
 The relatively large infall velocity demonstrates that, even $100,000$ years before 
 the proto-disk or star particle forms, these regions 
-are not in hydrostatic equilibrium, in which Reynold's stress or turbulent pressure balances the force of gravity.  This calls into question
+are not in hydrostatic equilibrium, in which Reynolds stress or turbulent pressure balances the force of gravity.  This calls into question
 the assumption made by previous analytic models of massive star formation, 
 such as the turbulent core model.
 %
@@ -854,7 +854,7 @@ quantities to the local gravitational acceleration, $g=GM(<r)/r^2$.
 
 Inside of $r\approx 0.01$ pc, the gas settles into a rotationally supported 
 disk and the support from other sources drops. However,  
-the sum of the Reynold stress and rotational support (thick red line) nearly balances 
+the sum of the Reynolds stress and rotational support (thick red line) nearly balances 
 the local gravity. 
 
 \begin{figure}[htb]%Figure 13, ratio of pressure to gravity terms
@@ -966,7 +966,7 @@ $M_*\sim t^2$ scaling.
 The slower growth at earlier times is due to fact that, at the time 
 of star formation, the infall velocity is non-zero, despite there being no star to 
 attract the gas; see Figure \ref{fig:hydro_velocity_avg}. In other words, the initial 
-infall velocity is larger than $\sqrt{GM_*/r}$; it takes time before the Reynold stress can slow the infall to the steady state value given by equation 
+infall velocity is larger than $\sqrt{GM_*/r}$; it takes time before the Reynolds stress can slow the infall to the steady state value given by equation 
 (\ref{eq:hydro_infall_behavior}), and hence before the mass accretion rate settles onto the steady 
 state value given by equation (\ref{eq:hydro_Mdot_behavior}).
 
@@ -1157,7 +1157,7 @@ of the gravity term for $r>r_d$}
 Figure \ref{fig:hydro_dPdr_avg} shows that the 
 acceleration due to the pressure gradient is comparable to the 
 acceleration of gravity for $r_d<r<r_*$. 
-Thus Reynold's stresses slow the infall compared to the free-fall rate, i.e., $|u_r(r,t)|< \sqrt{GM(r)/r}$.  
+Thus Reynolds stresses slow the infall compared to the free-fall rate, i.e., $|u_r(r,t)|< \sqrt{GM(r)/r}$.  
 At small radii ($r<r_d$), the rotational support becomes important and 
 the support from $v_T$ becomes much smaller than the radial component
 of gravity, but comparable to the vertical component in the disk.
@@ -1241,7 +1241,7 @@ is on average about constant.
 We emphasize that the length scales at which the character of the solution changes are time dependent. 
 As the star grows in mass, the radius where the stars' gravity exceeds the gravity of the surrounding gas increases outwards away from the star, 
 $r_*(t) \propto M_*^{2/3}(t)$.
-The disk radius, $r_d$, also changes as a function of time as a result of the advection and transport of angular momentum from largescales to small scales (and vice versa).
+The disk radius, $r_d$, also changes as a function of time as a result of the advection and transport of angular momentum from large scales to small scales (and vice versa).
 
 We also found that the density profile evolves
 to a fixed attractor, $\rho(r,t ) \rightarrow \rho(r)$ in line with the results of MC15 and 
@@ -1558,7 +1558,7 @@ is that the ratio $v_{T,\, r}/v_{T,\, l}\approx 1/2$ for $0.04\pc\lesssim r\less
 
 Between $r_d\approx0.02\pc$ and the local maximum of $|u_r|$ at
 $r\approx0.04\pc$, the infall velocity is large but roughly constant,
-meaning that the radial dilation ceases. We interpret the uptick in
+meaning that the radial dilation ceases. We interpret the up-tick in
 $v_{T,\, r}$ toward small radii as the result of the cascade of
 $v_{T,\,l}$ driving the radial component, as the turbulence strives
 to reach equipartition, combined with the cessation of adiabatic cooling 
@@ -1579,11 +1579,11 @@ velocity at small radii as the flow settling into more ordered motion in an accr
 For completeness we report the IMF in this subsection, though we caution the reader again that, because we do not handle the thermal physics properly, the location of the break in the IMF is unlikely to be correct; however it is commonly believed that the slope at the high mass end is set by the turbulence so that the thermal properties will not have much effect there.
 Figure \ref{fig:hydro_imf} shows the IMF at the end of our Ramses run with $N_J = 32$. 
 The plot includes a total of 90 stellar particles, with a total mass of $240 M_\odot$, or about  $\approx 1 \%$ of the total mass in the simulation. The time that Figure \ref{fig:hydro_imf} is plotted corresponds roughly to the right edge ($\approx 600,000$ years after the first star forms) in figure \ref{fig:hydro_avg_mass}. 
-It shows a form that is roughly consistent with observed IMFs, in that it has a power law at high masses, a peak around a solar mass, and a fall off at lower mass. The peak however, is at $2 M_\odot$ which is about a factor of four higher than observed IMFs, and the fall off at high mass is too flat, indicating that we are top heavy. If the Saltpeter slope is denoted by $\Gamma = 2.35$, our slope is $\Gamma = 1.36$. 
+It shows a form that is roughly consistent with observed IMFs, in that it has a power law at high masses, a peak around a solar mass, and a fall off at lower mass. The peak however, is at $2 M_\odot$ which is about a factor of four higher than observed IMFs, and the fall off at high mass is too flat, indicating that we are top heavy. If the Salpeter slope is denoted by $\Gamma = 2.35$, our slope is $\Gamma = 1.36$. 
 
 \begin{figure}[htb]
 \plotone{Hydro/fD1.pdf} % Figure D1 Appendix D IMF of Ramses N_J 32 output 00086
-\caption[Hydro Initial Mass Function]{Initial mass function for the Ramses run with $N_J = 32$. The peak of the IMF is at $2 M_\odot$ and the high mass slope is $\Gamma = 1.36$, where the Saltpeter slope is $\Gamma = 2.35$. The red line shows the least-squares fit to the mass function for $M \geq 1.0 M_\odot$. Our IMF varies with time with the peak mass moving to lower mass and the value of $\Gamma$ increasing with time. \label{fig:hydro_imf}}
+\caption[Hydro Initial Mass Function]{Initial mass function for the Ramses run with $N_J = 32$. The peak of the IMF is at $2 M_\odot$ and the high mass slope is $\Gamma = 1.36$, where the Salpeter slope is $\Gamma = 2.35$. The red line shows the least-squares fit to the mass function for $M \geq 1.0 M_\odot$. Our IMF varies with time with the peak mass moving to lower mass and the value of $\Gamma$ increasing with time. \label{fig:hydro_imf}}
 \end{figure}
 
 Figure \ref{fig:hydro_avg_mass} shows the average stellar mass as a function of time. We see that the average mass is significantly higher than that of observed IMFs, where it is in the range of $0.3 - 1.0$. In addition, we see that this average mass rises initially as the massive stars grow and then decreases as low mass star formation kicks in.

@@ -74,7 +74,7 @@ We have implemented a model of jet feedback in the adaptive mesh refinement (AMR
 Ramses is a mature AMR code that includes self-gravity, sink particle formation \citep{2010MNRAS.409..985D,2014MNRAS.445.4015B}, and radiative transfer \citep{2013MNRAS.436.2188R,2015MNRAS.449.4380R}.  RAMSES has been used in a number of problems including cosmological structure formation (e.g., see for instance \citealt{2016MNRAS.463.1462O}), star cluster formation \citep{2017MNRAS.472.4155G}, %\citep{2017arXiv170107982G}, 
 colliding winds \citep{2011MNRAS.418.2618L,2017MNRAS.468.2655L}, and relativistic astrophysics \citep{2013A&A...560A..79L,2018MNRAS.474.2813L}. More recently, we have added a turbulent stirring module and have used this for star formation simulations in a turbulent gas without feedback \citep{2017MNRAS.465.1316M}.
 
-Here we build on our previous work \citep{2017MNRAS.465.1316M} by adding jets to the sink particle implemention in RAMSES \citep{2010MNRAS.409..985D,2014MNRAS.445.4015B}.   A jet is launched once a star particle has a mass in excess of $0.01 M_\odot$ at which point it also has a well defined spin angular momentum.
+Here we build on our previous work \citep{2017MNRAS.465.1316M} by adding jets to the sink particle implementation in RAMSES \citep{2010MNRAS.409..985D,2014MNRAS.445.4015B}.   A jet is launched once a star particle has a mass in excess of $0.01 M_\odot$ at which point it also has a well defined spin angular momentum.
 %We begin by presuming the existence of a sink particle with some already accreted angular momentum.
 When the sink particle accretes gas from nearby cells, a fraction, $f_{\rm jet}$, with a fiducial value $f_{\rm jet} = 0.3$, of this gas is launched along the spin axis of the protostar.  % as a jet.
 Numerically, this involves the injection of mass and momentum into nearby cells, while subtracting the ejected mass from the sink particle.
@@ -86,7 +86,7 @@ In particular, we set per cell in the injection regions:
 \dot{\rho} &=& \sum_i^{n_{\rm sink}} f_{\rm jet}\mathcal{R}(r)\mathcal{T}(\theta), \\
 \dot{\bf \pi} &=& \sum_i^{n_{\rm sink}}\dot{\rho}_i {\bf v}_{\rm jet},
 \end{eqnarray}
-where $\mathcal{T}$ is the angular distribution, $\mathcal{R}$ is the radial distribution, $r$ is the radial distance of the cell centre from the $i$th sink particle.
+where $\mathcal{T}$ is the angular distribution, $\mathcal{R}$ is the radial distribution, $r$ is the radial distance of the cell center from the $i$th sink particle.
 
 For the angular distribution, $\mathcal{T}$, we assume a Gaussian jet (in angle) about the spin axis of the sink particle:
 \begin{equation}
@@ -124,7 +124,7 @@ This latter model is used in our turbulent star formation simulations below.
 To test the physics of the jet and our numerical implementation, we consider the following test problem.
 We simulate a periodic box with a length of 0.2 pc on each side and a fixed background density $\rho_0 = 3\times 10^{-20}\,{\rm g\,cm^{-3}}$ ($n_0 = 10^4$ for H$_2$) of isothermal gas with a temperature of $\approx 17$ K, which corresponds to a sound speed of $0.265\,{\rm km\,s}^{-1}$.
 This setup is similar to the turbulent star formation simulations performed below and in \citet{2015ApJ...800...49L} and \citet{2017MNRAS.465.1316M}, but with a larger density and a smaller box.
-In the centre, we place a region of higher density, i.e., a clump, with a Gaussian density distribution, $\rho(r) = \rho_m\exp(-r^2/r_0^2)$,  with maximum density of $\rho_m=3\times 10^{-16}\,{\rm g\,cm^{-3}}$ and a characteristic radius $r_0=0.017$ pc.
+In the center, we place a region of higher density, i.e., a clump, with a Gaussian density distribution, $\rho(r) = \rho_m\exp(-r^2/r_0^2)$,  with maximum density of $\rho_m=3\times 10^{-16}\,{\rm g\,cm^{-3}}$ and a characteristic radius $r_0=0.017$ pc.
 The total mass of this dense region is approximately $M = 100\,M_{\odot}$.
 %We chose the Gaussian density distribution because on defining stricter boundary, we found that the simulation was wasting computational time in resolving the boundary using AMR.
 The entire clump is set to solid body rotation about the z-axis with an angular frequency corresponding to 10\% of the breakup velocity of the clump.
@@ -139,7 +139,7 @@ This jet grows and extends across the entire plotted region by $t=6058$ yrs (low
 
 \begin{figure}[htb] %Figure 1 % Phil's test problem, 4 panels.
   \plotone{Jet/jet_panel.pdf}
-  \caption[Jet Test Problem]{Sequential plots of density structure perpendicular to the disk plane through the centre of the sink particle. Columns from left to right show different times, from $t=0$ to $t=4820$ yrs, showing the effect of jet feedback on the test problem.}
+  \caption[Jet Test Problem]{Sequential plots of density structure perpendicular to the disk plane through the center of the sink particle. Columns from left to right show different times, from $t=0$ to $t=4820$ yrs, showing the effect of jet feedback on the test problem.}
     \label{fig:jet_test_jet}
 \end{figure}
 
@@ -297,13 +297,13 @@ In the bottom panels ($t = 1.84$ Myrs), the no jet feedback (left panel) simulat
 \end{figure}
 %
 
-Figure \ref{fig:jet_jet_close_up} displays a thin slice $1\,{\rm pc}$ on a side centred on a star particle, showing the bubble inflated by the jet from the central star.
+Figure \ref{fig:jet_jet_close_up} displays a thin slice $1\,{\rm pc}$ on a side centered on a star particle, showing the bubble inflated by the jet from the central star.
 The total extent of the bubble, which has a bi-conical shape, is roughly a parsec.
 
 %
 \begin{figure}[htb] % Figure 3 %Off axis 1pc along L ID1_0
   \plotone{Jet/movieframe_ID1_0_density_1_0pc_L_offslice_00130.png}
-  \caption[Jet - Postage stamp of jet blown gas]{A slice of the density structure centreed on a sink particle of $\approx 3 M_\odot$ viewed along the angular momentum axis. Annotated in black arrows is the gas velocity, where length corresponds to relative magnitude. The jet is blowing two bubbles opening in opposite directions, partially disrupting the filament in which the star particle formed. The maximum extent of the jet is $\approx 0.5 \, {\rm pc}$ about $300,000 \, {\rm yrs}$ after formation.}
+  \caption[Jet - Postage stamp of jet blown gas]{A slice of the density structure centered on a sink particle of $\approx 3 M_\odot$ viewed along the angular momentum axis. Annotated in black arrows is the gas velocity, where length corresponds to relative magnitude. The jet is blowing two bubbles opening in opposite directions, partially disrupting the filament in which the star particle formed. The maximum extent of the jet is $\approx 0.5 \, {\rm pc}$ about $300,000 \, {\rm yrs}$ after formation.}
     \label{fig:jet_jet_close_up}
 \end{figure}
 %
@@ -367,7 +367,7 @@ MC15 and \citet{2017MNRAS.465.1316M} assumed $f_{\rm jet} = 0 \rightarrow f = 1$
 
 Figure \ref{fig:jet_f_jet} plots the SFE for four different simulations, where we varied $f_{\rm jet}$ while keeping $p_{\rm jet}$ constant.
 The ratio predicted by equation (\ref{eq:jet_mass_ratio}) with $f = 0.7$ is $2.04$ and accounts for $75 \%$ of the difference between the two runs.
-Thus the (indirect) effect of the jet on accretion onto star particle (from turbulent driving, explusion of accreting gas, etc) is $\approx 25 \%$, showing that the dynamical effect of jets on the mass accretion rate is minor.
+Thus the (indirect) effect of the jet on accretion onto star particle (from turbulent driving, expulsion of accreting gas, etc) is $\approx 25 \%$, showing that the dynamical effect of jets on the mass accretion rate is minor.
 Comparing the left to right hand columns in Figure \ref{fig:jet_jet_panel}, this is not too surprising, since the differences are rather subtle; Figure \ref{fig:jet_jet_close_up} shows a zoom-in on a proto-star with a jet-inflated bubble, which shows that, while the jet moves gas on scales of order a parsec, accretion continues along directions perpendicular to the jet axis.
 
 In the next subsections we check the other predictions of MC15, $\rho(r,t) \rightarrow \rho(r)$ is an attractor solution, $u_r = \sqrt{GM_* /r}$ is set by the protostar at $r<r_*$, where $r_*$ is the sphere of influence of the star particle (MC15), and the ``raw'' mass accretion rate --- without the $f_{\rm jet}$ correction ---  is the same in the cases with and without a jet.
@@ -534,14 +534,14 @@ This is due to the fact that the timescale that we are looking at is smaller tha
 However, the jet case shows substantial deviation.
 At $t-t_* = 0.48$ Myrs for the jet case (thin black dashed line), we note that the power spectrum is remarkably similar to $P_k \propto k^{-2}$ even beyond the cutoff.
 In this case, this is not due to Burgers turbulence, but rather to the presence of delta-functions (at the resolution of $256^3$) in velocity in the simulation volume.
-This is undoubtably due to the narrow (on the scale of $256^3$) protostellar jets. We caution the reader against the implication that this small scale velocity structure translates to turbulence in the star forming clumps. Figure \ref{fig:jet_power_spectrum} implies that the velocity structure is small scale, but does not imply that this structure is associated with the star forming regions.  In particular, jets might induce turbulence at their working surfaces which would be at a significant distance from their launching sites.
+This is undoubtedly due to the narrow (on the scale of $256^3$) protostellar jets. We caution the reader against the implication that this small scale velocity structure translates to turbulence in the star forming clumps. Figure \ref{fig:jet_power_spectrum} implies that the velocity structure is small scale, but does not imply that this structure is associated with the star forming regions.  In particular, jets might induce turbulence at their working surfaces which would be at a significant distance from their launching sites.
 
 At $t-t_* = 1$ Myrs, the jet case (thin black dotted line) show even greater deviation.  Here the velocity power spectrum is larger than it was initially.  On the larger scales, it has increase by a factor of approximately 3 and again remains remarkable flat for the same reasons discussed above.  However, at $kL\sim 8$, we note a bump in the power spectrum, which contains the bulk of the energy.  The scale of this bump is at $\sim L/8 = 2$ pc and so shows that the effect of jets is mainly on the few parsec scales in our simulation.  Moreover, the decline toward larger scales from this scale may be an indication of an inverse cascade.
 %
 \begin{figure}[htb] % Figure 12 % power spectrum of the 16k^3 sim
   \plotone{Jet/hi_power_spec_151.pdf}
   %\includegraphics[width=\columnwidth]{vrms.pdf}
-  \caption[Jet - Velocity Power Spectrum]{Compensated velocity power spectrum, $k^2P_k(v)$ as a function of wave vector, $k$ at $t-t_* = -0.03$ (solid lines), $0.48$ (dashed lines), and $1$ Myrs (dotted lines) for the jet (thin lines) and no-jet (thick lines) cases.  To perform the fast-Fourier transform, we map the simulation volume to a $256^3$ grid.  The $t-t_* = -0.03$ Myrs lines for the jet and no-jet case is the same as the spectrum is derived from stirred turbulence.  The no-jet power spectrum does not substantially differ in time as stars form, but the jet case does. In particular the flatness of the power spectrum at large $k$ at $t-t_*=0.48$ and $1$ Myr is due to the presence of velocity delta-functions (at the resolution of $256^3$) in the simulation volume.  Additionally, the jet drives an uptick in power at $kL\sim 8$, a spatial scale of 2 pc, at $t-t_*=1$ Myr.
+  \caption[Jet - Velocity Power Spectrum]{Compensated velocity power spectrum, $k^2P_k(v)$ as a function of wave vector, $k$ at $t-t_* = -0.03$ (solid lines), $0.48$ (dashed lines), and $1$ Myrs (dotted lines) for the jet (thin lines) and no-jet (thick lines) cases.  To perform the fast-Fourier transform, we map the simulation volume to a $256^3$ grid.  The $t-t_* = -0.03$ Myrs lines for the jet and no-jet case is the same as the spectrum is derived from stirred turbulence.  The no-jet power spectrum does not substantially differ in time as stars form, but the jet case does. In particular the flatness of the power spectrum at large $k$ at $t-t_*=0.48$ and $1$ Myr is due to the presence of velocity delta-functions (at the resolution of $256^3$) in the simulation volume.  Additionally, the jet drives an up-tick in power at $kL\sim 8$, a spatial scale of 2 pc, at $t-t_*=1$ Myr.
 }
     \label{fig:jet_power_spectrum}
 \end{figure}
@@ -552,7 +552,7 @@ At $t-t_* = 1$ Myrs, the jet case (thin black dotted line) show even greater dev
 
 %\subsection{Protostellar Jets do not strongly affect the dynamics of gas accretion.}
 
-Given our initial set up of a box with sides $16$ pc in length, with a mach number of $\approx 9$ and a virial parameter of order unity, we could expect to form moderate sized star clusters. However, this does not preclude isolated star formation.
+Given our initial set up of a box with sides $16$ pc in length, with a Mach number of $\approx 9$ and a virial parameter of order unity, we could expect to form moderate sized star clusters. However, this does not preclude isolated star formation.
 What we see is $\approx 180 M_\odot $ in stars, in a filament/clump $\approx 4$ pc in length and a clump gas mass of $\approx 3500 M_\odot $. The overdense regions that we see correspond to molecular clumps with a few thousand solar masses formed inside of our parent molecular cloud.
 
 We have shown that protostellar jets do not strongly affect the dynamics of accreting gas.
@@ -576,7 +576,7 @@ This ensures that the jet driven turbulence from an individual star decays more 
   \caption[Jet - Star Formation Efficiency over time]{Left plot: the SFE, $M_*/M_{\rm tot}$, as a function of time (measure in free-fall times) for the jet (solid line) and no-jet (dashed line) cases from \citet{2014ApJ...790..128F} Figure 9 (N.B. HD simulation). 
 Right plot: the SFE as a function of time (measure in Myrs) for the jet (solid line) and no-jet (dashed line) cases from \citet{2015MNRAS.450.4035F} Figure 2 (N.B. MHD simulation). 
 In both plots we have rescaled the no-jet case by $f=(1-f_{\rm jet})^2$, which is set to $f_{\rm jet} = 0.3$. 
-In the left plot the rescaled no-jet case follows the jet case fairly well up to about an SFE of about 0.4. The rescaled no-jet case at this point rescales the no-jet case for $M_*/M_{\rm tot}\approx 0.8$, where the accretion onto star particles is starved due to depletion of gas. 
+In the left plot the rescaled no-jet case follows the jet case fairly well up to about an SFE of about 0.4. The rescaled no-jet case at this point re-scales the no-jet case for $M_*/M_{\rm tot}\approx 0.8$, where the accretion onto star particles is starved due to depletion of gas. 
 In the right plot, the rescaled no-jet case does a rather poor job of following the jet case. This may be because \citet{2015MNRAS.450.4035F} does a MHD calculation rather than a HD calculation as in \citet{2014ApJ...790..128F}.
     }
     \label{fig:jet_fed_comp}
@@ -631,7 +631,7 @@ It does appear that magnetic field may enhance the effects of jet feedback.  The
 
 \section{Conclusions}\label{sec:jet_conclusions}
 We performed simulations of turbulent, self-gravitating gas including star particle formation and protostellar jets. %gravitationally collapsing regions both with and without protostellar jets.
-Starteing with uniform density in a box with length $16$ parsecs on a side, we drove turbulence until we reached a statistically steady state.
+Starting with uniform density in a box with length $16$ parsecs on a side, we drove turbulence until we reached a statistically steady state.
 At that point, the density was no longer uniform.
 We then turned on gravity and star formation.
 We used AMR to follow collapsing regions down to an effective resolution of $32 \, K^3$ which gave us a $\Delta x$ of $100 {\rm AU}$ at the finest level of refinement.
@@ -830,7 +830,7 @@ the green circles connected by a solid green line show $v_{\rm T}$ while the bla
 Finally, the sound speed is denoted by the black horizontal line.
 
 All three snapshots are of the same particle, of roughly $5.2 {\rm M_\odot}$, at the same time, from the same simulation.
-In the top panel we calculate the various velocities averaged over spherical shells, i.e.,  we do not remove the jet bi-cone, in the centre panel we remove the jet bi-cone, and in the bottom panel we remove a bi-cone with twice the jet opening angle.
+In the top panel we calculate the various velocities averaged over spherical shells, i.e.,  we do not remove the jet bi-cone, in the center panel we remove the jet bi-cone, and in the bottom panel we remove a bi-cone with twice the jet opening angle.
 
 The most dramatic change is in the turbulent velocity.
 When we average over full spherical shells (top panel), the turbulent velocity remains roughly constant at all radii, with a slight increase at $r>1$ pc.

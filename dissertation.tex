@@ -63,18 +63,47 @@
 \newcommand{\lp}{\left(}
 \newcommand{\rp}{\right)}
 
+\newcommand{\oft}{\lp t \rp}
+\newcommand{\ofr}{\lp \vec{r} \rp}
+\newcommand{\ofrt}{\lp \vec{r},t \rp}
+
+\newcommand{\ofreqn}{\lp {\mathbf r} \rp}
+\newcommand{\ofrteqn}{\lp {\mathbf r},t \rp}
+
+\newcommand{\rhoatt}{\rho(\vec{r},t) \rightarrow \rho(\vec{r})}
+
+\newcommand{\rd}{\vec{r}_d}
+\newcommand{\rdeqn}{{\mathbf r}_d}
+\newcommand{\rs}{\vec{r}_*}
+\newcommand{\rseqn}{{\mathbf r}_*}
+\newcommand{\rrs}{ \vec{r} < \rs}
+\newcommand{\rrseqn}{{\mathbf r} < \rseqn}
+\newcommand{\rdr}{ \rd < \vec{r}}
+\newcommand{\rdrrs}{ \rd < \vec{r} < \rs}
+
 % Common Velocities I use
-\newcommand{\ur}{\mathbf{u_r}}
-\newcommand{\vt}{\mathbf{v_T}}
-\newcommand{\vkep}{\mathbf{v_{\rm K}}}
-\newcommand{\vphi}{\mathbf{v_\phi}}
-\newcommand{\vff}{\mathbf{v_{\rm ff}}}
-\newcommand{\vrms}{\mathbf{v_{\rm rms}}}
+\newcommand{\ur}{\vec{u}_{\rm r}}
+\newcommand{\urb}{|\vec{u}_{ \rm r}|}
+\newcommand{\vt}{\vec{v}_{\rm T}}
+\newcommand{\vkep}{\vec{v}_{\rm K}}
+\newcommand{\vphi}{\vec{v}_\phi}
+\newcommand{\vff}{\vec{v}_{\rm ff}}
+\newcommand{\vrms}{\vec{v}_{\rm rms}}
 \newcommand{\cs}{c_{\rm s}}
 
+%In equations, maintaining convention
+\newcommand{\ureqn}{\mathbf{u}_{\rm r}}
+\newcommand{\vteqn}{\mathbf{v}_{\rm T}}
+\newcommand{\vkepeqn}{\mathbf{v}_{\rm K}}
+\newcommand{\vphieqn}{\mathbf{v}_\phi}
+\newcommand{\vffeqn}{\mathbf{v}_{\rm ff}}
+\newcommand{\vrmseqn}{\mathbf{v}_{\rm rms}}
+
+% Common times
 \newcommand{\etaeff}{\eta_{\rm ff}}
 \newcommand{\tff}{\tau_{\rm ff}}
 \newcommand{\tdyn}{\tau_{\rm dyn}}
+\newcommand{\tts}{\lp t \, - \, t_* \rp}
 
 %--------------------- Units ----------------------------%
 % Solar
@@ -114,7 +143,7 @@
 
 %------------------------ Figure Commands -------------------------------%
 \newcommand\plotonesmall[1]{\begin{center} \includegraphics[width=0.5\textwidth]{#1} \end{center}}
-\newcommand\plotonebig[1]{\begin{center} \includegraphics[width=0.8\textwidth]{#1} \end{center}}
+\newcommand\plotonebig[1]{\begin{center} \includegraphics[width=0.9\textwidth]{#1} \end{center}}
 \newcommand\plotone[1]{\begin{center} \includegraphics[width=0.6\textwidth]{#1} \end{center}}
 \newcommand\plottwo[2]{\begin{center} \includegraphics[width=0.5\textwidth]{#1}\includegraphics[width=0.5\textwidth]{#2} \end{center}}
 \newcommand\plotthree[3]{\begin{center} \includegraphics[width=0.3\textwidth]{#1}\includegraphics[width=0.3\textwidth]{#2}\includegraphics[width=0.3\textwidth]{#3} \end{center}}
@@ -191,8 +220,8 @@ I discuss the dynamics of collapsing regions, the effect of protostellar jets, a
 I perform high-resolution adaptive mesh refinement simulations of star formation in self-gravitating turbulently driven gas. 
 I have run simulations including hydrodynamics (HD), and HD with protostellar jet feedback.
 Accretion begins when the turbulent fluctuations on largescales, near the driving scale, produce a converging flow.
-I find that the character of the collapse changes at two radii, the disk radius $r_d$, and the radius $r_*$ where the enclosed gas mass exceeds the stellar mass. 
-This is the first numerical work to show that the density evolves to a fixed attractor, $\rho(r,t ) \rightarrow \rho(r)$, for $r_d<r<r_*$; mass flows through this structure onto a sporadically gravitationally unstable disk, and from thence onto the star. 
+I find that the character of the collapse changes at two radii, the disk radius $\rd$, and the radius $\rs$ where the enclosed gas mass exceeds the stellar mass. 
+This is the first numerical work to show that the density evolves to a fixed attractor, $\rhoatt$, for $\rdrrs$; mass flows through this structure onto a sporadically gravitationally unstable disk, and from thence onto the star. 
 The total stellar mass $M_*(t)\sim (t-t_*)^2$, where $(t-t_*)^2$ is the time elapsed since the formation of the first star. 
 This is in agreement with previous numerical and analytic work that suggests a linear rate of star formation.
 I show that protostellar jets change the normalization of the stellar mass accretion rate, 
@@ -234,15 +263,19 @@ Finally, I show that the small scale structure --- the radial density, velocity,
 
 \item In astronomy Hydrogen that has been ionized is refered to as $\HII$, where ``H'' is hydrogen and ``II'' is the roman numeral for 2. 
 
+\item Bold font indicates a vector or a matrix, such as $\mathbf{I}$, $\mathbf{S}$ and $\mathbf{x}$.
+
+\item vector notation is also used, where an arrow also indicates a vector, such as $\vec{x}$, $\vec{v}$, $\vec{a}$
+
+\item 'over-dot' notation (Newtons notation) is used, such as $\dot{M} = \frac{dM}{dt}$
+
 \item I use $\ur$ to indicate radial (infall) velocity.
 
 \item I use $\vt$ to indicate the random motions velocity.
 
 \item I use $\vphi$ to indicate the rotational velocity.
 
-\item I use $\vkep$ to indicate the $\sqrt{GM/r}$ velocity.
-
-\item Bold font indicates a vector or a matrix, such as $\mathbf{J}$, $\mathbf{S}$ and $\mathbf{x}$.
+\item I use $\vkep$ to indicate the $\sqrt{GM/\vec{r}}$ velocity.
 
 \end{itemize}
 
@@ -266,7 +299,7 @@ Finally, I show that the small scale structure --- the radial density, velocity,
 
 \dblspace
 
-The inquisitiveness of many good friends and the wisdom of family and colleagues have planted me where I am.
+The inquisitiveness of many good friends and the wisdom of family and colleagues have planted me here.
 I would not be where I am today without the constant love and support of my family. 
 I would like to thank my nephew Aiden, and Phil's sons Liam and Gregory, for teaching me to approach everything with an open mind, and to question constantly.
 I have a new appreciation of sprinklers and ``Mighty Machines'', due to their curiosity.
@@ -327,7 +360,7 @@ I am grateful for the opportunity to complete my dissertation as a member of the
 %----------------------- CV --------------------------------%
 
 \newpage
-\section{CURRICULUM VITAE}
+\section{Curriculum Vitae}
 \sglspc
 \begin{center}
 {\bf \Large{CURRICULUM VITAE}}\\
@@ -350,8 +383,6 @@ Place of birth: Santa Monica, CA
 {\it 8/2012--5/2018} & {\bf Doctor of Philosophy in Physics} \\
  			        & University of Wisconsin -- Milwaukee, Milwaukee WI \\
 			        & Advisor: Dr. Philip Chang \\
-			        & Awards: Research Excellence Award, Chancellor's Graduate Student Award, \\
-			        & Physics Graduate Student Award \\
 			        & GPA: 3.07/4.00 \\
 {\it 9/2008--6/2012} & {\bf Bachelor of Science in Physics} \\
  			        & University of California Santa Barbara, Santa Barbara, CA \\
@@ -367,24 +398,20 @@ Place of birth: Santa Monica, CA
 {\it 8/2012--present} & {\bf Graduate Research Assistant} \\
 				& University of Wisconsin - Milwaukee, Milwaukee WI \\
 				& Advisor: Dr. Philip Chang \\
+
+{\it 6/2011 -- 8/2011} & {\bf Summer Undergraduate Research Assistant} \\ 
+                              & Smithsonian Astrophysical Observatory, Cambridge MA \\
+                              & Advisor: Dr. Matthew Holman \\
+{\it 6/2010 -- 1/2011} & {\bf Undergraduate Research Assistant} \\
+                              & Las Cumbres Observatory, Santa Barbara CA \\
+                              & Advisor: Dr. Andy Howell \\
+{\it 12/2009 -- 3/2010} & {\bf Undergraduate Research Assistant} \\  
+                              & University of California, Santa Barbara, Santa Barbara CA \\
+                              & Advisor: Dr. Phil Lubin \\
+
 \end{tabular}	        
 
 
-Employment  June 2011 - August 2011 
-History:Smithsonian Astrophysical Observatory  
- Pan-STARRS collaboration under Matthew Holman
-Wrote part of the data reduction pipeline, including the databasing
-
-June 2010 – January 2011
- Las Cumbres Observatory
-Research Intern under Andy Howell
-Wrote and refined a program to automate the reduction of SNe data
-Work resulted in two papers, published in Nature and The Astrophysical Journal.
-
-December 2009- March 2010 
- Dr. Phil Lubin’s lab at UCSB
-Research Assistant
-Designed inflatable mirrors for near-infrared applications
 
 \newpage
 			        				
@@ -409,13 +436,16 @@ Designed inflatable mirrors for near-infrared applications
 %
 \begin{tabular}{ll}
 %{\it 2013, 2014} & Distinguished Dissertation Fellowship Nominee (UWM)\\
+{\it 20??} Research Excellence Award (UWM) \\
+{\it 20??} Chancellor's Graduate Student Award (UWM \\
+{\it 20??} Physics Graduate Student Award (UWM)\\
 {\it 2018} & Department of Physics Papastamatiou Scholarship (UWM)\\
 %
 \end{tabular}
 
-\bigskip
-\noindent{\bf INVITED TALKS}
-\medskip
+%\bigskip
+%\noindent{\bf INVITED TALKS}
+%\medskip
 
 %\begin{tabular}{ll}
 %{\it 5/2017} & {\bf Midwest Magnetic Fields Workshop} \\

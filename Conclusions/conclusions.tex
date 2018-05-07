@@ -27,7 +27,7 @@ The research which makes up the body of work in this dissertation was motivated,
 by the discrepancies between observations and the analytic models. 
 Numerical simulations, as well, failed to account for the most recent insights into how stars form. 
 
-\section{Isolating the effect of random thermal motions}
+\section{Isolating the Effect of Random Thermal Motions}
 My initial simulations did not include the additional physics of magnetic fields, winds, jets or supernovae. 
 This was an effort to understand how the system behaves in its simplest form.
 %Motivated by disagreement between current analytic models, numerical simulations, and observations, we perform deep AMR simulations 
@@ -51,62 +51,49 @@ We find these departures from Larson's law only in collapsing regions in our sim
 %We find these departures from Larson's law only in
 %collapsing regions in our simulations. 
 
-I show that two length scales emerge from the process of star formation, $r_*$ and $r_d$, and demonstrate that these length scales are clearly associated with physical effects. 
+Two length scales emerge from the process of star formation, $\rs$ and $\rd$. 
+We demonstrate that these length scales are clearly associated with physical effects. 
 As mentioned in section \ref{sec:sf_review} analytic theories assumed that the solution shows a self-similarity, and thus would present a power law solution.
-In fact, there are two power laws, which which change at $r_*(t)$. 
-One power law inside of $r_*$ (but outside $r_d$) $|\ur|$ and  $\vt$ are both
-$\propto r^{-1/2}$; and outside of $r_*$, $\vt \sim r^{p}$ (with $p\approx0.2$), while $|\ur|$ is on average about constant. 
-It is worth emphasizing, that $r_*(t)$, the length scale at which the character of the solution changes, is time dependent. 
+In fact, there are two power laws, which which change at $\rs\oft$. 
+One power law inside of $\rs$ (but outside $\rd$) $\urb$ and  $\vt$ are both
+$\propto \mathbf{r}^{-1/2}$; and outside of $\rs$, $\vt \sim \mathbf{r}^{p}$ (with $p\approx0.2$), while $\urb$ is on average about constant. 
+It is worth emphasizing, that $\rs \oft$, the length scale at which the character of the solution changes, is time dependent. 
 As the star grows in mass, the radius where the stars' gravity exceeds the gravity of the surrounding gas increases outwards away from the star, 
-$r_*(t) \propto M_*^{2/3}(t)$.
-The disk radius, $r_d$, also changes as a function of time as a result of the advection and 
+$\rs\oft \propto M_*^{2/3}\oft$.
+The disk radius, $\rd$, also changes as a function of time as a result of the advection and 
 transport of angular momentum from large scales to small scales (and vice versa).
 
-I found that the density profile evolves to a fixed attractor, $\rho(r,t ) \rightarrow \rho(r)$. 
+I found that the density profile evolves to a time-independent attractor solution, $\rhoatt$. 
+The implication is that one cannot infer the age or lifetime of these structures via the free-fall or crossing time.
 
-I also show that the acceleration due to the pressure gradient is comparable to that due to gravity at all $r>r_d$. 
+I also show that the acceleration due to the pressure gradient is comparable to that due to gravity at all $\vec{r} > \rd$. 
 As a result, the infall velocity is substantially smaller than the free fall velocity
 even very close to the star or accretion disk. 
-Inside $r_d$, rotational support takes over and as a result $\ur$ and $\vt$ both decrease.  
+Inside $\rd$, rotational support takes over and as a result $\urb$ and $\vt$ both decrease.  
 
-I found the development of rotationally supported disks at $r_d \sim 0.01$ pc.  
+I found the development of rotationally supported disks at $\rd \sim 0.01$ pc.  
 These disks have radii comparable to or slightly larger than disks seen around 
-young stars in Taurus ($\sim 500 - 900\AU$) \citep{1999AJ....117.1490P} in which stellar feedback effects are minimal,
+young stars in Taurus ($\sim 500 - 900 \AU$) \citep{1999AJ....117.1490P} in which stellar feedback effects are minimal,
 and where the undisturbed disks are larger than in more active star forming regions such as Orion, 
-where the disk radii are $\sim 100\AU$ \citep{2011ARA&A..49...67W}.  
-This is despite the fact that I do not include magnetohydrodynamic effects 
-in my numerical computations; large scale magnetic fields may transfer angular 
+where the disk radii are $\sim 100\AU$ \citep{2011ARA&A..49...67W}. 
+As mention previously, large scale magnetic fields may transfer angular 
 momentum away from these disks, shrinking them.  
 
-Like the disks modeled by Kratter et al. (2010), my simulated disks 
-appear to be marginally gravitationally stable. If my disks are 
-gravitationally unstable, at least part of the time, it would suggest 
+My simulated disks appear to be marginally gravitationally stable, similar to \citet{2010ApJ...708.1585K}. 
+If my disks are gravitationally unstable, at least part of the time, it would suggest 
 that large scale gravitational torques could be responsible for 
-transport of material and angular momentum in our simulations; this may 
-also be true at early times in real protostellar disks. However, while I 
-resolve the radial component of the accretion disk (by ~10 cells), I do 
-not resolve the scale height of my disks. This lack of resolution calls 
+transport of material and angular momentum in our simulations.
+However, while I resolve the radial component of the accretion disk, I do not resolve the scale height of my disks. 
+This lack of resolution calls 
 into question the ability of my simulations to properly describe the 
-angular momentum transport of (potentially) self-gravitating disks.
-
- From your published paper, you have a 16pc box with a resolution of 
-
-
-32768, so 0.00048 pc. Your disks extend to about 0.01pc from when the 
-rotational velocity is about half the escape velocity (roughly equal to 
-the Keplerian velocity).
-
-Like the disks modeled by \citet{2010ApJ...708.1585K},
-my simulated disks appear to be marginally gravitationally stable. 
-If my disks are 
-gravitationally unstable, at least part of the time, it would suggest 
-that large scale gravitational torques could be responsible for 
-transport of material and angular momentum in our simulations; this may 
-also be true at early times in real protostellar disks. 
-However, while I resolve the radial component of the accretion disk (by $\sim10$ cells), 
-I do not resolve the scale height of my disks. 
-This lack of resolution calls into question the ability of my simulations to properly describe the 
-angular momentum transport of (potentially) self-gravitating disks.
+angular momentum transport of (potentially) self-gravitating disks. 
+As mentioned previously, the simulation box length is 16 pc with an effective resolution of $32768^3$. 
+That resolution and length scale correspond to a cell length of $\sim 5 \times 10^{-4} \pc = 50 \, {\rm AU}$. 
+Radially the simulated disks extend up to $0.01 \pc$, allowing roughly twenty cells to resolve the radial portion of the disk. 
+However, this does not indicate sufficient resolution of the scale height of the disk; which have been seen to have thicknesses of 
+$\sim 50 to 350 \, {\rm AU}$ in Taurus \citep{1999AJ....117.1490P}, corresponding to $1 \sim $ few cells. 
+This is not enough to consider the scale height of the disk resolved. 
+%A single cell to measure the thickness of the protostellar disk is not a high enough resolution to concretely determine any physics.
 
 I have shown that the assumptions made by previous analytic collapse models
 \citep{1977ApJ...214..488S,1992ApJ...396..631M,1997ApJ...476..750M,2003ApJ...585..850M}, 
@@ -116,53 +103,36 @@ do they show any evidence of inside-out collapse.
 The gathering of material before collapse, i.e.,
 before the central cusp in the density power law is formed, involves transonic bulk motions 
 and supersonic random motions (see Figure \ref{fig:hydro_velocity_avg}). 
-The accretion of mass starts at large scales ($r\sim 1\pc$) with large initial infall velocities. 
+The accretion of mass starts at large scales ($\vec{r} \sim 1\pc$) with large initial infall velocities. 
 In addition, we find that $\vt$ 
 scales differently in collapsing regions as opposed to the rest of the simulation box, 
 whereas the turbulent collapse models \citep{1997ApJ...476..750M,2003ApJ...585..850M} assume 
-that the scaling of $\vt$ with $r$ remains fixed.  
+that the scaling of $\vt$ with $\vec{r}$ remains fixed.  
 
-%Finally, we close with a brief discussion of how our results relate to turbulence regulated theories of star formation. Here we find several points of disagreement. 
-%First, we find that the star 
-%particles accrete continuously from the surrounding large scale turbulent flow; there is 
-%no hydrostatic ``core'' that is cut-off from the turbulent medium. Second, 
-%the density distribution does not remain log-normal, but rather develops a power law tail that 
-%is directly related to the density profile \citep{2011ApJ...727L..20K,2015ApJ...800...49L}.  
-%Third, the fact that the density profile approaches an attractor solution that scales like 
-%$r^{-3/2}$ for $r<r_*$ and $u_r$ scales with the Keplerian velocity guarantees that $\dot{M}$ is 
-%constant with radius and $\dot{M}_*\propto t$ and hence a non-linear star formation efficiency, 
-%i.e., $M_* \propto t^2$ results. This is in contrast with turbulence regulated theories of star 
-%formation that predict a constant star formation rate, i.e., $\dot{M}_* = {\rm const}$ and, 
-%hence, a linear star formation efficiency $M_* \propto t$. 
 
-\section{The effect of protostellar Jets}
-%We performed simulations of turbulent, self-gravitating gas including star particle formation and protostellar jets. 
-%Starteing with uniform density in a box with length $16$ parsecs on a side, we drove turbulence until we reached a statistically steady state.
-%At that point, the density was no longer uniform.
-%We then turned on gravity and star formation.
-%We used AMR to follow collapsing regions down to an effective resolution of $32 \, K^3$ which gave us a $\Delta x$ of $100 {\rm AU}$ at the finest level of refinement.
-%The spherical average profile of gas around the protostar does not appear to change in the case with jets.
+\section{The Effect of Protostellar Jets}
 
-We observed that the inclusion of protostellar jets does not affect the general dynamics of accreting gas.
-In particular, we saw $M_*(t) \propto f^2 (t-t_*)^2$ where $f = 1 - f_{\rm jet}$ is the fraction of mass accreted onto the protostar and $f_{\rm jet}$ is the fraction ejected by the jet.
+We observed that protostellar jets do not affect the general dynamics of accreting gas.
+In particular, $M_*(t) \propto f^2 (t-t_*)^2$ where $f = 1 - f_{\rm jet}$ is the fraction of mass accreted onto the protostar and $f_{\rm jet}$ is the fraction ejected by the jet.
 We find that this mass ejection accounts for 75\% of the effect of jets on the star formation rate in our simulations.
-This appears to be the case in similar simulations performed by other groups (e.g. see Figure \ref{fig:jet_fed_comp}), but we find suggestions that this may be altered if MHD is included.
+%This appears to be the case in similar simulations performed by other groups (e.g. see Figure \ref{fig:jet_fed_comp}), but we find suggestions that this may be altered if MHD is included.
 
-As found previously, in the case without jets \citep{2017MNRAS.465.1316M}, 
-the spherical average profile of gas around the protostar follows the analytic model of MC15 and does not appear to change in the case with jets.
+%As found previously, in the case without jets \citep{2017MNRAS.465.1316M}, 
+The spherical average profile of gas around the protostar follows the analytic model of MC15 and does not appear to change in the case with jets.
 %As we have found previously in the case without jets \citep{2017MNRAS.465.1316M}, the spherical average profile of gas around the protostar follows the analytic model of MC15 and does not seem to change in the case with jets.  
-In particular, the run of density finds an attractor solution prior to star formation and remains on that solution even after jets begin to blow out cavities in the surrounding medium.
+The run of density finds an attractor solution prior to star formation and remains on that solution even after jets begin to blow out cavities in the surrounding medium.
 The behavior of the infall and rotational velocities is similar regardless of whether jets are included or not.
 The profile of the random velocities is also similar, once the jet bi-cone is removed.  Finally, the mass accretion rates are similar in the jet and no-jet cases.
 
-Of particular note is that the collapse is outside-in  \citep{2017MNRAS.465.1316M}, and holds for both the jet and no jet simulations.
-The average jet momentum per stellar mass does increase over time, though this is to be expected as the stars continue to accrete mass.
+It is worth noting again that the collapse is {\em outside-in}. 
+This result holds for simulations that both include and ignore protostellar jet feedback. % both the jet and no jet simulations.
+The average jet momentum per stellar mass does increase over time, though this is to be expected as the stars continue to accrete mass. 
 Our runs were not long enough for the stars to completely consume the surrounding gas and thus, for the jets to begin to be shut off.
 We find that jets do drive turbulence in the surrounding gas, but is confined to small scales of roughly a parsec.
 
 \section{Future Work}
-While the results presented in this dissertation move the story of star formation a little further along, 
-there is still much we do not understand and further work is needed. 
+As the King in Dune rather eloquently stated, our story doesn't truly end here. %As the King in Dune so eloquently states, ``there is no real ending. It's just the place where you stop the story.''
+The results presented in this dissertation advance the story of star formation, but there is still much we do not understand and further work is required. 
 
 For instance, this theory and the results of this dissertation, has not yet looked at the effects of magnetic fields. 
 There are several papers \citep{2009ApJ...704..891L,2015ApJ...808...48B,2017ApJ...838...40M} , which suggest that magnetic fields have an effect on the rate of star formation. 
@@ -174,34 +144,29 @@ We direct the reader to section \ref{subsec:missing_physics} for our argument ab
 The upshot was that we expect that the effects of radiation pressure are not particularly significant in the situations we report; 
 the run of density and infall velocity, and hence the $M_*(t)\sim t^2$ scaling should not be affected, at least up to the times we are reporting on. 
 This estimate neglects the effect of radiative or ionization heating which is an important feedback mechanism. 
-In addition, this our argument in \ref{subsec:missing_physics} indicates that radiation dynamics must have a significant effect when $M_* \ge 4 \Msun$. 
+In addition, our argument in \ref{subsec:missing_physics} indicates that radiation dynamics must have a significant effect when $M_* \ge 4 \Msun$. 
 
 %as the mass of stars grows the effects of radiation from these massive stars will have a strong impact on the surrounding medium. 
 
 Radiative feedback will also affect both the IMF and, for massive enough stars, the dynamics of the collapse at late times (after massive stars have formed). 
 
-%To estimate the effects of radiation, we compare the force from the Reynold stress $F_T=4\pi r^2 \rho \vt^2$, to the radiation force $L/c$. 
-%From Figure \ref{fig:hydro_velocity_avg}, the (averaged over many stars) $\vt$ is slightly in excess of $1\kms$ at $r=0.01\pc$, 
-%while from any of the density figures the density is $\rho\approx5\times10^{-18} {\rm g/cm}^3$. 
-%The force from Reynold stress is then $F\approx4\times 10^{26}$ dynes. 
-%The luminosity of a 4 solar mass star on the zero age main sequence is $L\approx 2\times10^{36}\ergs$ \citep{1992A&AS...96..269S}, 
-%so the radiation force $L/c \approx 3\times10^{25}\,{\rm dynes}$, about a 10\% effect. 
-%The force from Reynolds stress increases outward, see Figure \ref{fig:hydro_dPdr_avg}, so this statement holds at larger radii as well. 
-%
-%Thus we expect that the effects of radiation pressure are not particularly significant in the situations we report; 
-%the run of density and infall velocity, and hence the $M_*(t)\sim t^2$ scaling should not be affected, at least up to the times we are reporting on. 
-%We note, however, that this estimate neglects the effect of radiative or ionization heating which is an important feedback mechanism.
-
 Simulations including radiative feedback support this simple analysis. 
 Figure 15 of  \citet{2014MNRAS.439.3420M} shows that in their simulations, 
 which include feedback from both protostellar outflows and radiation (as well as magnetic fields), 
-the stellar mass increases as the square of the time, up to masses of ~4.5 solar masses. 
+the stellar mass increases as the square of the time, up to masses of $\sim 4.5 \Msun$. 
 Earlier work by the Berkeley group found similar results, forming stars with 10 solar masses, 
-with $M_*(t)~ t^2$ even for such massive stars, see Figure 13 of \citet{2012ApJ...754...71K}. 
-Their simulations included radiative effects, but no proto-stellar winds. 
+with $M_*(t) \sim t^2$ even for such massive stars, see Figure 13 of \citet{2012ApJ...754...71K}. 
+Their simulations included radiative effects, but no protostellar winds. 
 
-Among the myriad of contributions that can be made, looking at the chemistry of these regions, 
-creating predictions about the species, the type and amount of emission and absorption of radiation that may be seen. 
-The generation of synthetic observations from these simulations would allow more accurate testing by the latest generation of telescopes.
+Among the myriad of contributions that can be made, in particular, looking at the chemistry of these regions, holds many avenues of intrigue. 
+Creating predictions about the species, the type and amount of emission and absorption of radiation that may be seen would provide
+specific tracers/profiles that may be observed.  
+This knowledge, and the generation of synthetic observations from these simulations would allow more accurate searches and testing by the latest generation of telescopes. 
+
+The knowledge and wisdom of those who came before has allowed us to partially unravel the mysterious tapestry that is our Universe.
+Our inquisitiveness and thirst for truth will drive us to question and pull harder on that thread. 
+To answer the question of what halts star formation, a saying I learned as a child comes to mind: “The motto of all the mongoose family is, ``Run and find out,'' and Rikki-tikki was a true mongoose.” \citep{Rikki_Tikki_Tavi}.
+
+%― Rudyard Kipling, Rikki-Tikki-Tavi
 
 \end{document}

@@ -20,28 +20,16 @@
 
 \dblspace
 
-%% Abstract of the paper
-%Original Abstract
-%We present results of hydrodynamic simulations of massive star forming regions with and without protostellar jets.
-%We show that jets change the normalization of the stellar mass accretion rate, but do not strongly affect the dynamics of star formation.
-%In particular, $M_*(t) \propto f^2 (t-t_*)^2$ where $f = 1 - f_{\rm jet}$ is the fraction of mass accreted onto the protostar, $f_{\rm jet}$ is the fraction ejected by the jet, and $(t-t_*)^2$ is the time elapsed since the formation of the first star.
-%The star formation efficiency is nonlinear in time.
-%We find that jets have only a small effect (of order 25\%) on the accretion rate onto the protostellar disk (the ``raw'' accretion rate).
-%We show that the small scale structure -- the radial density, velocity, and mass accretion profiles are very similar in the jet and no-jet cases.
-%Finally, we show that the inclusion of jets does drive turbulence but only on small (parsec) scales.
-%
-%While it is not always simple, I try to understand one concept, and then proceed to see how it is modified in the face of something new. 
 In the previous chapter, we found that the turbulence was driven at small scales by the collapse, and that it  had a direct impact on the dynamics of star formation. Despite that, the star formation rate was rapidly approaching the free fall rate as the simulations proceeded; the turbulence merely delayed the inevitable.
 
 Now we have to ask the question: Does the relation $M_*(t)\sim (t-t_*)^2$ hold when one of the physical processes ignored in the hydrodynamic simulations, in particular, feedback from protostellar jets, is included? 
 
 %While the next step may logically be MHD, we looked instead to the inclusion of protostellar jets. 
 
-\section{Current state of the field}
-As a reminder to the reader, early work \citep{1977ApJ...214..488S,1992ApJ...396..631M,1997ApJ...476..750M} assumed that the pressure, which appears in the momentum equation, was given by $P = \rho c_s^2$ with $c_S = \textrm{const}$ or $P = \rho v_{\rm T}^2$ with $v_{\rm T} = v_{\rm T}(r) \propto r^{\kappa_r}$, i.e., a prescribed function of $r$, and $\kappa_r$ is typically chosen to be 1/2 to reflect Larson's law \citep{1981MNRAS.194..809L}.
+\section{Current State of the Field}
+As a reminder to the reader, early work \citep{1977ApJ...214..488S,1992ApJ...396..631M,1997ApJ...476..750M} assumed that the pressure, 
+which appears in the momentum equation, was given by $P = \rho c_s^2$ with $c_s = \textrm{const}$ or $P = \rho \vteqn^2$ with $\vteqn = \vteqn\ofr \propto \mathbf{r}^{\kappa_r}$, i.e., a prescribed function of $\mathbf r$, and $\kappa_r$ is typically chosen to be 1/2 to reflect Larson's law \citep{1981MNRAS.194..809L}.
 In contrast,  MC15 used the results of \citet{2012ApJ...750L..31R} on compressible turbulence including both decay and compression, treating the turbulent velocity as a dynamical variable.  
-%In essence, MC15 includes an extra equation for the evolution of the energy.
-%In doing so, MC15 found that the $t^2$ power law arises naturally because the small scale density and velocity are set by the gravity of the protostar, and made predictions for the velocity and mass accretion profiles that were later verified numerically by \citet{2017MNRAS.465.1316M}.
 
 In any case, the issue of the slow rate of large scale star formation remains.
 One possibility is that stellar feedback acting on large (galactic disk) scales controls the rate of star formation on those scales.
@@ -49,7 +37,7 @@ Cosmological simulations including both radiative and supernova feedback can rep
 
 However, jets may control the rate of small (parsec) or medium (GMC) scale star formation and may power the observed turbulence in molecular clouds \citep{2007ApJ...659.1394M}.
 As a result, a number of groups have recently studied the effects of protostellar jets and outflows on star formation \citep{2010ApJ...709...27W,2014MNRAS.439.3420M,2015MNRAS.450.4035F}.
-\citet{2007ApJ...662..395N} and \citet{2011ApJ...740...36N} found that the effect of protostellar outflows was important for driving turbulence.  \citet{2011ApJ...740..107C} and \citet{2012ApJ...747...22H} found that protostellar outflows enhanced the effectiveness of radiative feedback.  In addition, \citet{2015MNRAS.450.4035F} found that a combination of turbulence, jets, and magnetism is able to reproduced the observed low efficiency (to within a factor of four) of star formation in contrast to galactic scale simulations that rely on radiative and supernovae feedback.
+\citet{2007ApJ...662..395N,2011ApJ...740...36N} found that the effect of protostellar outflows was important for driving turbulence.  \citet{2011ApJ...740..107C} and \citet{2012ApJ...747...22H} found that protostellar outflows enhanced the effectiveness of radiative feedback.  In addition, \citet{2015MNRAS.450.4035F} found that a combination of turbulence, jets, and magnetism is able to reproduced the observed low efficiency (to within a factor of four) of star formation in contrast to galactic scale simulations that rely on radiative and supernovae feedback.
 
 The results of \citet{2015ApJ...800...49L}, \citet{2015ApJ...804...44M}, and \citet{2017MNRAS.465.1316M} demonstrated that the small scale dynamics are intimately linked to the star formation rate. 
 The question we address in this chapter is, do protostellar jets affect the small scale physics of accretion in a turbulent medium? 
@@ -109,12 +97,12 @@ Similarly, \citet{2014ApJ...790..128F} iterates over the deposition of jet mass 
 We use the protostellar mass and radius to set the jet velocity.
 In particular, we set
 \begin{equation}\label{eq:jet_vjet}
-v_{\rm jet} = f_{K} \sqrt{\frac{GM_*}{r_*}},
+v_{\rm jet} = f_{K} \sqrt{\frac{GM_*}{r_{\rm p*}}},
 \end{equation}
-where $f_{K}$ is the fractional percentage of the Keplerian velocity the jet reaches asymptotically, and $r_*$ is the radius of the accreting protostar.
+where $f_{K}$ is the fractional percentage of the Keplerian velocity the jet reaches asymptotically, and $r_{\rm p*}$ is the radius of the accreting protostar.
 We take $f_{K} = 1/3$, following \citet{2014MNRAS.439.3420M}.
-To set $r_*$, we use two methods.
-First, following \citet{2014ApJ...790..128F} we fix the protostellar radius at $r_* = 10\,R_{\odot}$.
+To set $r_{\rm p*}$, we use two methods.
+First, following \citet{2014ApJ...790..128F} we fix the protostellar radius at $r_{\rm p*} = 10\,R_{\odot}$.
 We use this only in the next section for our test problem.
 Second, we implement a one-zone protostellar model described by \citet[][hereafter known as O09]{2009ApJ...703..131O} and utilized in \citet{2014MNRAS.439.3420M}.
 This latter model is used in our turbulent star formation simulations below.
@@ -124,7 +112,7 @@ This latter model is used in our turbulent star formation simulations below.
 To test the physics of the jet and our numerical implementation, we consider the following test problem.
 We simulate a periodic box with a length of 0.2 pc on each side and a fixed background density $\rho_0 = 3\times 10^{-20}\,{\rm g\,cm^{-3}}$ ($n_0 = 10^4$ for H$_2$) of isothermal gas with a temperature of $\approx 17$ K, which corresponds to a sound speed of $0.265\,{\rm km\,s}^{-1}$.
 This setup is similar to the turbulent star formation simulations performed below and in \citet{2015ApJ...800...49L} and \citet{2017MNRAS.465.1316M}, but with a larger density and a smaller box.
-In the center, we place a region of higher density, i.e., a clump, with a Gaussian density distribution, $\rho(r) = \rho_m\exp(-r^2/r_0^2)$,  with maximum density of $\rho_m=3\times 10^{-16}\,{\rm g\,cm^{-3}}$ and a characteristic radius $r_0=0.017$ pc.
+In the center, we place a region of higher density, i.e., a clump, with a Gaussian density distribution, $\rho\ofr = \rho_m\exp(-\mathbf{r}^2/r_0^2)$,  with maximum density of $\rho_m=3\times 10^{-16}\,{\rm g\,cm^{-3}}$ and a characteristic radius $r_0=0.017$ pc.
 The total mass of this dense region is approximately $M = 100\,M_{\odot}$.
 %We chose the Gaussian density distribution because on defining stricter boundary, we found that the simulation was wasting computational time in resolving the boundary using AMR.
 The entire clump is set to solid body rotation about the z-axis with an angular frequency corresponding to 10\% of the breakup velocity of the clump.
@@ -137,9 +125,9 @@ This clump begins to collapse, reaching a peak density of $10^{-13}\,{\rm g\,cm}
 A jet develops and launches $f_{\rm jet} = 1/3$ of the accreted mass along that axis.
 This jet grows and extends across the entire plotted region by $t=6058$ yrs (lower left and right panels).
 
-\begin{figure}[htb] %Figure 1 % Phil's test problem, 4 panels.
-  \plotone{Jet/jet_panel.pdf}
-  \caption[Jet Test Problem]{Sequential plots of density structure perpendicular to the disk plane through the center of the sink particle. Columns from left to right show different times, from $t=0$ to $t=4820$ yrs, showing the effect of jet feedback on the test problem.}
+\begin{figure}[ptb] %Figure 1 % Phil's test problem, 4 panels.
+  \plotonebig{Jet/jet_panel.pdf}
+  \caption[Jet -- Test Problem Panel]{Sequential plots of density structure perpendicular to the disk plane through the center of the sink particle. Columns from left to right show different times, from $t=0$ to $t=4820$ yrs, showing the effect of jet feedback on the test problem.}
     \label{fig:jet_test_jet}
 \end{figure}
 
@@ -173,16 +161,16 @@ The protostar's state is set to be ``no burning,'' because its core temperature 
 We reproduce it here for convenience:
  \begin{eqnarray}
 \label{eq:jet_deltaR}
-\Delta r_* &=& 2 \frac{\Delta M_*}{M_*} \left( 1 - \frac{1 - f_k}{\alpha_g \beta} + \frac{1}{2} \frac{d\, \rm{log} \beta}{d\, \rm{log} M_*} \right) r_* - 2 \frac{\Delta t}{\alpha_g \beta} \nonumber\\
-&&\times \left( \frac{r_*}{G M_*^2} \right) \left( L_{int} + L_{ion} - L_D \right) r,
+\Delta r_{\rm p*} &=& 2 \frac{\Delta M_*}{M_*} \left( 1 - \frac{1 - f_k}{\alpha_g \beta} + \frac{1}{2} \frac{d\, \rm{log} \beta}{d\, \rm{log} M_*} \right) r_{\rm p*} - 2 \frac{\Delta t}{\alpha_g \beta} \nonumber\\
+&&\times \left( \frac{r_{\rm p*}}{G M_*^2} \right) \left( L_{int} + L_{ion} - L_D \right) r,
 \end{eqnarray}
-where $\alpha_g = 3/(5 - n)$ describes the gravitational binding energy of a polytrope, and $\beta(n, M_*, r_*)$ is the ratio of gas pressure to the total pressure for a polytrope of index $n$ and (proto)stellar mass $M_*$ and radius $r_*$ as defined above.
+where $\alpha_g = 3/(5 - n)$ describes the gravitational binding energy of a polytrope, and $\beta(n, M_*, r_{\rm p*})$ is the ratio of gas pressure to the total pressure for a polytrope of index $n$ and (proto)stellar mass $M_*$ and radius $r_{\rm p*}$ as defined above.
 $f_k$ is the fraction of kinetic energy of the infalling material that is radiated away (typically $f_k = 0.5$), $L_{\rm int}$ is the luminosity leaving the stellar interior, $L_{ion}$ is the luminosity required to dissociate and ionize all infalling material, and $L_D$ is the luminosity which is supplied by deuterium burning.
-We precompute $\beta$ as a function of $n$, $M_*$, and $r_*$ and linearly interpolate with that table for specific values. The luminosities, $L_{\rm int}$, $L_{\rm ion}$, and $L_D$ are determined from equations (B6)-(B9) of O09 respectively.
+We precompute $\beta$ as a function of $n$, $M_*$, and $r_{\rm p*}$ and linearly interpolate with that table for specific values. The luminosities, $L_{\rm int}$, $L_{\rm ion}$, and $L_D$ are determined from equations (B6)-(B9) of O09 respectively.
 \item Once the central temperature, reaches $T_c \geq 1.5\times 10^6$ K, the protostar advances to a ``core burning at fixed temperature'' state.  Following O09, we also reset $n=1.5$.  We procede to burn deuterium at a rate to maintain a fixed temperature in accordance with O09 (their equation (B8)).
 \item Once the deuterium mass in the star drops to zero, the protostar switches to ``core burning at variable core temperature''; deuterium is burned as rapidly as it is accreted (O09, their equation (B9)).
 \item At this point the star can take two paths.
-If the radius of the star falls below $r_{\rm ms}$, where $r_{\rm ms}$ is the radius of the main sequence star of the same mass (from \citet{1967CaJPh..45.3429E},) we set $r_*=r_{\rm ms}$ and the state of the star is set to ``main sequence''.
+If the radius of the star falls below $r_{\rm ms}$, where $r_{\rm ms}$ is the radius of the main sequence star of the same mass (from \citet{1967CaJPh..45.3429E},) we set $r_{\rm p*}=r_{\rm ms}$ and the state of the star is set to ``main sequence''.
 However, if $L_D > 0.33 L_{\rm ms}$, where $L_{\rm ms}$ is the main sequence luminosity, we set the protostellar state to be ``deuterium shell burning'', $n\rightarrow 3$, and the radius is expanded by a factor of 2.1 to mimic swelling due the formation of a radiative zone (O09).
 Subsequently the star then shrinks down to the main sequence.
 \end{enumerate}
@@ -191,11 +179,11 @@ Though we wait until the initial mass of our protostar is $0.01 M_\odot$, our ch
 As stated in equation (\ref{eq:jet_vjet}): $v_{\rm jet} \propto M_*^{1/2}$.
 The mass expelled by the jets is determined by: $m_{\rm jet} = f_{\rm jet} \delta M$, where  $\delta M$ is the total mass that would be accreted by the sink particle in the absence of jet feedback. 
 It can be shown that $\dot{m}_{\rm jet} \propto m^{1/2}$.
-The momentum of the jet is simply: $p_{\rm jet} = m_{\rm jet} * v_{\rm jet}$; 
-thus, the time rate of change in momentum due to the mass is: $\dot{p}_{\rm jet} \approx \dot{m}_{\rm jet} * v_{\rm jet}$.
-Writing this expression solely as a function of mass: $\dot{p}_{\rm jet} \propto m^{1/2} * m^{1/2} = m_*$. 
-Therefore the total integrated momentum: $p_{\rm jet} \approx \frac{2}{3} m^{3/2}$.
-So, if we do a comparison between the momentum of the jet from our threshold mass of $0.01$ to $0.1 M_\odot$ vs $0.1$ to $1.0 M_\odot$, we see that changing our threshold mass from $0.01 M_\odot$ to $0.1 M_\odot$ affects our result by $\approx 0.1 \%$.
+The momentum of the jet is simply: $\vec{p}_{\rm jet} = m_{\rm jet} \times \vec{v}_{\rm jet}$; 
+thus, the time rate of change in momentum due to the mass is: $\dot{\vec{p}}_{\rm jet} \approx \dot{m}_{\rm jet} \times \vec{v}_{\rm jet}$.
+Writing this expression solely as a function of mass: $\dot{p}_{\rm jet} \propto m^{1/2} \times m^{1/2} = m_*$. 
+Therefore the total integrated momentum: $\vec{p}_{\rm jet} \approx \frac{2}{3} m^{3/2}$.
+So, if we do a comparison between the momentum of the jet from our threshold mass of $0.01$ to $0.1 \Msun$ vs $0.1$ to $1.0 \Msun$, we see that changing our threshold mass from $0.01 M_\odot$ to $0.1 M_\odot$ affects our result by $\approx 0.1 \%$.
 %Another way to write this is $ \dot{m_{\rm jet}} = f_{\rm jet} \dot{m_*} $, and $\dot{m_*} \propto m^{1/2}$
 
 %\subsection{Comparison with Previous models}\label{sec:jet_previous}
@@ -264,7 +252,8 @@ is exceeded by a factor of three at the highest refinement level, the excess mas
 If the distance to the nearest sink particle is less than $2$ grid cells, then the material is accreted onto that sink particle.
 On the other hand, if the gas is contracting (local divergence of velocity is negative), a local potential minimum, and sufficiently far away from other sink particles, then the excess mass is used to produce a sink particle.
 Finally, if these additional checks are not satisfied, then the gas is left alone.
-We should note that this star formation criteria differs from our previous work in \citet{2015ApJ...800...49L} and \citet{2017MNRAS.465.1316M}, which did not include these additional checks.
+We should note that this star formation criteria differs Chapter \ref{ch:hydro}, %from our previous work in \citet{2015ApJ...800...49L} and \citet{2017MNRAS.465.1316M}, 
+which did not include these additional checks.
 We have found that jet feedback produces small pockets of high density as a result of shocks from the jet.  This is why we have included these new checks in this work.
 To make a fair comparison between the feedback and no-feedback cases, we run the same numerical experiments both with and without jets.
 
@@ -274,7 +263,7 @@ As a result each star particle is endowed with an angular momentum vector from w
 In addition, we have also modified each star particle to track its protostellar state which changes based on the conditions laid out above.
 
 
-\subsection{Parsec scale effects of the jets}\label{sec:jet_large scale}
+\subsection{Parsec Scale Effects of the Jets}\label{sec:jet_large scale}
 
 In Figure \ref{fig:jet_jet_panel} we plot sequential projections of the entire simulation without (left column) and with (right column) jet feedback.
 We show the plots at $t=0.8$ Myrs (top), which is right after the first stars form, to $t=1.33$ Myrs (middle) and $t=1.84$ Myrs (bottom). The images show up to seven levels of refinement, giving an effective resolution of $16384^3$ or a minimum cell size of $\sim 200 {\rm \, AU}$.
@@ -290,8 +279,9 @@ The jet feedback case has substantially reduced SFE (by a factor of 3) and the g
 
 %
 \begin{figure}[ptb] % Figure 2 % 
-  \plotone{Jet/composite.pdf}
-  \caption[Jet - Jet No Jet Comparison]{Sequential projections of the density structure of the entire simulation domain along the z-axis for simulations with (right column) and without (left column) jet feedback.  From top to bottom, we show the plots at $t=0.8$ Myrs (top), which is right after the first stars form to $t=1.33$ Myrs (middle) and $t=1.84$ Myrs (bottom).  The SFE advances from $\epsilon_* = 0$ (right top) to $0.019$ (right bottom) for the case with jet feedback and from $\epsilon_* = 0$ (left top) to $0.06$ (left bottom) in the case without jet feedback. The black dots represent locations where one or more sink particles have been created. We state one or more sink particles, as the full box projections are zoomed out such that small clusters of two or three sinks have been plotted under one black dot. 
+  \plotonebig{Jet/composite.pdf}
+  \caption[Jet -- Jet vs. No Jet Comparison]{Sequential projections of the density structure of the entire simulation domain along the z-axis for simulations with (right column) and without (left column) jet feedback.  From top to bottom, we show the plots at $t=0.8$ Myrs (top), which is right after the first stars form to $t=1.33$ Myrs (middle) and $t=1.84$ Myrs (bottom).  The SFE advances from $\epsilon_* = 0$ (right top) to $0.019$ (right bottom) for the case with jet feedback and from $\epsilon_* = 0$ (left top) to $0.06$ (left bottom) in the case without jet feedback. The black dots represent locations where one or more sink particles have been created. 
+We state one or more sink particles, as the full box projections are zoomed out such that small clusters of two or three sinks have been plotted under one black dot. 
 In the bottom panels ($t = 1.84$ Myrs), the no jet feedback (left panel) simulation has a total of 46 sink particles accounting for $\approx 1072 M_\odot$, while the jet feedback simulation (right panel) has 49 sinks for $\approx 342 M_\odot$. Both jet and no jet simulations have a total box mass of $18,000 M_\odot$.}
     \label{fig:jet_jet_panel}
 \end{figure}
@@ -302,8 +292,8 @@ The total extent of the bubble, which has a bi-conical shape, is roughly a parse
 
 %
 \begin{figure}[htb] % Figure 3 %Off axis 1pc along L ID1_0
-  \plotone{Jet/movieframe_ID1_0_density_1_0pc_L_offslice_00130.png}
-  \caption[Jet - Postage stamp of jet blown gas]{A slice of the density structure centered on a sink particle of $\approx 3 M_\odot$ viewed along the angular momentum axis. Annotated in black arrows is the gas velocity, where length corresponds to relative magnitude. The jet is blowing two bubbles opening in opposite directions, partially disrupting the filament in which the star particle formed. The maximum extent of the jet is $\approx 0.5 \, {\rm pc}$ about $300,000 \, {\rm yrs}$ after formation.}
+  \plotonebig{Jet/movieframe_ID1_0_density_1_0pc_L_offslice_00130.png}
+  \caption[Jet -- Postage Stamp of Jet Blown Gas]{A slice of the density structure centered on a sink particle of $\approx 3 M_\odot$ viewed along the angular momentum axis. Annotated in black arrows is the gas velocity, where length corresponds to relative magnitude. The jet is blowing two bubbles opening in opposite directions, partially disrupting the filament in which the star particle formed. The maximum extent of the jet is $\approx 0.5 \, {\rm pc}$ about $300,000 \, {\rm yrs}$ after formation.}
     \label{fig:jet_jet_close_up}
 \end{figure}
 %
@@ -317,7 +307,7 @@ We begin with a discussion of the overall star formation efficiency (SFE).
 MC15 developed an analytic model of turbulent collapse, motivated by the work of \citet{2015ApJ...800...49L}, who found that the SFE was $M_*\propto t^2$.
 The prediction for the SFR is:
 \begin{equation}
-\dot{M}_* = f 4\pi r^2 \rho(r) \sqrt{\frac{GM_*(r,t)}{r}},
+\dot{M}_* = f 4\pi \mathbf{r}^2 \rho(\mathbf{r}) \sqrt{\frac{GM_*(\mathbf{r},t)}{\mathbf{r}}},
 \label{eq:jet_mass_accretion}
 \end{equation}
 where $f = 1 - \Delta M_{\rm jet} / \Delta M = 1 - f_{\rm jet}$ is the fraction of mass that accretes onto the star particle.
@@ -329,8 +319,8 @@ M_*(t) = f^2 \left( \frac{\beta}{2} \right)^2 (t-t_*)^2.
 \end{equation}
 
 In the analytic model the $t^2$ dependence arises from the following two results.
-First, the density around a collapsing region approaches an attractor solution, $\rho(r,t) \rightarrow \rho(r)$.
-Second, the velocities inside the ``sphere of influence'' $r_*$, where $r_*$ is the radius at which the gas mass enclosed is roughly equal to the stellar mass, is controlled by gravity, i.e., $v_r, v_{\perp} \propto \sqrt{GM_*/r}$.
+First, the density around a collapsing region approaches an attractor solution, $\rhoatt$. % $\rho(r,t) \rightarrow \rho(r)$.
+Second, the velocities inside the ``sphere of influence'' $\rs$, where $\rs$ is the radius at which the gas mass enclosed is roughly equal to the stellar mass, is controlled by gravity, i.e., $\vec{v}_r, \vec{v}_{\perp} \propto \sqrt{GM_*/\vec{r}}$.
 %Using these two results in the expression for the mass accretion rate gives $\dot M_* \propto \rho r^2 v_r \propto \sqrt{M_*}$.
 %This implies that $M_*(t) \propto (t-t_*)^2$, where $t_*$ denotes the time when the first star in the simulation formed.
 Both the fact that the density approaches an attractor, and the growth of the infall velocity at a fixed radius with $M_*(t-t_*)$  were also later verified by \citet{2017MNRAS.465.1316M} using high resolution AMR simulations.
@@ -339,7 +329,7 @@ Does this story change in the presence of jet feedback? It appears that qualitat
 %
 \begin{figure}[htb] % Figure 4 % SFR
   \plotone{Jet/sfr.pdf}
-  \caption[Jet - SFR]{Star formation efficiency (SFE) as a function of time since the formation of the first star, $t-t_*$. 
+  \caption[Jet -- SFR]{Star formation efficiency (SFE) as a function of time since the formation of the first star, $t-t_*$. 
     Power law fits to the SFE for $M_*/M_{\rm tot} > 10^{-3}$ for an effective resolution of $32k^3$, $M_*/M_{\rm tot} \propto (t - t_*)^{\alpha}$, give $\alpha \approx 1.8$ and $\approx 1.7$ for the jet and no jet cases, respectively.
     We have done runs at $8k^3$, (not shown) for which the SFR does not appear to be converged.
     We note that the power law fits for both jet and no jet simulations are roughly equivalent. 
@@ -353,14 +343,17 @@ We also report power law fits to the SFE (for $M_*/M_{\rm tot} > 10^{-3}$), for 
 The fit gives $M_*/M_{\rm tot} \propto (t - t_*)^{\alpha}$ with $\alpha \approx 1.8$ for both the jet and no jet cases. If the emergence of this $t^2$ law is due to the same physics as was shown in the no-jet case, then again the density approaches an attractor solution and velocity inside of the sphere of influence of the star particle is controlled by the stellar gravity.  We demonstrate these two facts below in \S~\ref{sec:jet_run_density} and \ref{sec:jet_small_scale}, which show that the inclusion of protostellar jet feedback does not strongly affect the dynamics of star formation.
 
 The normalization in Figure \ref{fig:jet_sfr} shows that at a given time, the no jet case has approximately 2.5 times the mass of the jet case.
-Calculating the ratio of the stellar masses at a fixed time after star formation for the no jet vs jet runs, we find a ratio of $2.5$ and $2.6$ for the $16 \, K^3$ and $32 \, K^3$ resolutions.
+Calculating the ratio of the stellar masses at a fixed time after star formation for the no jet vs jet runs, we find a ratio of $2.5$ and $2.6$ for the $16k^3$ and $32k^3$ resolutions.
 However, an examination of equation (\ref{eq:jet_mass_ratio}) reveals that the change in the normalization is explained almost entirely by the fact that the jet case ejects $f_{jet} = 0.3$ of the mass accreted onto the star back into the interstellar medium in the form of a jet.
 In particular, equation (\ref{eq:jet_mass_ratio}) indicates that $M_* \propto f^2$, which implies that if the jet is ejecting a fraction $f_{\rm jet} = 0.3$ of the accreted mass then the star's mass is only $f^2 = (1-f_{\rm jet})^2 = (0.7)^2 \approx 0.5$ of what its mass would be if there was no jet.
 MC15 and \citet{2017MNRAS.465.1316M} assumed $f_{\rm jet} = 0 \rightarrow f = 1$, so it appears that the incorporation of jet feedback into the analytic theory of MC15 can be accomplished with a simple physical parameter!
 
 \begin{figure}[htb]% Figure 5 % SFR Comparing the SFR for each changed fraction of m ejected via jet f
   \plotone{Jet/check_sfr.pdf}
-  \caption[Jet - SFR varying $f_{\rm jet}$]{Star formation efficiency (SFE) as a function of time since the formation of the first star, $t-t_*$ for 4 simulations, all with an effective resolution of $16k^3$. The jet simulations differ only in the fraction of accreted mass that they eject, the total momentum is the same across all jet simulations. The blue dashed line (labeled no jet) is the same simulation as the cyan dashed in Figure (\ref{fig:jet_sfr}) and the solid green line (labeled $0.3 {\rm \, jet}$) is the same as the thin solid red line in Figure (\ref{fig:jet_sfr}). The dotted red line is $f_{\rm jet} = 0.1$, while the cyan dot-dashed line is $f_{\rm jet} = 0.5$. The effective resolution, jeans length and initial conditions are identical for all simulations in this plot. %For the jet runs, all three simulations have the same momentum deposition from jets. The sole difference, is in the amount of accreted mass that is ejected back into the GMC.
+  \caption[Jet -- SFR Varying $f_{\rm jet}$]{Star formation efficiency (SFE) as a function of time since the formation of the first star, $\tts$ for 4 simulations, all with an effective resolution of $16k^3$. 
+The jet simulations differ only in the fraction of accreted mass that they eject, the total momentum is the same across all jet simulations. 
+The no jet (blue dashed) is the same simulation as the cyan dashed in Figure \ref{fig:jet_sfr} and the $0.3 {\rm \, jet}$ (solid green line) is the same as the thin solid red line in Figure \ref{fig:jet_sfr}. 
+The dotted red line is $f_{\rm jet} = 0.1$, while the cyan dot-dashed line is $f_{\rm jet} = 0.5$. The effective resolution, jeans length and initial conditions are identical for all simulations in this plot. %For the jet runs, all three simulations have the same momentum deposition from jets. The sole difference, is in the amount of accreted mass that is ejected back into the GMC.
 }
   \label{fig:jet_f_jet}
 \end{figure}
@@ -370,39 +363,41 @@ The ratio predicted by equation (\ref{eq:jet_mass_ratio}) with $f = 0.7$ is $2.0
 Thus the (indirect) effect of the jet on accretion onto star particle (from turbulent driving, expulsion of accreting gas, etc) is $\approx 25 \%$, showing that the dynamical effect of jets on the mass accretion rate is minor.
 Comparing the left to right hand columns in Figure \ref{fig:jet_jet_panel}, this is not too surprising, since the differences are rather subtle; Figure \ref{fig:jet_jet_close_up} shows a zoom-in on a proto-star with a jet-inflated bubble, which shows that, while the jet moves gas on scales of order a parsec, accretion continues along directions perpendicular to the jet axis.
 
-In the next subsections we check the other predictions of MC15, $\rho(r,t) \rightarrow \rho(r)$ is an attractor solution, $u_r = \sqrt{GM_* /r}$ is set by the protostar at $r<r_*$, where $r_*$ is the sphere of influence of the star particle (MC15), and the ``raw'' mass accretion rate --- without the $f_{\rm jet}$ correction ---  is the same in the cases with and without a jet.
+In the next subsections we check the other predictions of MC15, $\rhoatt$ is an attractor solution, $\urb = \sqrt{GM_* /\vec{r}}$ is set by the protostar at $\vec{r}< \rs$, %where $\rs$ is the sphere of influence of the star particle (MC15), 
+and the ``raw'' mass accretion rate --- without the $f_{\rm jet}$ correction ---  is the same in the cases with and without a jet.
 %Encoded in the result of equation (\ref{eq:jet_mass_ratio}) is the theoretical results of MC15, which is implicitly assumed to apply to the jet case.  In particular, the ``raw'' mass accretion rate in the cases with and without a jet are the same.  What this implies is that the accretion rate onto the star -- the ``raw'' rate -- is the same in the jet and no-jet case modulo the factor of $(\beta/2)^2$, which is empirically seen to be small.  However, the jet removes a fraction of this accrete mass, leading to a lower growth rate of the star.  Following the results of MC15, this implies that because the velocity follows the local Keplerian velocity inside of the sphere of influence of the star particle and the density approaches the same attractor solution in the jet and no-jet case.  These three predictions -- same $\dot{M}$, same attractor solution for the density profile, and same velocity profile -- can now be checked for both simulations and we proceed to do so below.
 
-\subsection{A fixed point attractor for $\rho(r,t)$ inside $r_*$} \label{sec:jet_run_density}
+\subsection{A Fixed Point Attractor for $\rho\ofrt$ Inside $\rs$} \label{sec:jet_run_density}
 
-One of the more striking findings in MC15 and confirmed in the simulations of \citet{2017MNRAS.465.1316M} was that the run of density is independent of time for $r < r_*$, where $r_*$ is the radius of the sphere which encloses a gas mass equal to $3 M_*$, i.e., the sphere of influence of the star.
+One of the more striking findings in MC15 and confirmed in the simulations of \citet{2017MNRAS.465.1316M} was that the run of density is independent of time for $\vec{r} < \rs$. %, where $r_*$ is the radius of the sphere which encloses a gas mass equal to $3 M_*$, i.e., the sphere of influence of the star.
 Those simulations were hydrodynamic runs only, and thus the question addressed here is, do jets alter the density profile?
 %
 \begin{figure}[htb] % Figure 6 % Avg Density for 1.0, 4.0 Msun & -80 yrs for Jet AND No Jet
     %\includegraphics[width=\columnwidth]{avg_density_1_0_4_0Msun.pdf}
   \plotone{Jet/avg_density.pdf}
-  \caption[Jet - Density profile for Jet Feedback]{Density $\rho$ as a function of radius at 80,000 years prior to star formation (blue dotted line) and for $1$ (thin lines) and $4 M_\odot$ (thick lines) sink particles for both the jet (blue solid lines) and no jet (red dashed lines) simulations. In the jet case for the one solar mass stars we average over thirty six particles, and thirty particles for the four solar mass case. The corresponding no jet cases are averaged over nine and twenty three particles. Finally, the plot at 80,000 years prior to formation in the jet case is averaged over 16 particles.
+  \caption[Jet -- Density Profile for Jet Feedback]{Density $\rho$ as a function of radius at 80,000 years prior to star formation (blue dotted line) and for $1$ (thin lines) and $4 M_\odot$ (thick lines) sink particles for both the jet (blue solid lines) and no jet (red dashed lines) simulations. In the jet case for the one solar mass stars we average over thirty six particles, and thirty particles for the four solar mass case. The corresponding no jet cases are averaged over nine and twenty three particles. Finally, the plot at 80,000 years prior to formation in the jet case is averaged over 16 particles.
     %The inclusion of protostellar jet feedback has no effect on the run of density (see Figure \ref{fig:jet_density_bicone}).
     }
     \label{fig:jet_ideal_density}
 \end{figure}
 %
 
-In Figure \ref{fig:jet_ideal_density} we plot the averaged number density $n$ and mass density $\rho$ as a function of $r$ for $1$ and $4 \, M_\odot$ sink particles.
+In Figure \ref{fig:jet_ideal_density} we plot the averaged number density $n$ and mass density $\rho$ as a function of $\vec{r}$ for $1$ and $4 \, M_\odot$ sink particles.
 The averages are over 36 and 30 particles respectively.
-The plot confirms that $\rho(r,t) \rightarrow \rho(r)$ for $r_d < r < r_*$, i.e. the density is already on an attractor solution and that profile persists well after formation.
-We define the accretion disk radius $r_d$ as being the radius where the circular velocity ($v_\phi$) is larger than $v_T$ and $u_r$.
-The mean power-law slope of the density after the star forms is $k_\rho \sim 1.5$. In addition the density profile is the same for the jet and no-jet case confirming a major ingredient of equation (\ref{eq:jet_mass_ratio}) showing that the results of MC15 continue to apply in the case of jet feedback.
+The plot confirms that $\rhoatt$ for $\rdrrs$, i.e. the density is already on an attractor solution and that profile persists well after formation.
+We define the accretion disk radius $\rd$ as being the radius where the circular velocity ($\vphi$) is larger than $\vt$ and $\urb$.
+The mean power-law slope of the density after the star forms is $k_\rho \sim 1.5$. In addition the density profile is the same for the jet and no-jet case confirming a major ingredient of equation \ref{eq:jet_mass_ratio} showing that the results of MC15 continue to apply in the case of jet feedback.
 
 It is important to note that the lack of change in the run of density is not due to the fact that we integrate for roughly a quarter of the global free-fall time.
 We emphasize that the density can change on the local free-fall time, which is much smaller than the global free-fall time.
-This can be seen from Figure \ref{fig:jet_ideal_density}, where $\rho(r)$ changes rapidly for $r < 0.3 {\rm pc}$ before the star forms (see the dotted line).
+This can be seen from Figure \ref{fig:jet_ideal_density}, where $\rho\ofr$ changes rapidly for $\vec{r} < 0.3 {\rm pc}$ before the star forms (see the dotted line).
 
-\subsection{The infall ($u_r$), random motion ($v_{\rm T}$)  and circular ($v_{\phi}$) velocities} \label{sec:jet_small_scale}
+\subsection{The Infall ($\urb$), Circular ($\vphi$) and Random Motion ($\vt$) Velocities with Protostellar Jets} \label{sec:jet_small_scale}
 
-Figure \ref{fig:jet_velocity_profile} shows the infall velocity $u_r$ (blue triangles connected by a solid blue line), the random velocity $v_{\rm T}$ (green dots connected by a green line), and the rotational velocity $v_\phi$ (black plus signs) as a function of radius centered around a specific sink particle.
-The red dashed line depicts $\sqrt{GM(<r)/r}$, while the black horizontal line shows the sound speed $c_s = 0.265 {\rm \, kms^{-1}}$.
-We calculate each of these velocities in the same manner as \citet{2017MNRAS.465.1316M}, with the following modification for the jet case: when calculating these otherwise spherical shell averaged quantities, we remove the cells that sit within the opening angle of the jet.
+Figure \ref{fig:jet_velocity_profile} shows the infall velocity $\urb$ (blue triangles connected by a solid blue line), the random velocity $\vt$ (green dots connected by a green line), and the rotational velocity $\vphi$ (black plus signs) as a function of radius centered around a specific sink particle.
+The red dashed line depicts $\sqrt{GM(<\vec{r})/\vec{r}}$, while the black horizontal line shows the sound speed $c_s = 0.265 \kms$.
+We calculate each of these velocities in the same manner as Chapter \ref{ch:hydro},  %\citet{2017MNRAS.465.1316M}, 
+with the following modification for the jet case: when calculating these otherwise spherical shell averaged quantities, we remove the cells that sit within the opening angle of the jet.
 See Appendix \ref{sec:jet_jet_cone_sub} to see how this subtraction affects the radial profiles of all the velocities.
 %
 \begin{figure*}[htb] % Figure 7 % Velocity ID3_123 & ID4_124 for No Jet and Jet respect.
@@ -410,69 +405,77 @@ See Appendix \ref{sec:jet_jet_cone_sub} to see how this subtraction affects the 
     %NOTE: These are from the 32K^3 run. Same location in the simulation.
   \plottwo{Jet/velocity_ID3_shellsphere_123.png}{Jet/velocity_ID4_shellsphere_124.png}%No jet %Jet
   %\includegraphics[width=\columnwidth]{Jet/velocity_ID4_shellsphere_124.png}%Jet
-  \caption[Jet - Velocity profile comparison]{The left panel is the run of velocity for a $\sim 3.0 {\rm \, M_\odot}$ sink particle with jet feedback. The right panel is the particle in the same location in a simulation without jet feedback, with mass $3.8 \, M_\odot$. The sound speed is denoted by the black horizontal line while the infall velocity $ \lvert u_r \rvert$ is given by the blue triangles, connected by a solid blue line. The green circles connected by a solid green line show $v_T$ while the black crosses show the rotational velocity $v_K \equiv \sqrt{GM(< r)/r}$. Note that both $\lvert u_r \rvert$ and $v_{\rm T}$ increase with decreasing radius for $10^{-2}{\rm\, pc}<r<10^{-1}{\rm \, pc}$. }
+  \caption[Jet -- Velocity Profile Comparison]{The left panel is the run of velocity for a $\sim 3.0 \Msun$ sink particle with jet feedback. 
+The right panel is the particle in the same location in a simulation without jet feedback, with mass $3.8 \Msun$. 
+The sound speed is denoted by the black horizontal line while the infall velocity $\urb$ is given by the blue triangles, connected by a solid blue line. 
+The green circles connected by a solid green line show $\vt$ while the black crosses show the rotational velocity $\vkep \equiv \sqrt{GM(< \vec{r})/\vec{r}}$. 
+Note that both $\urb$ and $\vt$ increase with decreasing radius for $10^{-2} \pc < \vec{r} < 10^{-1}\pc$. }
     \label{fig:jet_velocity_profile}
 \end{figure*}
 %
 
 The left panel in Figure \ref{fig:jet_velocity_profile} shows the velocities associated with a three solar mass sink particle in a simulation that included jet feedback.
 The right panel is of a sink particle in a simulation without jet feedback that formed within a hundredth of a parsec of the same location within a few thousand years of the same time as the particle in the jet case.
-That particle is roughly $3.8 M_\odot$.
-While we can not make a direct comparison of the magnitude of the velocities, due to the different masses, we can compare the trends in the velocities to the $\sqrt{GM(<r)/r}$ velocity in each panel. We see similar behavior in both jet and no-jet simulations, with some expected differences.
+That particle is roughly $3.8 \Msun$.
+While we can not make a direct comparison of the magnitude of the velocities, due to the different masses, we can compare the trends in the velocities to the $\sqrt{GM(< \vec{r})/\vec{r}}$ velocity in each panel. 
+We see similar behavior in both jet and no-jet simulations, with some expected differences.
 
-First, what one immediately notices in each case (with and without jets), is that both $\lvert u_r \rvert$ and $v_{\rm T}$ decrease with decreasing radius down to $r \approx 0.1 {\rm pc}$ then increase with decreasing radius, until running into the accretion disk around the sink particle, at $r_d \approx 5\times 10^{-3} {\rm pc}$.
+First, what one immediately notices in each case (with and without jets), is that both $\urb$ and $\vt$ decrease with decreasing radius down to $\vec{r} \approx 0.1 \pc$ then increase with decreasing radius, until running into the accretion disk around the sink particle, at $\rd \approx 5\times 10^{-3} \pc$.
 This indicates that jets by themselves do not change the general dynamics outside and inside the stellar sphere of influence.
 %Similar to \citet{2017MNRAS.465.1316M} we define the stellar sphere of influence as the radius ($r_*$) where the enclosed mass $M( <r, t)$ is three times the mass of the star.
- Both $\lvert u_r \rvert$ and $v_{\rm T}$ increase inward of $r_*$. This was seen by \citet{2017MNRAS.465.1316M} for the no jet case.
+ Both $\urb$ and $\vt$ increase inward of $\rs$. 
+This was seen by \citet{2017MNRAS.465.1316M} for the no jet case.
 It is also consistent with the rapid increase in turbulent energy density with decreasing radius seen in \citet{2017ApJ...838...40M}, although their simulations halted when the first star particle formed (and hence did not include any protostellar jet feedback).
 
-However, the inclusion of jets does affect the ratio of the random motion velocity to the fiducial velocity $\sqrt{GM(<r)/r}$.
-In the case with jets, $v_{\rm T}$ remains much closer to $\sqrt{GM(<r)/r}$ for all radii larger than the disk radius as compared to that ratio for the no-jet simulation.
+However, the inclusion of jets does affect the ratio of the random motion velocity to the fiducial velocity $\sqrt{GM(<\vec{r})/\vec{r}}$.
+In the case with jets, $\vt$ remains much closer to $\sqrt{GM(<\vec{r})/\vec{r}}$ for all radii larger than the disk radius as compared to that ratio for the no-jet simulation.
 This is not an unexpected result, given that jets are injecting momentum back into the gas surrounding the collapse; this momentum deposition pumps up the random motions of the gas and thus slows down the in-falling gas.
-Even though the jets are boosting the random motion velocity, inside the stellar sphere of influence, $\lvert u_r \rvert$ still increases with decreasing radius. That is, the gravity of the star dominates the dynamics.% and thus the jets do not affect the general dynamics of the collapse inside $r_*$.
+Even though the jets are boosting the random motion velocity, inside the stellar sphere of influence, $\urb$ still increases with decreasing radius. 
+That is, the gravity of the star dominates the dynamics.% and thus the jets do not affect the general dynamics of the collapse inside $r_*$.
 
 %In contrast to the jet simulation, in the no jet case there is a cross-over point where the infalling gas becomes the dominant energy density, before hitting the accretion disk.
 
 Finally, we note that the infall velocity is $\sim 25 - 30 \%$ of the free-fall velocity over all radii less than a parsec. This observation shows that this system is not in hydrostatic equilibrium. The run of density versus radius is similar to that in Figure \ref{fig:jet_ideal_density}.
 
-\subsection{Average mass accretion rate $\langle \dot{M}(r, t) \rangle_{\rm stars}$ for jet and no jet sink particles} \label{subsec:jet_mdotstars}
+\subsection{Average Mass Accretion Rate $\langle \dot{M}\ofrt \rangle_{\rm stars}$ for Jet and No Jet Sink Particles} \label{subsec:jet_mdotstars}
 
-The final prediction that we can check is that $\dot{M}(r,t)$ is independent of $r$ for $r < r_*$ and that the jet and no-jet cases have (roughly) the same $\dot{M}$.
-In Figure \ref{fig:jet_mdot_shu}, we show the average mass accretion rate $\dot{M}$ as a function of $r$ for $1$ and $4 \, M_\odot$ sink particles comparing between the jet and no jet simulations.
+The final prediction that we can check is that $\dot{M}\ofrt$ is independent of $\vec{r}$ for $\vec{r} < \rs$ and that the jet and no-jet cases have (roughly) the same $\dot{M}$.
+In Figure \ref{fig:jet_mdot_shu}, we show the average mass accretion rate $\dot{M}$ as a function of $\vec{r}$ for $1$ and $4 \Msun$ sink particles comparing between the jet and no jet simulations.
 % We do not show the mass accretion rates prior to sink particle formation, as there is no jet feedback and thus the profiles look the same as Figure 7 in \citet{2017MNRAS.465.1316M}.
 
-We note that while the $\dot{M}$ profile is flat at small radii it does increase over time: the profile at $4 \, M_\odot$ inside of $r_*$ is larger than that of the $1 \, M_\odot$ profile for both jet and no jet simulations.
-We contrast this with an inside-out collapse model, which we exemplify using a \citet{1977ApJ...214..488S} solution, green dashed line obtained by directly integrating equations (11) and (12) of \citet{1977ApJ...214..488S} at a fixed time.
+We note that while the $\dot{M}$ profile is flat at small radii it does increase over time: the profile at $4 \Msun$ inside of $\rs$ is larger than that of the $1 \Msun$ profile for both jet and no jet simulations.
+We contrast this with an inside-out collapse model, which we exemplify using a \citet{1977ApJ...214..488S} solution, green dashed line obtained by directly integrating equations 11 and 12 of \citet{1977ApJ...214..488S} at a fixed time.
 
-We also note that both the jet and no-jet case settle onto an average $\dot{M}$ that is roughly the same for the  $1$ and $4 \, M_\odot$ sink particle case.  Hence the ``raw'' rate is the same in the jet and no-jet cases as implicitly required by equation (\ref{eq:jet_mass_ratio}).
+We also note that both the jet and no-jet case settle onto an average $\dot{M}$ that is roughly the same for the  $1$ and $4 \Msun$ sink particle case.  Hence the ``raw'' rate is the same in the jet and no-jet cases as implicitly required by equation (\ref{eq:jet_mass_ratio}).
 %
 \begin{figure}[htb] % Figure 8 % Avf mdot, 1.0, 4.0 Msun & -80 kyrs
   \plotone{Jet/avg_mdot.pdf}
-  \caption[Jet - $\dot{M}$ profile]{The average run of $\dot{M}$ for $1$ and $4 \, M_\odot$ sink particles in simulations with and without jets. The blue solid lines are the jet simulations, while the red dashed lines are for the no jet case. The thin lines correspond to the $1 \, M_\odot$ averages, while the thick lines represent the $4 \, M_\odot$ averages. The thin blue dotted line is the average 80,000 years prior to formation in the jet case. The average, for the jet case, is over 16, 30 and 36 sink particles for the prior to formation, $1$ and $4 \, M_\odot$ respectively. For the no jet case, the average is over 9 and 23 sink particles for the $1$ and $4 \, M_\odot$ respectively. In all cases, the accretion rate is about an order of magnitude  lower at small radii (say $10^{-2} \rm{pc}$) than at $1 \rm{pc}$. At both masses, and prior to formation, the accretion rate at $1 \rm{pc}$ exceeds that at all smaller radii, showing that the collapse is outside-in, not inside-out. As an example of an inside-out collapse, we show the accretion rate for the \citet{1977ApJ...214..488S} model (the green dot-dashed line) for a star of a solar mass with Shu's parameter $A = 3.501$.  %The blue dotted line is the mass accretion rate 80,000 years prior to formation averaged over the same particles for the $4 \, M_\odot$ jet plot.
+  \caption[Jet -- $\dot{M}$ Profile]{The average run of $\dot{M}$ for $1$ and $4 \, M_\odot$ sink particles in simulations with and without jets. The blue solid lines are the jet simulations, while the red dashed lines are for the no jet case. The thin lines correspond to the $1 \, M_\odot$ averages, while the thick lines represent the $4 \, M_\odot$ averages. The thin blue dotted line is the average 80,000 years prior to formation in the jet case. The average, for the jet case, is over 16, 30 and 36 sink particles for the prior to formation, $1$ and $4 \, M_\odot$ respectively. For the no jet case, the average is over 9 and 23 sink particles for the $1$ and $4 \, M_\odot$ respectively. In all cases, the accretion rate is about an order of magnitude  lower at small radii (say $10^{-2} \rm{pc}$) than at $1 \rm{pc}$. At both masses, and prior to formation, the accretion rate at $1 \rm{pc}$ exceeds that at all smaller radii, showing that the collapse is outside-in, not inside-out. As an example of an inside-out collapse, we show the accretion rate for the \citet{1977ApJ...214..488S} model (the green dot-dashed line) for a star of a solar mass with Shu's parameter $A = 3.501$.  %The blue dotted line is the mass accretion rate 80,000 years prior to formation averaged over the same particles for the $4 \, M_\odot$ jet plot.
     }
     \label{fig:jet_mdot_shu}
 \end{figure}
 %
-%At all times, the accretion rate is either nearly flat or increasing with radius.
-
-%In summary, at no time do we see any indication of an inside-out collapse in our simulated massive star forming regions.
 
 \subsection{Jet Momentum Deposition} \label{subsec:jet_jet_mv}
 In Figure \ref{fig:jet_avg_jet_velocity} we plot the mass weighted average of the jet velocity for all sink particle jets over time.
 It has been calculated following the definition in \citet{2000ApJ...545..364M}
 \begin{equation}
-\langle v_{\rm jet} \rangle \equiv p_{\rm jet} / M_* ,
+\langle \vec{v}_{\rm jet} \rangle \equiv \vec{p}_{\rm jet} / M_* ,
 \label{eq:jet_avg_jet_momentum}
 \end{equation}
-where $M_*$ is the total stellar mass and $p_{\rm jet}$ is the total momentum ejected by all the jets up to the current time.
-\citet{2000ApJ...545..364M} estimate (observationally) that $\langle v_{\rm jet}\rangle \approx 40 \, {\rm km \, s^{-1}}$.
+where $M_*$ is the total stellar mass and $\vec{p}_{\rm jet}$ is the total momentum ejected by all the jets up to the current time.
+\citet{2000ApJ...545..364M} estimate (observationally) that $\langle \vec{v}_{\rm jet}\rangle \approx 40 \, {\rm km \, s^{-1}}$.
 The figure shows that the average velocity is increasing with time because the stars are accreting more mass, and their radii are contracting.
 By the end of our run, the average velocity is in the range of that estimated by \citet{2000ApJ...545..364M}.
 
 %
 \begin{figure}[htb] % Figure 9 %
   \plotone{Jet/jet_v_vs_t.pdf}
-  \caption[Jet - Jet momentum over time]{The average jet momentum per stellar mass as defined in equation (\ref{eq:jet_avg_jet_momentum}) as a function of time since the first sink particle forms ($t-t_*$). The solid green line depicts the $32 \, {\rm K^3}$ run while the dashed blue line depicts the $16 \, {\rm K^3}$ result. Both show an increase in $\langle v_{\rm jet} \rangle$ with increasing time. This occurs because as time increases, the star particles gain mass, and thus have higher escape velocities and launch faster jets. The $16 \, {\rm K^3}$ run produces higher jet momenta per stellar mass because it forms fewer stars that are more massive, due to its lower resolution. Note however that the total stellar mass in the two runs is converged (see Figure \ref{fig:jet_sfr}).}
+  \caption[Jet -- Jet Momentum over Time]{The average jet momentum per stellar mass as defined in equation (\ref{eq:jet_avg_jet_momentum}) as a function of time since the first sink particle forms ($\tts$). 
+The solid green line depicts the $32k^3$ run while the dashed blue line depicts the $16k^3$ result. 
+Both show an increase in $\langle \vec{v}_{\rm jet} \rangle$ with increasing time. 
+This occurs because as time increases, the star particles gain mass, and thus have higher escape velocities and launch faster jets. 
+The $16k^3$ run produces higher jet momenta per stellar mass because it forms fewer stars that are more massive, due to its lower resolution. Note however that the total stellar mass in the two runs is converged (see Figure \ref{fig:jet_sfr}).}
     \label{fig:jet_avg_jet_velocity}
 \end{figure}
 %
@@ -485,17 +488,17 @@ This is due to infall stirring up $v_{\rm T}$ and $\lvert u_r \rvert$ as we saw 
 A comparison between the no-jet and jet case on the high density end looks unsurprisingly similar.
 The jets are directed into lower density regions, not into the accretion disk and thus do not affect the high density regions.
 
-However, we note that the major difference between the no-jet and jet cases is the substantial amount of gas above $10\,{\rm km\,s}^{-1}$ and that the density of this gas is around 10x the mean density $3\times 10^{-22}\,{\rm g\,cm^{-2}}$.
-In fact, the jet case has material moving above $100\,{\rm km\,s}^{-1}$.
+However, we note that the major difference between the no-jet and jet cases is the substantial amount of gas above $10\,{\rm km\,s}^{-1}$ and that the density of this gas is around 10x the mean density $3\times 10^{-22}\, {\rm g cm^{-3}}$.
+In fact, the jet case has material moving above $100 \kms$.
 
 \begin{figure*}[htb] % Figure 10 % Phil's Plot %TODO: Understand BOTH how phil made these plots, and what they are telling me.
   \plottwo{Jet/hi_nojet_phase_plot_137.png}{Jet/hi_jet_phase_plot_137.png}
   %\includegraphics[width=0.49\textwidth]{Jet/hi_jet_phase_plot_137.png}
-  \caption[Jet - Phase plot of $\rho(\ur)$]{ Phase plot of density vs velocity for the no-jet case (left) and the jet case (right) at $t-t_*=0.48$ Myrs. The colourmap denotes the total mass at each point in density-velocity space.  The distribution at the high density end is set by gravity both accelerating the infall velocity and adiabatically heating the turbulent velocity, and is similar for both the no-jet and jet cases.  There is, however, a clear difference between the no-jet and jet cases, namely, the substantial amount of gas above $10\,{\rm km\,s}^{-1}$ in the jet case. While there is a large distribution in velocity, this has only a $25\%$ effect on the mass accretion rate (see Figure \ref{fig:jet_sfr} and \S~\ref{subsec:jet_SFR}).}
+  \caption[Jet -- Phase Plot of Density vs. Velocity]{ Phase plot of density vs velocity for the no-jet case (left) and the jet case (right) at $t-t_*=0.48$ Myrs. The colourmap denotes the total mass at each point in density-velocity space.  The distribution at the high density end is set by gravity both accelerating the infall velocity and adiabatically heating the turbulent velocity, and is similar for both the no-jet and jet cases.  There is, however, a clear difference between the no-jet and jet cases, namely, the substantial amount of gas above $10\,{\rm km\,s}^{-1}$ in the jet case. While there is a large distribution in velocity, this has only a $25\%$ effect on the mass accretion rate (see Figure \ref{fig:jet_sfr} and \S~\ref{subsec:jet_SFR}).}
     \label{fig:jet_v_phase_plot}
 \end{figure*}
 
-\subsection{Jets mainly drive small scale turbulence} \label{sec:jet_jets_drive_small}
+\subsection{Jets Mainly Drive Small Scale Turbulence} \label{sec:jet_jets_drive_small}
 Figure \ref{fig:jet_jet_driven_turb} displays the mass averaged velocity dispersion in the simulation volume plotted as a function of time since gravity was turned on.
 The solid lines are the $32\, k^3$ simulation, while the dashed lines show the $16\, k^3$ simulation data.
 The thick and thin lines designate the jet vs no jet cases respectively.
@@ -513,7 +516,7 @@ In Figure \ref{fig:jet_jet_close_up} we presented a postage stamp shot of a star
   \plotone{Jet/dan_vrms.pdf}
   %\includegraphics[width=\columnwidth]{vsquared.pdf}
   %\includegraphics[width=\columnwidth]{vrms.pdf}
-  \caption[Jet - $\vrms \lp t-t_{\rm grav} \rp$ ]{The mass averaged velocity dispersion squared in the simulation volume plotted as a function of time since gravity was turned on.
+  \caption[Jet -- $\vrms \lp t \, - \, t_{\rm grav} \rp$ ]{The mass averaged velocity dispersion squared in the simulation volume plotted as a function of time since gravity was turned on.
 %The average was $\Sum_{i}m_i * v_i \sdot v_i = p_step$.
 The thick and thin lines show the jet and no jet case respectively. The solid lines show the $32 k^3$ result and the dashed lines the $16k^3$ result.
 The increase seen in the no jet case starting at $ t \approx 1 \, {\rm Myrs}$ results from the gravitational collapse driving random motions.
@@ -541,7 +544,7 @@ At $t-t_* = 1$ Myrs, the jet case (thin black dotted line) show even greater dev
 \begin{figure}[htb] % Figure 12 % power spectrum of the 16k^3 sim
   \plotone{Jet/hi_power_spec_151.pdf}
   %\includegraphics[width=\columnwidth]{vrms.pdf}
-  \caption[Jet - Velocity Power Spectrum]{Compensated velocity power spectrum, $k^2P_k(v)$ as a function of wave vector, $k$ at $t-t_* = -0.03$ (solid lines), $0.48$ (dashed lines), and $1$ Myrs (dotted lines) for the jet (thin lines) and no-jet (thick lines) cases.  To perform the fast-Fourier transform, we map the simulation volume to a $256^3$ grid.  The $t-t_* = -0.03$ Myrs lines for the jet and no-jet case is the same as the spectrum is derived from stirred turbulence.  The no-jet power spectrum does not substantially differ in time as stars form, but the jet case does. In particular the flatness of the power spectrum at large $k$ at $t-t_*=0.48$ and $1$ Myr is due to the presence of velocity delta-functions (at the resolution of $256^3$) in the simulation volume.  Additionally, the jet drives an up-tick in power at $kL\sim 8$, a spatial scale of 2 pc, at $t-t_*=1$ Myr.
+  \caption[Jet -- Velocity Power Spectrum]{Compensated velocity power spectrum, $k^2P_k(v)$ as a function of wave vector, $k$ at $t-t_* = -0.03$ (solid lines), $0.48$ (dashed lines), and $1$ Myrs (dotted lines) for the jet (thin lines) and no-jet (thick lines) cases.  To perform the fast-Fourier transform, we map the simulation volume to a $256^3$ grid.  The $t-t_* = -0.03$ Myrs lines for the jet and no-jet case is the same as the spectrum is derived from stirred turbulence.  The no-jet power spectrum does not substantially differ in time as stars form, but the jet case does. In particular the flatness of the power spectrum at large $k$ at $t-t_*=0.48$ and $1$ Myr is due to the presence of velocity delta-functions (at the resolution of $256^3$) in the simulation volume.  Additionally, the jet drives an up-tick in power at $kL\sim 8$, a spatial scale of 2 pc, at $t-t_*=1$ Myr.
 }
     \label{fig:jet_power_spectrum}
 \end{figure}
@@ -559,7 +562,9 @@ We have shown that protostellar jets do not strongly affect the dynamics of accr
 For example, the infall and rotational velocities both show similar behavior between the no jet and jet runs; the random velocity is also similar, once the region containing the jet cone has been excised (see Figure \ref{fig:jet_ideal_velocity} and appendix \ref{sec:jet_jet_cone_sub}).
 Similarly, the run of density approaches an attractor solution regardless of whether or not there are jets associated with the sink particle.
 
-The fact that $|u_r|$ increases inward for $r<r_*$, while increasing outward for $r>r_*$, combined with the time-independence of the density profile (once a density peak forms) implies that the mass accretion rate $\dot M(r,t)$ for individual stars is flat for $r<r_*$ and increasing with radius for $r>r_*$. This is demonstrated in Figure \ref{fig:jet_mdot_shu}, which also shows the contrasting behavior for an inside-out collapse model, that of \cite{1977ApJ...214..488S}.
+The fact that $\urb$ increases inward for $\rrs$, while increasing outward for $\vec{r} > \rs$, combined with the time-independence of the density profile 
+(once a density peak forms) implies that the mass accretion rate $\dot{M}\ofrt$ for individual stars is flat for $\rrs$ and increasing with radius for $\vec{r} > \rs$. 
+This is demonstrated in Figure \ref{fig:jet_mdot_shu}, which also shows the contrasting behavior for an inside-out collapse model, that of \cite{1977ApJ...214..488S}.
 This is the signature of outside-in collapse, which occurs in runs both with and with out jet feedback.
 
 We have seen that jets do create cavities in the surrounding gas, changing the morphology of the gas on parsec scales.
@@ -573,7 +578,7 @@ This ensures that the jet driven turbulence from an individual star decays more 
 \begin{figure*}[htb] % Figure 13 %
   \plottwo{Jet/fed_hd.pdf}{Jet/fed_mhd.pdf}
   %\includegraphics[width=0.49\textwidth]{Jet/fed_mhd.pdf}
-  \caption[Jet - Star Formation Efficiency over time]{Left plot: the SFE, $M_*/M_{\rm tot}$, as a function of time (measure in free-fall times) for the jet (solid line) and no-jet (dashed line) cases from \citet{2014ApJ...790..128F} Figure 9 (N.B. HD simulation). 
+  \caption[Jet -- Star Formation Efficiency over Time]{Left plot: the SFE, $M_*/M_{\rm tot}$, as a function of time (measure in free-fall times) for the jet (solid line) and no-jet (dashed line) cases from \citet{2014ApJ...790..128F} Figure 9 (N.B. HD simulation). 
 Right plot: the SFE as a function of time (measure in Myrs) for the jet (solid line) and no-jet (dashed line) cases from \citet{2015MNRAS.450.4035F} Figure 2 (N.B. MHD simulation). 
 In both plots we have rescaled the no-jet case by $f=(1-f_{\rm jet})^2$, which is set to $f_{\rm jet} = 0.3$. 
 In the left plot the rescaled no-jet case follows the jet case fairly well up to about an SFE of about 0.4. The rescaled no-jet case at this point re-scales the no-jet case for $M_*/M_{\rm tot}\approx 0.8$, where the accretion onto star particles is starved due to depletion of gas. 
@@ -595,7 +600,7 @@ In the right plot of Figure \ref{fig:jet_fed_comp}, we plot SFE as a function of
 Here the rescaled no-jet case does a rather poor job of following the jet case.
 This may be because \citet{2014ApJ...790..128F} (right plot) does a MHD calculation rather than a HD calculation as in \citet{2014ApJ...790..128F} (left plot).
 We do not believe that our analytic model can explain the evolution of $\dot{M}$ beyond $t/t_{ff} > 1.3$, nor do we think it should.
-After a single free fall time $\approx 10\%$ of the entire gas mass in the simulation has been eaten by the created sink particles. By $t \approx 1.3 t_{ff}$ that has expanded to nearly $40\%$ of all the gas in the simulation. 
+After a single free fall time $\approx 10\%$ of the entire gas mass in the simulation has been eaten by the created sink particles. By $t \approx 1.3 \, t_{ff}$ that has expanded to nearly $40\%$ of all the gas in the simulation. 
 Once the mass of the stars becomes an appreciable fraction of the gas mass, accretion begins to be suppressed simply because there is insufficient gas.  This should occur when the mass in stars is a few tens of percent of the gas mass.
 
 The scaling of equation (\ref{eq:jet_mass_ratio}) may hold for other cases in the literature but we are unable to check them.
@@ -634,14 +639,14 @@ We performed simulations of turbulent, self-gravitating gas including star parti
 Starting with uniform density in a box with length $16$ parsecs on a side, we drove turbulence until we reached a statistically steady state.
 At that point, the density was no longer uniform.
 We then turned on gravity and star formation.
-We used AMR to follow collapsing regions down to an effective resolution of $32 \, K^3$ which gave us a $\Delta x$ of $100 {\rm AU}$ at the finest level of refinement.
+We used AMR to follow collapsing regions down to an effective resolution of $32k^3$ which gave us a $\Delta x$ of $\sim 50 {\rm AU}$ at the finest level of refinement.
 
 We observed that the inclusion of protostellar jets does not affect the general dynamics of accreting gas.
 In particular we saw $M_*(t) \propto f^2 (t-t_*)^2$ where $f = 1 - f_{\rm jet}$ is the fraction of mass accreted onto the protostar and $f_{\rm jet}$ is the fraction ejected by the jet.
 We find that this mass ejection accounts for 75\% of the effect of jets on the star formation rate in our simulations.
 This appears to be the case in similar simulations performed by other groups (e.g. see Figure \ref{fig:jet_fed_comp}), but we find suggestions that this may be altered if MHD is included.
 
-As we have found previously in the case without jets \citep{2017MNRAS.465.1316M}, the spherical average profile of gas around the protostar follows the analytic model of MC15 and does not seem the change in the case with jets.  In particular, the run of density finds an attractor solution prior to star formation and remains on that solution even after jets begin to blow out cavities in the surrounding medium.
+As we have found previously in the case without jets, Chapter \ref{ch:hydro} \citep{2017MNRAS.465.1316M}, the spherical average profile of gas around the protostar follows the analytic model of MC15 and does not seem the change in the case with jets.  In particular, the run of density finds an attractor solution prior to star formation and remains on that solution even after jets begin to blow out cavities in the surrounding medium.
 The behavior of the infall and rotational velocities is similar regardless of whether jets are included or not.
 The profile of the random velocities are also similar once the jet bi-cone is removed.  Finally, the mass accretion rates are similar in the jet and no-jet cases.
 
@@ -653,25 +658,6 @@ We did not run long enough for the stars to completely consume the surrounding g
 We find that jets do drive turbulence in the surrounding gas, but is confined to small scales of roughly a parsec.
 %Since the driving is on small scales, the eddy turn over time is also short, and thus the feedback of jets does not affect the entirety of the box.
 %This means thats jets do not affect the larger scale dynamics of star formation
-
-%\section*{Acknowledgements}
-%
-%We thank Norm Murray for useful discussions and encouragement during the course of this work. We thank the anonymous referee for his/her detailed and thoughtful comments.
-%DM and PC are supported in part by the NASA ATP
-%program through NASA grant NNX13AH43G, NSF grant AST-1255469, and the University of Wisconsin-Milwaukee.
-%SG acknowledges support from  Summer Funded Internship Award at Skidmore College and Student Experiential Learning Fund at Dartmouth College.
-%Some of the computations were performed on
-%the gpc supercomputer at the SciNet HPC Consortium
-%\citep{2010JPhCS.256a2026L}. SciNet is funded by: the Canada
-%Foundation for Innovation under the auspices of Compute Canada; the
-%Government of Ontario; Ontario Research Fund - Research Excellence;
-%and the University of Toronto.
-%The authors also acknowledge the Texas Advanced Computing Center (TACC) at The University of Texas
-%at Austin for providing HPC resources that have contributed to the research results reported
-%within this paper. URL: \url{http://www.tacc.utexas.edu}
-%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
 
@@ -804,12 +790,16 @@ We find that jets do drive turbulence in the surrounding gas, but is confined to
 % \subsection{Main Sequence}
 % When the star particle is in the main sequence state, we simply calculate the radius from the data of \citet{1967CaJPh..45.3429E}.
 %
+%
 \section{Appendix}
 
-\subsection{Effects of excising bi-cones aligned with protostellar jets on the infall, random, and rotational velocity} \label{sec:jet_jet_cone_sub}
-In this appendix we illustrate the effect of excising bi-cones aligned with the jet emitted by a protostar when calculating $\lvert u_r \rvert$, $v_{\rm T}$ and $v_\phi$. The simulated jets are powerful enough that they enforce outflow over almost the entire bi-cone over which the star particle emits the jet. However, because our jets are emitted along the instantaneous spin axis of the star particle, which is usually roughly perpendicular to the accretion disk, the jet outflow tends to avoid high density and infalling gas, which is generally near the plane of the disk. An example can be seen in Figure \ref{fig:jet_jet_close_up}.
+\subsection{Effects of Excising Bi-cones Aligned with Protostellar Jets on the Infall, Random, and Rotational Velocity} \label{sec:jet_jet_cone_sub}
+In this appendix we illustrate the effect of excising bi-cones aligned with the jet emitted by a protostar when calculating $\urb$, $\vt$ and $\vphi$. 
+The simulated jets are powerful enough that they enforce outflow over almost the entire bi-cone over which the star particle emits the jet. However, because our jets are emitted along the instantaneous spin axis of the star particle, which is usually roughly perpendicular to the accretion disk, the jet outflow tends to avoid high density and infalling gas, which is generally near the plane of the disk. An example can be seen in Figure \ref{fig:jet_jet_close_up}.
 
-While the jets do not strongly affect the infall and rotational velocity of the bulk of the gas near the star particle, they do have a fairly strong effect on the random velocity, when averaged over spherical shells. A glance at Figure \ref{fig:jet_jet_close_up} shows why: the jet velocities are very large in the evacuated region around the jet axis. Our calculation of $v_T$ involves subtracting the mass-weighted infall and rotational velocity in spherical shells from the velocity of each cell in the shell; since the jet expels low density gas, it does not affect the mass weighted infall or rotational velocity when performing the average, but it does boost the random velocity.
+While the jets do not strongly affect the infall and rotational velocity of the bulk of the gas near the star particle, they do have a fairly strong effect on the random velocity, when averaged over spherical shells. 
+A glance at Figure \ref{fig:jet_jet_close_up} shows why: the jet velocities are very large in the evacuated region around the jet axis. 
+Our calculation of $\vt$ involves subtracting the mass-weighted infall and rotational velocity in spherical shells from the velocity of each cell in the shell; since the jet expels low density gas, it does not affect the mass weighted infall or rotational velocity when performing the average, but it does boost the random velocity.
 
 %
 \begin{figure}[htb] % Figure 14 % The effect of subtracting the Jet cone
@@ -819,25 +809,30 @@ While the jets do not strongly affect the infall and rotational velocity of the 
   %\plotone{Jet/velocity_ID4_shellsphere_124_w_jet.png}%Not Subtracting Jet
   %\plotone{Jet/velocity_ID4_shellsphere_124.png}%Subtracting jet angle with alpha=1
   %\plotone{Jet/velocity_ID4_shellsphere_124_alpha2.png}%Subtracting jet angle with alpha=2
-  \caption[Jet - Effect of Subtracting the Jet cone]{The run of velocity for a $M_*\approx 5.2 {\rm M_\odot}$ sink particle, averaged over spherical shells (top), averaged over the same shells but excising a bi-cone aligned with and having the same opening angle as the jet (middle) and excising a bi-cone with twice the jet opening angle (bottom). The sound speed is denoted by the black horizontal line while other lines denote the infall velocity $ \lvert u_r \rvert$ (blue triangles connected by a solid blue line), the random velocity $v_{\rm T}$ (green circles connected by a solid green line) and the rotational velocity $v_\phi$ (black crosses); the dashed red line shows $v_K \equiv \sqrt{GM(r)/r}$. Note that both $\lvert u_r \rvert$ and $v_{\rm T}$ increase with decreasing radius for $10^{-2}{\rm\, pc}<r<10^{-1}{\rm \, pc}$. }
+  \caption[Jet -- Effect of Subtracting the Jet Cone]{The run of velocity for a $M_* \approx 5.2 \Msun$ sink particle, 
+averaged over spherical shells (left), averaged over the same shells but excising a bi-cone aligned with and having the same opening angle as the jet (middle) and excising a bi-cone with twice the jet opening angle (right). 
+The sound speed is denoted by the black horizontal line while other lines denote the infall velocity $\urb$ (blue triangles connected by a solid blue line), the random velocity $\vt$ (green circles connected by a solid green line) and the rotational velocity $\vphi$ (black crosses); 
+the dashed red line shows $\vkep \equiv \sqrt{GM \ofr / \vec{r}}$. 
+Note that both $\urb$ and $\vt$ increase with decreasing radius for $10^{-2}\pc < \vec{r} <10^{-1}\pc$.}
     \label{fig:jet_ideal_velocity}
 \end{figure}
 %
 
 In Figure \ref{fig:jet_ideal_velocity} we show three panels.
-All three panels follow the same convention: the infall velocity $ \lvert u_r \rvert$ is depicted by the blue triangles, connected by a solid blue line,
-the green circles connected by a solid green line show $v_{\rm T}$ while the black crosses show the rotational velocity $v_\phi$. The dashed red line shows $v_K \equiv \sqrt{GM(r)/r}$.
+All three panels follow the same convention: the infall velocity $\urb$ is depicted by the blue triangles, connected by a solid blue line,
+the green circles connected by a solid green line show $\vt$ while the black crosses show the rotational velocity $\vphi$. The dashed red line shows $\vkep \equiv \sqrt{GM\ofr/\vec{r}}$.
 Finally, the sound speed is denoted by the black horizontal line.
 
-All three snapshots are of the same particle, of roughly $5.2 {\rm M_\odot}$, at the same time, from the same simulation.
+All three snapshots are of the same particle, of roughly $5.2 \Msun$, at the same time, from the same simulation.
 In the top panel we calculate the various velocities averaged over spherical shells, i.e.,  we do not remove the jet bi-cone, in the center panel we remove the jet bi-cone, and in the bottom panel we remove a bi-cone with twice the jet opening angle.
 
 The most dramatic change is in the turbulent velocity.
-When we average over full spherical shells (top panel), the turbulent velocity remains roughly constant at all radii, with a slight increase at $r>1$ pc.
-In the two plots where we excise the jet bi-cone (or a bi-cone with twice the jet opening angle), we see similar behavior to runs where no jets were included; at large radii the random velocity $v_{\rm T}$ decreases (by a factor of two) with decreasing radius, while at small radii ($r\lesssim 0.1$ pc) $v_{\rm T}$ increases with decreasing radius.
+When we average over full spherical shells (top panel), the turbulent velocity remains roughly constant at all radii, with a slight increase at $\vec{r} >1$ pc.
+In the two plots where we excise the jet bi-cone (or a bi-cone with twice the jet opening angle), we see similar behavior to runs where no jets were included; 
+at large radii the random velocity $\vt$ decreases (by a factor of two) with decreasing radius, while at small radii ($\vec{r} \lesssim 0.1$ pc) $\vt$ increases with decreasing radius.
 
-The effect of removing or not removing the jet bi-cone on $|u_r|$ and $v_\phi$ is much smaller.
-The infall velocity smooths out slightly when we excise the region around the jet, but the general dynamic of decreasing velocity with decreasing radius at large $r$, and then inverting to increasing velocity with decreasing radius for $r\lesssim 0.1$ pc is seen in all three panels.
+The effect of removing or not removing the jet bi-cone on $\urb$ and $\vphi$ is much smaller.
+The infall velocity smooths out slightly when we excise the region around the jet, but the general dynamic of decreasing velocity with decreasing radius at large $\vec{r}$, and then inverting to increasing velocity with decreasing radius for $\vec{r} \lesssim 0.1$ pc is seen in all three panels.
 
 % \begin{figure}
 % 	% To include a figure from a file named example.*
